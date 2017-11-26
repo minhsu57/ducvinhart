@@ -33,29 +33,30 @@ class Public_Controller extends MY_Controller
 		$this->load->model('website_model');
 		$this->load->model('news_model');
 		$this->load->model('category_model');
+		$this->load->model('category_translation_model');
 		$input['where'] = array('language_slug'=>'vi');
 		$this->data['website'] = $this->website_model->get_row($input);	
 		$this->data['website']->page_title = $this->data['website']->website_name;
 		$this->data['website']->meta_keyword = "";
 		$this->data['website']->meta_description = "";
-        // get 7 items of news model
-		// $input_news['limit'] = array('6' ,'0');
-		// $input_news['order'] = array('modified_date','DESC');
-		// $this->data['news'] = $this->news_model->get_list($input_news);
 
-		// // get category level - 01
-		// $input_cate['where'] = array('level' => 0);
-		// $input_cate['order'] = array('sort_order', 'ASC');
-		// $cate_lv01 = $this->category_model->get_list_arr($input_cate);
-		// //
-		// $this->data['cate_lv01'] = array();
-		// foreach ($cate_lv01 as $key=>$item) {
-		// 	$input_child_cate['where'] = array('parent' => $item['id']);
-		// 	$input_child_cate['order'] = array('sort_order', 'ASC');
-		// 	$cate_child = $this->category_model->get_list_arr($input_child_cate);
-		// 	$item['children'] = $cate_child;
-		// 	array_push($this->data['cate_lv01'], $item);
-		// }
+		// get categories of product
+		$input_cate = array('parent_id'=>27,'level'=>1);
+		$cate_product = $this->category_translation_model->get_list_category_arr($input_cate);
+		//
+		$this->data['cate_product'] = array();
+		foreach ($cate_product as $key=>$item) {
+			$input_child_cate = array('parent_id' => $item['cate_id']);
+			$cate_child = $this->category_translation_model->get_list_category_arr($input_child_cate);
+			$item['children'] = $cate_child;
+			array_push($this->data['cate_product'], $item);
+		}
+		// get categories of service
+		$input_cate = array('parent_id'=>28,'level'=>1);
+		$this->data["cate_services"] = $this->category_translation_model->get_list_category_arr($input_cate);
+		// get categories of topic
+		$input_cate = array('parent_id'=>35,'level'=>1);
+		$this->data["cate_topic"] = $this->category_translation_model->get_list_category_arr($input_cate);
 	}
 
 	protected function render($the_view = NULL, $template = 'public_master')
@@ -83,6 +84,8 @@ class Admin_Controller extends MY_Controller
 		$this->user_id = $current_user->id;
 		$this->data['current_user'] = $current_user;
 		$this->data['current_user_menu'] = '';
+		//
+        $this->lang_slug = "vi";
 		if($this->ion_auth->in_group('admin'))
 		{
 			$this->data['current_user_menu'] = $this->load->view('templates/_parts/user_menu_admin_view.php', NULL, TRUE);

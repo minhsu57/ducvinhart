@@ -35,3 +35,29 @@
     padding-right: 5px;
     margin-bottom: 5px;
 }
+.btn-browse-image{
+    margin-top: 5px !important;
+}
+.image_note {
+    margin: 5px;
+    color: #FF5722;
+    font-style: italic;
+}
+.width-small{
+    width: 50px;
+}
+.width-medium{
+    width: 100px;
+}
+.width-large{
+    width: 150px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle !important;
+}
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    vertical-align: middle !important;
+}
+.table tr td img{
+    cursor: pointer;
+}

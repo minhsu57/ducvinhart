@@ -32,10 +32,9 @@ if($this->ion_auth->logged_in()) {
                         <ul class="dropdown-menu" role="menu">
                             <li><?php echo anchor('admin/slider','Slider');?></li>
                             <li><?php echo anchor('admin/category','Category');?></li>
+                            <li><?php echo anchor('admin/product','Product');?></li>
                             <li><?php echo anchor('admin/page_content','Page Content');?></li>
                             <li><?php echo anchor('admin/users','Users');?></li>
-                            <li><?php echo anchor('admin/course','Courses');?></li>
-                            <li><?php echo anchor('admin/calendar','Calendar');?></li>
                             <li><?php echo anchor('admin/images_library','Images Library');?></li>
                         </ul>
                     </li>

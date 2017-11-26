@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="container" style="margin-top:0px;">
     <div class="row">
@@ -19,26 +19,25 @@
             echo '<tr>';
             echo '<th><div class="text-center">No</div></th>';
             echo '<th>Category name</th>';
-            echo '<th>Slogan</th>';
             echo '<th>Image</th>';
             echo '<th>Modified date</th>';
-            echo '<th>Status</th>';
+            echo '<th><div class="text-center">Status</div></th>';
             echo '<th>Actions</th>';
             echo '</tr>';
             echo '</thead>';
             echo '<tbody>';
-            if(!empty($items))
-            {
-
-                foreach($items as $key => $item)
-                {
+            if (!empty($items)) {
+                foreach ($items as $key => $item) {
                     echo '<tr>';
                     echo '<td><div class="text-center">'.($key+1).'</div></td>';
                     echo '<td>'.$item->category_name.'</td>';
-                    echo '<td>'.$item->description.'</td>';
-                    echo '<td><img src="'.base_url($item->image).'" style="width: 180px;"></td>';                    
+                    echo '<td><img src="'.base_url($item->image_url).'" style="width: 180px;"></td>';
                     echo '<td>'.$item->modified_date.'</td>'; ?>
-                    <td><?php if($item->status == 1) echo "Showing"; else echo "Hiding"; ?></td>
+                    <td><div class="text-center"><?php if ($item->status == 1) {
+                        echo "<li class='fa fa-check'></li>";
+                    } else {
+                        echo "<li class='fa fa-times'></li>";
+                    } ?></div></td>
                     <?php
                     echo '<td>';
                     echo '<a href="slider/edit/'.$item->id.'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';

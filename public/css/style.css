@@ -109,6 +109,8 @@ span.slogan_small {
 }
 .social {
 	display: inline-block;
+	text-align: center;
+	font-size: 0.9em;
 }
 .footer_link{
 	text-align: center;
@@ -767,7 +769,6 @@ footer.footer-area a {
 .ftr-grid ul li a{
 	color:#fff;
 	line-height: 2em;
-	font-size:0.9em;
 }
 .ftr-grid ul li a:hover{
 	color:#d5cdcd;
@@ -775,9 +776,6 @@ footer.footer-area a {
 }
 .footer{
 	padding-bottom:2em;
-}
-.social ul li{
-	text-align: center;
 }
 .social ul li a{
 	display: inline-block;

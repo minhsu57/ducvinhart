@@ -18,17 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li><a href="#"><span class="fa fa-google-plus circle"></span></a><a href="#"><span class="fa fa-facebook circle"></span></a>
 							<a href="#"><span class="fa fa-youtube circle"></span></a>
 						</li>
-						<li><a href="#">Mỹ thuật Đức Vinh</a></li>
-						<li><a href="#">Điện thoại - 0936 777 170</a></li>
-						<li><a href="#">Địa chỉ - xã Trị an, huyện Vĩnh Cửu,tỉnh Đồng Nai</a></li>
+						<?php echo $website->footer_content_1; ?>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-md-4 ftr-grid footer_link">
 					<ul>
-						<li><a href="#">Trang chủ</a></li>
-						<li><a href="product.html">Sản phẩm</a></li>
-						<li><a href="#">Chuyên đề</a></li>
-						<li><a href="contact.html">Liên hệ</a></li>
+						<?php echo $website->footer_content_2; ?>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

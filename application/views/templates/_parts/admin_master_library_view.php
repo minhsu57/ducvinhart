@@ -17,10 +17,8 @@
     <link href="<?php echo public_helper('bootstrap-dialog/bootstrap-dialog.min.css') ?>" rel="stylesheet" type="text/css" />
     <script src="<?php echo public_helper('lib/jquery/jquery-ui.min.js')?>"></script> 
     <script src="<?php echo public_helper('bootstrap-dialog/bootstrap-dialog.min.js') ?>"></script>
-    <script src="<?php echo public_helper('js/moment-with-locales.js') ?>" ></script>
-    <script src="<?php echo public_helper('lib/datetime-picker/datetimepicker.js')?>"></script>
 
-    <link rel="stylesheet" href="<?php echo public_helper('css/admin.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo public_helper('css/admin.css').'?t='.rand(); ?>" type="text/css" />
     <!-- fullcander -->
 
 

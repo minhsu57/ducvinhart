@@ -12,15 +12,17 @@ class Home extends Public_Controller {
         $this->load->model('slider_model');
     }
 
-    public function index()
+    function index()
     {
         // get content of category
-        $input['where'] = array("id" => 'home', "lang_slug" => "vi");
+        $input['where'] = array("id" => '1', "lang_slug" => "vi");
         $page = $this->category_translation_model->get_row($input);
-        // $this->data['website']->meta_keyword = $page->meta_keyword;
-        // $this->data['website']->meta_description = $page->meta_description;
+        if($page){            
+            $this->data['website']->meta_keyword = $page->meta_keyword;
+            $this->data['website']->meta_description = $page->meta_description;
+        }
         // get content of slider
-        $input['where'] = array('status' => 1, "category_id" => 'home');
+        $input['where'] = array('status' => 1, "cate_id" => '1');
         $this->data['sliders'] = $this->slider_model->get_list($input);
 
         $this->render('user/home_view');

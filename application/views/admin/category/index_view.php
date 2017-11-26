@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="container" style="margin-top:0px;">
     <div class="row">
@@ -18,28 +18,22 @@
             echo '<thead>';
             echo '<tr>';
             echo '<th>Category Name</th>';
-            echo '<th>Category Parent</th>';
             echo '<th>Sort Order</th>';
             echo '<th>Modify Date</th>';
             echo '<th style="width: 90px !important">Actions</th>';
             echo '</tr>';
             echo '</thead>';
             echo '<tbody>';
-            if(!empty($items))
-            {
-
-                foreach($items as $item)
-                {
-                    echo '<tr>';
-                    echo '<td>'.$item->name.'</td>';
-                    echo '<td>'.$item->parent.'</td>'; 
-                    echo '<td>'.$item->sort_order.'</td>';                   
+            if (!empty($items)) {
+                foreach ($items as $item) {
+                    echo '<tr>'; ?>
+                    <td><?php if($item->level==1) echo "-- "; else if($item->level==2) echo "------ "; echo $item->name; ?></td>
+                    <?php
+                    echo '<td>'.$item->sort_order.'</td>';
                     echo '<td>'.$item->modified_date.'</td>';
                     echo '<td>';
-                    echo '<a href="'.base_url("admin/").'category/edit/'.$item->id.'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
-                    if($item->level != -1){
-                        echo '<a href="'.base_url("admin/").'category/delete/'.$item->id.'" style="color:#fff" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
-                    }                    
+                    echo '<a href="'.base_url("admin/").'category/edit/'.$item->cate_id.'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
+                    echo '<a href="'.base_url("admin/").'category/delete/'.$item->cate_id.'" style="color:#fff" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
                     ?>
                     <?php
                     echo '</td>';

@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Slider_model extends MY_Model
 {
@@ -8,19 +8,27 @@ class Slider_model extends MY_Model
     function __construct()
     {
         parent::__construct();
-        // pct change
-        //$this->table = 'slider';
         $this->table = 'slider';
-        // end pct change
     }
 
-    public function get_list_slider_category(){
-    	$rows = $this->db->query('select c.name category_name, s.* from category c, slider s where c.id = s.category_id order by s.modified_date desc');
-        return $rows->result();
+    private function get_slider($where){
+        $this->db->select('c.name category_name, s.*');
+        $this->db->from('slider s');
+        $this->db->join('category_translation c', 'c.cate_id = s.cate_id');
+        $this->db->where($where);
+        $this->db->order_by("modified_date","desc");
+    }
+    function get_list_slider($where)
+    {
+        $this->get_slider($where);        
+        $query = $this->db->get();
+        return $query->result();
     }
 
-    public function get_slider_category_by_id($id){
-        $rows = $this->db->query('select c.name category_name, s.* from category c, slider s where c.id = s.category_id and s.id = '.$id);
-        return $rows->row();
+    function get_row_slider($where)
+    {
+        $this->get_slider($where);        
+        $query = $this->db->get();
+        return $query->row();
     }
 }

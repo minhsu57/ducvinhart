@@ -8,29 +8,15 @@
                 <label>Category </label><span class="error">*</span>
                 <select class="form-control" name="category">
                 <?php foreach ($categories as $value) { ?>
-                    <option value="<?php echo $value->id; ?>"><?php echo $value->name; ?></option>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id); ?>><?php echo $value->name; ?></option>
                 <?php } ?>
                 </select>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label>Link </label>
                 <?php
                 echo form_error('link');
                 echo form_input('link',set_value('link',''),'class="form-control"');
-                ?>
-            </div>             
-            <div class="form-group col-md-5">
-                <label>Slogan 01 <span class="error">*</span></label>
-                <?php
-                echo form_error('description','<span class="error">');
-                echo form_input('description',set_value('description',''),'class="form-control"');
-                ?>
-            </div>
-            <div class="form-group col-md-5">
-                <label>Slogan 02 </label>
-                <?php
-                echo form_error('description2');
-                echo form_input('description2',set_value('description2',''),'class="form-control"');
                 ?>
             </div>
             <div class="col-md-2">
@@ -46,10 +32,10 @@
                 <div>
                     <input type="hidden" name="image" id="image" value="<?php echo set_value("image"); ?>">
                     <img src="<?php echo base_url(set_value("image")); ?>" id="image_link_img" style="max-height: 300px" onclick="openPopup()" name="image_link_img">
-                    <button type="button" class="btn btn-default" onclick="openPopup()"><li class="fa fa-image"></li> Browse Image</button>
+                    <button type="button" class="btn btn-default btn-browse-image" onclick="openPopup()"><li class="fa fa-image"></li> Browse Image</button>
+                    <div class="image_note">Kích thước tốt : 1978 x 521 or tỉ lệ dài/cao = 3,8</div>
                 </div>
-            </div>
-                     
+            </div>                     
             <?php
             $submit_button = 'Save';
             echo form_submit('submit', $submit_button, 'class="btn btn-primary btn-lg btn-block"');?>
