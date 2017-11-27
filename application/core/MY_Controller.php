@@ -30,11 +30,11 @@ class Public_Controller extends MY_Controller
 	function __construct()
 	{
 		parent::__construct();
+		//
+        $this->lang_slug = "vi";
 		$this->load->model('website_model');
-		$this->load->model('news_model');
-		$this->load->model('category_model');
 		$this->load->model('category_translation_model');
-		$input['where'] = array('language_slug'=>'vi');
+		$input['where'] = array('language_slug'=>$this->lang_slug);
 		$this->data['website'] = $this->website_model->get_row($input);	
 		$this->data['website']->page_title = $this->data['website']->website_name;
 		$this->data['website']->meta_keyword = "";

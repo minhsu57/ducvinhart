@@ -10,4 +10,32 @@ class News_model extends MY_Model
         parent::__construct();
         $this->table = 'news';
     }
+
+    protected function get_news($input = array())
+    {
+        $this->db->select('c.level, c.parent_id, c.sort_order, n.*');
+        $this->db->from('category c');
+        $this->db->join('news n', 'c.id = n.cate_id');
+        $this->get_list_set_input($input);
+    }
+    function get_list_news($input = array())
+    {
+        $this->get_news($input);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function get_row_news($input = array())
+    {
+        $this->get_news($input);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    function get_total_news($input = array())
+    {
+        $this->get_news($input);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
 }

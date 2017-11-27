@@ -5,7 +5,7 @@
             <h3 class="text-center">ADD NEWS</h3>
         </div>
     </div>
-    <?php echo form_open_multipart('admin/news/create/');?>
+    <?php echo form_open_multipart('admin/news/create/'.$type_id);?>
     <div class="row">
         <div class="col-xs-12">
             <div class="col-xs-12 ">

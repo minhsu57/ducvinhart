@@ -84,14 +84,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li><a class="color4" href="">dịch vụ</a>
 							<ul>
 								<?php foreach ($cate_services as $cate) { ?>
-								<li><a href=""><?php echo $cate['name']; ?></a></li>
+								<li><a href="<?php echo base_url('dich-vu/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
 								<?php } ?>
 							</ul>
 						</li>
-						<li><a class="color5" href="#">Chuyên đề</a>
+						<li><a class="color5" href="">Chuyên đề</a>
 							<ul>
 								<?php foreach ($cate_topic as $cate) { ?>
-								<li><a href=""><?php echo $cate['name']; ?></a></li>
+								<li><a href="<?php echo base_url('chuyen-de/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
 								<?php } ?>
 							</ul>
 						</li>

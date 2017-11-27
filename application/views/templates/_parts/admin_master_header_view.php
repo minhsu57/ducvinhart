@@ -42,7 +42,13 @@ if($this->ion_auth->logged_in()) {
                     <li><?php echo anchor('admin/website/index','COMMON INFO');?></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><?php echo anchor('admin/news/index','NEWS');?></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><?php echo anchor('admin/news?type=services','Dịch Vụ');?></li>
+                            <li><?php echo anchor('admin/news','Chuyên Đề');?></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $this->ion_auth->user()->row()->username;?> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">

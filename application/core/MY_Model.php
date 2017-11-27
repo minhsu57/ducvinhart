@@ -232,7 +232,7 @@ class MY_Model extends CI_Model {
      * $input : mang du lieu dau vao
      */
     
-    protected function get_list_set_input($input = array())
+    public function get_list_set_input($input = array())
     {
         
         // Thêm điều kiện cho câu truy vấn truyền qua biến $input['where'] 
