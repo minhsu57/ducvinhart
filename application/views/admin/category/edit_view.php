@@ -26,7 +26,7 @@
                 <select class="form-control" name="parent">
                     <option value=""></option>
                     <?php foreach ($categories as $value) { ?>
-                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('parent',$value->cate_id,( !empty($item->parent_id) && $item->parent_id == $value->cate_id ? TRUE : FALSE )); ?>><?php echo $value->name; ?></option>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('parent',$value->cate_id,( !empty($item->parent_id) && $item->parent_id == $value->cate_id ? TRUE : FALSE )); ?>><?php if($value->level==1) echo "-- "; echo $value->name; ?></option>
                     <?php }?>
                 </select>
             </div>

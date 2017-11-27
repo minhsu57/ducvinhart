@@ -1031,16 +1031,17 @@ ul.tabs-menu li.active a{
 	color:#000;
 	font-weight:500;
 	font-size:0.9em;
+	text-transform: uppercase;
 }
 .product-info-cust p{
 	font-family: 'Arimo', sans-serif;
 	font-size:0.7em;
 	margin:5px 0;
 	letter-spacing:1px;
+	text-transform: uppercase;
 }
 span.item_price{
-	color:#000;
-	font-weight:600;
+    font-weight: 400;
 	font-size:1em;
 	font-family: 'Arimo', sans-serif;
 }
@@ -1128,6 +1129,7 @@ ul.dropdown-menu1 li a:hover{
 	font-size:1.2em;
 	font-weight:500;
 	line-height:1.3em;
+	text-transform: uppercase;
 }
 /* ratings */
 /**/
@@ -1181,6 +1183,7 @@ ul.dropdown-menu1 li a:hover{
 	color:#999;
 	font-family: 'Arimo', sans-serif;
 	margin-top:6px;
+	text-transform: uppercase;
 }
 .item-list ul{
 	padding-left:15px;
@@ -1260,9 +1263,6 @@ p.prod-desc {
 	padding-top: 2%;
 	font-size: 0.85em;
 	line-height: 1.8em;
-}
-.sofaset-info{
-	margin:2em 0;
 }
 .sofaset-info h4 {
 	font-size: 0.9em;

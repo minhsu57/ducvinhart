@@ -18,7 +18,17 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-
+            <div class="form-group col-md-12 col-lg-12">
+            <label>Category <span class="error">*</span></label>
+                <?php
+                echo form_error('category', '<span class="error">');
+                ?>
+                <select class="form-control" name="category">
+                    <?php foreach ($categories as $value) { ?>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category'); ?>><?php if($value->level==2) echo "--"; echo $value->name; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
             <div class="form-group col-md-12 col-lg-12">
                 <label>Title <span class="error">*</span></label>
                 <?php
@@ -46,7 +56,7 @@
                 <?php echo form_error('image','<p class="error">'); ?>
                 <div>
                     <input type="hidden" name="image" id="image" value="<?php echo set_value("image"); ?>">
-                    <img src="<?php echo base_url(set_value("image")); ?>" id="image_link_img" style="max-height: 200px" onclick="openPopup()" name="image_link_img">
+                    <img src="<?php echo base_url(set_value("image")); ?>" id="image_link_img" style="max-height: 100px" onclick="openPopup()" name="image_link_img">
                     <button type="button" class="btn btn-default" onclick="openPopup()"><li class="fa fa-image"></li> Browse Image</button>
                 </div>
             </div>

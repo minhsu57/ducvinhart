@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="header_top">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html" class="col-xs-12 col-md-4 pull-left"><img width="130px" src="<?php echo public_helper('upload/images/logo/logo.png') ?>" alt=""/></a>
+				<a href="<?php echo base_url(); ?>" class="col-xs-12 col-md-4 pull-left"><img width="130px" src="<?php echo public_helper('upload/images/logo/logo.png') ?>" alt=""/></a>
 				<div class="slogan col-xs-8">
 					<span><?php echo $website->website_name; ?></span>
 					<span class="slogan_small"><?php echo $website->slogan; ?></span>
@@ -63,17 +63,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="button"></div>
 					<!-- start header menu -->
 					<ul class="skyblue">
-						<li class="active grid"><a class="color1" href="index.html">Home</a></li>
-						<li class="grid"><a class="color2" href="#">Sản phẩm</a>
+						<li class="active grid"><a class="color1" href="<?php echo base_url(); ?>">Home</a></li>
+						<li class="grid"><a class="color2" href="">Sản phẩm</a>
 							<ul>
 								<?php foreach ($cate_product as $cate) { ?>
-								<li><a href=""><?php echo $cate['name']; ?></a>
+								<li><a href="<?php echo base_url('san-pham/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a>
 									<?php 
 									if(count($cate['children'])>0){
 										echo '<ul>';                   
-										foreach ($cate['children'] as $key => $value) {
-											echo '<li><a href="'.base_url('english/'.$value['id']).'">'.$value['name'].'</a></li>';                        
-										}
+										foreach ($cate['children'] as $key => $value) { ?>
+											<li><a href="<?php echo base_url('san-pham/'.create_slug($value['name'])) ?>"><?php echo $value['name']; ?></a></li>                      
+										<?php }
 										echo '</ul>';
 									}
 									?>
@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<?php } ?>
 							</ul>
 						</li>
-						<li><a class="color5" href="contact.html">liên hệ</a>
+						<li><a class="color5" href="<?php echo base_url('lien-he'); ?>">liên hệ</a>
 						</ul>
 						<div class="search">
 							<form>

@@ -1,8 +1,7 @@
 <!-- Google map -->
-<div class="container">
-    <div class="panel-xanh">
-        <div class="panel-heading"><div class="panel-title"><?php echo $website->website_name; ?> GOOGLE MAP</div></div>
-        <div id="map" style="width:100%;height:450px; margin-bottom: 20px" class="col-lg-12"></div>
+<div class="">
+    <div class="">
+        <div id="map" style="width:100%;height:350px; margin-bottom: 20px" class="col-lg-12"></div>
         <script>
             function myMap() {
                 var myCenter = new google.maps.LatLng(<?php echo $website->google_map; ?>);

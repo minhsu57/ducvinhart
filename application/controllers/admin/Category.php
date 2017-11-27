@@ -51,7 +51,7 @@ class Category extends Admin_Controller
                 $insert_category = array('status' => 1, 'sort_order' => $this->data['sort_order'], 'parent_id' => $parent, 'level' => $level);
                 if ($this->category_model->create($insert_category)) {
                     $new_category_id = $this->db->insert_id();
-                    $insert_translation_category = array('cate_id' => $new_category_id, 'lang_slug' => $this->lang_slug, 'name' => $name, 'meta_keyword' => $meta_keyword, 'meta_description' => $meta_description, 'created_date'=>date('Y-m-d H:i:s'), 'modified_date'=>date('Y-m-d H:i:s'));
+                    $insert_translation_category = array('cate_id' => $new_category_id, 'lang_slug' => $this->lang_slug, 'name' => $name, 'name_slug' => create_slug($name), 'meta_keyword' => $meta_keyword, 'meta_description' => $meta_description, 'created_date'=>date('Y-m-d H:i:s'), 'modified_date'=>date('Y-m-d H:i:s'));
                     if (!$this->category_translation_model->create($insert_translation_category)) {
                         $this->postal->add('Tạo mới thất bại !', 'error');
                     }else{
@@ -88,7 +88,7 @@ class Category extends Admin_Controller
                 $this->data['meta_description'] = $this->input->post('meta_description');
                 $update_cate = array('sort_order' => $this->data['sort_order'], 'parent_id' => $parent, 'level' => $level);
                 if ($this->category_model->update($id, $update_cate)) {
-                    $update_translation_category = array('name' => $this->data['name'], 'meta_keyword' => $this->data['meta_keyword'], 'meta_description' => $this->data['meta_description'], 'modified_date'=>date('Y-m-d H:i:s'));
+                    $update_translation_category = array('name' => $this->data['name'], 'name_slug' => create_slug($this->data['name']), 'meta_keyword' => $this->data['meta_keyword'], 'meta_description' => $this->data['meta_description'], 'modified_date'=>date('Y-m-d H:i:s'));
                     if (!$this->category_translation_model->update($this->input->post('translation_id'), $update_translation_category)) {
                         $this->postal->add('Chỉnh sửa thất bại !', 'error');
                     }else{

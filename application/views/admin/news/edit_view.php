@@ -18,7 +18,17 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-
+            <div class="form-group col-md-12 col-lg-12">
+                <label>Category <span class="error">*</span></label>
+                <?php
+                echo form_error('category', '<span class="error">');
+                ?>
+                <select class="form-control" name="category">
+                    <?php foreach ($categories as $value) { ?>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id,( !empty($item->cate_id) && $item->cate_id == $value->cate_id ? TRUE : FALSE )); ?>><?php if($value->level==2) echo "--"; echo $value->name; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
             <div class="form-group col-md-12 col-lg-12">
                 <label>Title <span class="error">*</span></label>
                 <?php
@@ -46,7 +56,7 @@
                 <?php echo form_error('image','<p class="error">'); ?>
                 <div>
                     <input type="hidden" name="image" id="image" value="<?php echo set_value("image",$item->image); ?>">
-                    <img src="<?php echo base_url(set_value("image",$item->image)); ?>" id="image_link_img" style="max-height: 200px" onclick="openPopup()" name="image_link_img">
+                    <img src="<?php echo base_url(set_value("image",$item->image)); ?>" id="image_link_img" style="max-height: 100px" onclick="openPopup()" name="image_link_img">
                     <button type="button" class="btn btn-default" onclick="openPopup()"><li class="fa fa-image"></li> Browse Image</button>
                 </div>
             </div>
@@ -57,7 +67,7 @@
                 <?php
                 echo form_label('Keyword','keyword');
                 echo form_error('keyword','<p class="error">');
-                echo form_input('keyword', $item->keyword,'class="form-control"');
+                echo form_input('keyword', $item->meta_keyword,'class="form-control"');
                 ?>
             </div>
             <div class="form-group col-md-12 col-lg-12">
@@ -74,20 +84,20 @@
 </div>
 <script src="<?php echo public_helper('ckfinder/ckfinder.js?t='.rand())?>"></script>
 <script>
-   function openPopup() {
-       CKFinder.popup( {
-           chooseFiles: true,
-           onInit: function( finder ) {
-               finder.on( 'files:choose', function( evt ) {
-                   var file = evt.data.files.first();
-                   document.getElementById( 'image' ).value = file.getUrl();
-                   document.getElementById( 'image_link_img' ).src = base_url+file.getUrl();
-               } );
-               finder.on( 'file:choose:resizedImage', function( evt ) {
-                   document.getElementById('image').value = evt.data.resizedUrl;
-                   document.getElementById( 'image_link_img' ).src = base_url+evt.data.resizedUrl;
-               } );
-           }
-       } );
-   }
+ function openPopup() {
+     CKFinder.popup( {
+         chooseFiles: true,
+         onInit: function( finder ) {
+             finder.on( 'files:choose', function( evt ) {
+                 var file = evt.data.files.first();
+                 document.getElementById( 'image' ).value = file.getUrl();
+                 document.getElementById( 'image_link_img' ).src = base_url+file.getUrl();
+             } );
+             finder.on( 'file:choose:resizedImage', function( evt ) {
+                 document.getElementById('image').value = evt.data.resizedUrl;
+                 document.getElementById( 'image_link_img' ).src = base_url+evt.data.resizedUrl;
+             } );
+         }
+     } );
+ }
 </script>

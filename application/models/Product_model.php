@@ -16,6 +16,7 @@ class Product_model extends MY_Model
         $this->db->from('product p');
         $this->db->join('product_translation t', 't.product_id = p.id');
         $this->db->where($where);
+        $this->db->limit(10,0);
         $this->db->order_by("t.name","asc");
     }
     function get_list_product($where)

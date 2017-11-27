@@ -29,7 +29,7 @@
                 <select class="form-control" name="parent">
                     <option value=""></option>
                     <?php foreach ($categories as $value) { ?>
-                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('parent',$value->cate_id); ?>><?php echo $value->name; ?></option>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('parent',$value->cate_id); ?>><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
                     <?php } ?>
                 </select>
             </div>
