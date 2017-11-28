@@ -102,7 +102,7 @@
                 <div class="col-md-12 product-model-sec fadeInLeft animated">
                     <?php foreach ($products as $key => $value) { ?>                       
                     <div class="product-grid love-grid">
-                        <a href="single.html">
+                        <a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>">
                             <div class="more-product"><span> </span></div>
                             <div class="product-img b-link-stripe b-animate-go  thickbox">
                                 <img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt="" />

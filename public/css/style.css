@@ -955,6 +955,7 @@ ul.tabs-menu li.active a{
 	-o-transition: 0.5s all;
 	min-height: 370px;
 	border:1px solid #fff;
+	background: #fff;
 }
 .product-grid:hover {
 	z-index: 1;
@@ -1130,6 +1131,9 @@ ul.dropdown-menu1 li a:hover{
 	font-weight:500;
 	line-height:1.3em;
 	text-transform: uppercase;
+}
+.single-main-image {
+    background: #fff;
 }
 /* ratings */
 /**/
@@ -2042,6 +2046,9 @@ h4.title:after {
 	background: #EF5F21;
     border: 1px solid #EF5F21;
     color: #fff;
+}
+.main {
+    min-height: 400px;
 }
 /*--responsive--*/
 @media (max-width:1280px){

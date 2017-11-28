@@ -88,7 +88,7 @@ class News extends Admin_Controller
             $keyword = $this->input->post('keyword');
             $meta_description = $this->input->post('meta_description');
 
-            $insert_data = array('cate_id' => $category, 'title' => $title, 'short_content' => $short_content,'status' => 1, 'content' => $content, 'image' => $image, 'lang_slug' => $this->lang_slug, 'meta_keyword' => $keyword, 'meta_description' => $meta_description, 'modified_date'=>date('Y-m-d H:i:s'));
+            $insert_data = array('cate_id' => $category, 'title' => $title, 'short_content' => $short_content,'status' => 1, 'content' => $content, 'image' => $image, 'lang_slug' => $this->lang_slug, 'meta_keyword' => $keyword, 'meta_description' => $meta_description, 'created_date'=>date('Y-m-d H:i:s'), 'modified_date'=>date('Y-m-d H:i:s'));
             if(!$this->news_model->create($insert_data))
             {             
                 $this->postal->add('Thêm bài viết thất bại !','error');

@@ -22,21 +22,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="services-area">
         <div class="container">
             <div class="">
-                <?php foreach ($items as $key => $value) { ?>                
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="item">
-                        <div class="news-container">
-                            <a href="<?php echo base_url(create_slug($page_header).'/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
+                <?php foreach ($items as $key => $value) {
+                    $year = date('Y', strtotime($value->created_date));
+                    $month = date('m', strtotime($value->created_date));
+                    $date = date('d', strtotime($value->created_date)); 
+                    ?>                
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="item">
+                            <div class="news-container">
+                                <a href="<?php echo base_url(create_slug($page_header).'/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
+                            </div>
+                            <?php if((create_slug($page_header) == "dich-vu")){ ?>
+                            <h3><a href="<?php echo base_url(create_slug($page_header).'/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->title; ?></a></h3>
+                            <h4><a href="<?php echo base_url(create_slug($page_header).'/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->short_content; ?></a></h4>
+                            <?php }else{ ?>
+                            <h3><li class="fa fa-clock-o"> Ngày <?php echo $date; ?> tháng <?php echo $month; ?> năm <?php echo $year; ?></li></h3>
+                            <h4><a href="<?php echo base_url(create_slug($page_header).'/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->short_content; ?></a></h4>
+                            <?php } ?>
                         </div>
-                        <h3><a href="services-details.html"><?php echo $value->title; ?></a></h3>
-                        <h4><a href="services-details.html"><?php echo $value->short_content; ?></a></h4>
                     </div>
+                    <?php } ?>
+                    <div class="clearfix"></div>
                 </div>
-                <?php } ?>
-                <div class="clearfix"></div>
             </div>
         </div>
     </div>
-</div>
-<!---->
+    <!---->
 

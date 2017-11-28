@@ -41,9 +41,9 @@
  					<div class="clearfix"></div>
  				</form>
  			</div>
+ 		</div>
  			<div class="contact-map">
  				<!--Load google map-->
  				<?php $this->load->view('user/google_map_view') ?>
  			</div>
- 		</div>
  	</div>

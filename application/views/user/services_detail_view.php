@@ -5,6 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php //require "slider_view.php" ?>
 <!-- End slider section -->
 <!---->
+<?php 
+$year = date('Y', strtotime($item->created_date));
+$month = date('m', strtotime($item->created_date));
+$date = date('d', strtotime($item->created_date)); 
+?>
 <div class="services-details-area">
 	<!--breadcrumb-->
 	<div class="container">
@@ -26,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						data-mobile-iframe="true">
 						<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Chia sẻ</a>
 					</div>
-					<span><i class="fa fa-clock-o"></i>Ngày 25 tháng 11 năm 2017</span>
+					<span><i class="fa fa-clock-o"></i>Ngày <?php echo $date; ?> tháng <?php echo $month; ?> năm <?php echo $year; ?></span>
 				</div>
 				<div class="service-text">
 					<?php echo $item->content; ?>
@@ -39,30 +44,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="single-sidebar-widget">
 					<h4 class="title">Dịch vụ tương tự</h4>
 					<div class="recent-content">
+						<?php foreach ($same_items as $key => $value) { ?>							
 						<div class="recent-content-item">
-							<a href="#"><img src="images/sen-da.png" alt=""></a>
+							<a href="<?php echo base_url('dich-vu/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" alt="<?php echo $value->title; ?>"></a>
 							<div class="recent-text">
-								<h4><a href="#">Ngôn ngữ của tranh dân gian là những ý niệm về vũ trụ quan, nhân sinh quan...</a></h4>
+								<h4><a href="<?php echo base_url('dich-vu/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->title; ?></a></h4>
 							</div>
 						</div>
-						<div class="recent-content-item">
-							<a href="#"><img src="images/tranh-son-mai-phong-khach1.png" alt=""></a>
-							<div class="recent-text">
-								<h4><a href="#">Nghệ nhân Nguyễn Hữu Quả, làng tranh Đông Hồ, xã Song Hồ, huyện Thuận Thành, </a></h4>
-							</div>
-						</div>
-						<div class="recent-content-item">
-							<a href="#"><img src="images/tranh-son-mai-phong-khach2.png" alt=""></a>
-							<div class="recent-text">
-								<h4><a href="#">Hơn nữa, nhiều thầy tào, thầy cúng tuổi đã cao nhưng chưa có con cháu có đủ tố chất để truyền...</a></h4>
-							</div>
-						</div>
-						<div class="recent-content-item">
-							<a href="#"><img src="images/Wedding-600W-x-600Hpx.jpg" alt=""></a>
-							<div class="recent-text">
-								<h4><a href="#">Writing Skill</a></h4>
-							</div>
-						</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="single-sidebar-widget">
