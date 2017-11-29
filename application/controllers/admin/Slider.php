@@ -20,19 +20,16 @@ class Slider extends Admin_Controller
         $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
 
         $this->load->model('slider_model');
-        $this->load->model('category_translation_model');        
-        $input_categories = array();
-        $this->data['categories'] = $this->category_translation_model->get_list_category($input_categories);
+        $this->load->model('category_translation_model');
+        $this->data['categories'] = $this->category_translation_model->get_list_category();
         //
         $this->form_validation->set_rules('image', 'Image', 'trim|required');
         $this->form_validation->set_rules('link', 'link', 'trim');
-        //        
-        $this->where = array();
     }
 
     public function index()
     {
-        $this->data['items'] = $this->slider_model->get_list_slider($this->where);
+        $this->data['items'] = $this->slider_model->get_list_slider();
         $this->render('admin/slider/index_view');
     }
 
@@ -61,8 +58,8 @@ class Slider extends Admin_Controller
 
     public function edit($id)   
     {
-        $this->where = array("s.id" => $id);
-        $this->data['item'] = $this->slider_model->get_row_slider($this->where);
+        $input_slider['where'] = array("s.id" => $id);
+        $this->data['item'] = $this->slider_model->get_row_slider($input_slider);
         if($this->input->post('submit')){
             if ($this->form_validation->run() == FALSE)
             {

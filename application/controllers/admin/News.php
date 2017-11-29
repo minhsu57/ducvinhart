@@ -44,14 +44,15 @@ class News extends Admin_Controller
         if($this->type == "services"){
             $input_news['where'] = array('parent_id' => 28);
             $this->data["type_id"] = 28;
+            $config['base_url'] = site_url('admin/news?type=services');
         }else{ 
             $this->data["type_id"] = 35;
             $input_news['where'] = array('parent_id<>' => 28);
+            $config['base_url'] = site_url('admin/news');
         }
         //pagination settings
-        $config["per_page"] = 15;
-        $config['base_url'] = site_url('admin/news');
-        $config['total_rows'] = $this->news_model->get_total();
+        $config["per_page"] = 15;        
+        $config['total_rows'] = $this->news_model->get_total_news($input_news);
         $this->data['total'] = $config['total_rows'];
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = $choice;     

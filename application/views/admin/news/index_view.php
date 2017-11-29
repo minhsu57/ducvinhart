@@ -3,12 +3,16 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="text-center">NEWS MANAGEMENT</h3>
+            <?php if($type_id == 28){ ?>
+            <h3 class="text-center">DỊCH VỤ</h3>
+            <?php }else{ ?>
+            <h3 class="text-center">CHUYÊN ĐỀ</h3>
+            <?php } ?>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <a href="<?php echo base_url('admin/news/create/'.$type_id); ?>"><button class="pull-right btn btn-primary"><li class="fa fa-plus"></li> Add news</button></a>
+            <a href="<?php echo base_url('admin/news/create/'.$type_id); ?>"><button class="pull-right btn btn-primary"><li class="fa fa-plus-circle"></li></button></a>
         </div>
     </div>
     <div class="row">
@@ -17,12 +21,12 @@
             echo '<table class="table table-hover table-bordered table-condensed">';
             echo '<thead>';
             echo '<tr>';
-            echo '<th><div class="text-center">No</div></th>';
-            echo '<th style="width: 200px !important">Title</th>';
-            echo '<th>Sumary content</th>';
-            echo '<th>Image</th>';
-            echo '<th>Modified date</th>';            
-            echo '<th>Actions</th>';
+            echo '<th style="width: 30px !important"><div class="text-center">No</div></th>';
+            echo '<th style="width: 200px !important">Category name</th>';
+            echo '<th>Title</th>';
+            echo '<th style="width: 120px !important">Image</th>';
+            echo '<th style="width: 150px !important">Modified date</th>';            
+            echo '<th style="width: 90px !important">Actions</th>';
             echo '</tr>';
             echo '</thead>';
             echo '<tbody>';
@@ -32,8 +36,8 @@
                 {
                     echo '<tr>';
                     echo '<td><div class="text-center">'.$record_number.'</div></td>';
+                    echo '<td><div style="max-width: 300px;">'.$item->category_name.'</div></td>';
                     echo '<td><div style="max-width: 300px;">'.$item->title.'</div></td>';
-                    echo '<td><div style="max-width: 300px;">'.$item->short_content.'</div></td>'; 
                     echo '<td><img src="'.$item->image.'" style="width: 100px;"></td>';                    
                     echo '<td>'.$item->modified_date.'</td>';
                     echo '<td>';

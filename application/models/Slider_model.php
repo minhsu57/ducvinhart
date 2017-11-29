@@ -11,23 +11,26 @@ class Slider_model extends MY_Model
         $this->table = 'slider';
     }
 
-    private function get_slider($where){
+    private function get_slider($input = array())
+    {
         $this->db->select('c.name category_name, s.*');
         $this->db->from('slider s');
         $this->db->join('category_translation c', 'c.cate_id = s.cate_id');
-        $this->db->where($where);
-        $this->db->order_by("modified_date","desc");
+        if ((isset($input['where'])) && $input['where'])
+        {
+            $this->db->where($input['where']);
+        } 
     }
-    function get_list_slider($where)
+    function get_list_slider($input = array())
     {
-        $this->get_slider($where);        
+        $this->get_slider($input);        
         $query = $this->db->get();
         return $query->result();
     }
 
-    function get_row_slider($where)
+    function get_row_slider($input = array())
     {
-        $this->get_slider($where);        
+        $this->get_slider($input);        
         $query = $this->db->get();
         return $query->row();
     }

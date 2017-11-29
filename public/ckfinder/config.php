@@ -33,8 +33,8 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['licenseName'] = 'localhost';
-$config['licenseKey']  = 'CFDFXBHVECMRAFBE5LU84ANDRG7EW';
+$config['licenseName'] = 'ducvinhart';
+$config['licenseKey']  = 'YJUJBN2HS1WDST28LBFPF35XNCJJ6';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -51,14 +51,9 @@ $config['privateDir'] = array(
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_images
 
 $config['images'] = array(
-    'maxWidth'  => 1600,
-    'maxHeight' => 1200,
-    'quality'   => 80,
-    'sizes' => array(
-        'small'  => array('width' => 480, 'height' => 320, 'quality' => 80),
-        'medium' => array('width' => 600, 'height' => 480, 'quality' => 80),
-        'large'  => array('width' => 800, 'height' => 600, 'quality' => 80)
-    )
+    'maxWidth'  => 0,
+    'maxHeight' => 0,
+    'quality'   => 0
 );
 
 /*=================================== Backends ========================================*/

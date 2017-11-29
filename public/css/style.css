@@ -602,8 +602,42 @@ a i.google:hover {
     margin: 0;
     padding: 10px 0;
 }
+.news-row{
+	margin-bottom: 20px;
+}
 .news-container img:hover {
     opacity: 0.8;
+}
+.news-left-content{
+	padding-right: 0px;
+	margin-bottom: 20px;
+}
+.news-right-content{
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: justify;
+}
+.news-date {
+    font-size: 1.2em;
+    color: #2f3333cc;
+    margin-bottom: 10px;
+}
+.news-date li {
+    font-style: italic;
+}
+h4.news-content {
+    font-size: 16px;
+    font-size: 16px;
+    color: #000;
+    line-height: 22px;
+}
+.news-title {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.news-title a {
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
 }
 .news-section h4 {
 	height: 40px;
@@ -2046,6 +2080,9 @@ h4.title:after {
 	background: #EF5F21;
     border: 1px solid #EF5F21;
     color: #fff;
+}
+.single-latest-text img{
+	max-width: 100% !important;
 }
 .main {
     min-height: 400px;
