@@ -95,8 +95,8 @@ class Product extends Admin_Controller
 
     public function edit($id, $translation_id)   
     {
-        $this->where = array("p.id" => $id);
-        $this->data['item'] = $this->product_model->get_row_product($this->where);
+        $input['where'] = array("p.id" => $id);
+        $this->data['item'] = $this->product_model->get_row_product($input);
         $this->data['item']->translation_id = $translation_id;
         // get all of additions images
         $input_product_images['where'] = array('product_id' => $id);

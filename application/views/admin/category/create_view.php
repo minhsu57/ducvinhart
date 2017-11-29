@@ -41,6 +41,15 @@
                 <input type="text" name="sort_order" class="form-control">
             </div>
             <div class="form-group col-md-12 col-lg-12">
+                <label>Ảnh đại diện <span class="error">*</span></label>
+                <?php echo form_error('image','<p class="error">'); ?>
+                <div>
+                    <input type="hidden" name="image" id="image" value="<?php echo set_value("image"); ?>">
+                    <img src="<?php echo base_url(set_value("image")); ?>" id="image_link_img" style="max-height: 100px" onclick="openPopup()" name="image_link_img">
+                    <button type="button" class="btn btn-default" onclick="openPopup()"><li class="fa fa-image"></li> Browse Image</button>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-lg-12">
                 <h5><b>SEO SECTION</b></h5>
             </div>
             <div class="form-group col-md-12 col-lg-6">
@@ -62,3 +71,22 @@
         </div>
     </div>
 </div>
+<script src="<?php echo public_helper('ckfinder/ckfinder.js?t='.rand())?>"></script>
+<script>
+     function openPopup() {
+         CKFinder.popup( {
+             chooseFiles: true,
+             onInit: function( finder ) {
+                 finder.on( 'files:choose', function( evt ) {
+                     var file = evt.data.files.first();
+                     document.getElementById( 'image' ).value = file.getUrl();
+                     document.getElementById( 'image_link_img' ).src = base_url+file.getUrl();
+                 } );
+                 finder.on( 'file:choose:resizedImage', function( evt ) {
+                     document.getElementById('image').value = evt.data.resizedUrl;
+                   document.getElementById( 'image_link_img' ).src = base_url+evt.data.resizedUrl;
+                 } );
+             }
+         } );
+     }
+ </script>

@@ -29,7 +29,8 @@ class Slider extends Admin_Controller
 
     public function index()
     {
-        $this->data['items'] = $this->slider_model->get_list_slider();
+        $input['order'] = array('created_date', "desc");
+        $this->data['items'] = $this->slider_model->get_list_slider($input);
         $this->render('admin/slider/index_view');
     }
 

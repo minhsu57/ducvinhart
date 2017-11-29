@@ -44,48 +44,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<!-- *************** -->
 		<div class="home_product_content">
 			<div class="container">
+				<?php foreach ($cate_product as $cate) { ?>
 				<div class="col-xs-12 col-md-4 col-xs-6 wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
 					<div class="item">
 						<div class="img">
-							<a href="#" class="img"><img src="public/upload/images/tranh-son-mai-phong-khach1.png" alt="Nội thất – Sơn mài "></a>
+							<a href="<?php echo base_url('san-pham/'.create_slug($cate['name'])) ?>" class="img"><img src="<?php echo base_url($cate['image']); ?>" alt="Nội thất – Sơn mài "></a>
 						</div>
-						<h3><a href="#">Nội thất – Sơn mài</a></h3>
-					</div>
-					<div class="item">
-						<div class="img">
-							<a href="#" class="img"><img src="public/upload/images/khung-tranh-1.png" alt="Trang trí – Trưng bày "></a>
-						</div>
-						<h3><a href="#">Khung Tranh – Nghệ Thuật</a></h3>
+						<h3><a href="<?php echo base_url('san-pham/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></h3>
 					</div>
 				</div>
-				<div class="col-xs-12 col-md-4 col-xs-6 wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
-					<div class="item">
-						<div class="img">
-							<a href="#" class="img"><img src="public/upload/images/tranh-quat-1.jpg" alt="Trang trí – Trưng bày "></a>
-						</div>
-						<h3><a href="#">Trang quạt – Trưng bày</a></h3>
-					</div>
-					<div class="item">
-						<div class="img">
-							<a href="#" class="img"><img src="public/upload/images/thu-cong-my-nghe-1.png" alt="Trang trí – Trưng bày "></a>
-						</div>
-						<h3><a href="#">Thủ công mỹ nghệ</a></h3>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-4 col-xs-6 wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
-					<div class="item">
-						<div class="img">
-							<a href="" class="img"><img src="public/upload/images/sen-da.png" alt="Trang trí – Trưng bày "></a>
-						</div>
-						<h3><a href="#">Tranh sơn mài - hiện đại</a></h3>
-					</div>
-					<div class="item">
-						<div class="img">
-							<a href="#" class="img"><img src="public/upload/images/Decoration-600W-x-600Hpx.jpg" alt="Trang trí – Trưng bày "></a>
-						</div>
-						<h3><a href="#">Trang trí – Trưng bày</a></h3>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 		<!-- *************** -->
@@ -96,60 +64,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="new">
 			<div class="container">
 				<div class="new-products">
-					<div class="new-items">
+					<?php foreach ($products as $key => $value) { ?>					
+					<div class="col-md-4">
 						<div class="item4">
-							<a href="products.html"><img src="public/upload/images/ban-da-ruou-bau-da.png" alt=""/></a>
+							<a href="products.html"><img src="<?php echo base_url($value->image); ?>" alt="<?php echo $value->name; ?>"/></a>
 							<div class="item-info4">
-								<h4><a href="products.html">Bàn đá</a></h4>
-								<span>ID: SR5421</span>
-								<a href="single.html">Buy Now</a>
-							</div>
-						</div>
-						<div class="item4">
-							<a href="products.html"><img src="public/upload/images/son-dau-vung-que.png" alt=""/></a>
-							<div class="item-info4">
-								<h4><a href="products.html">Tranh sơn dầu vùng quê</a></h4>
-								<span>ID: SR5421</span>
-								<a href="single.html">Buy Now</a>
+								<h4><a href="products.html"><?php echo $value->name; ?></a></h4>
+								<span>ID: <?php echo $value->model_id; ?></span>
+								<h5>Giá: <?php echo number_format($value->price,0,",","."); ?>VND</h5>
+								<a href="">Mua Ngay</a>
 							</div>
 						</div>
 					</div>
-					<div class="new-items new_middle">
-						<div class="item4">
-							<div class="item-info4">
-								<h4><a href="products.html">Tranh sơn dầu hoa</a></h4>
-								<span>ID: GS7641</span>
-								<a href="single.html">Buy Now</a>
-							</div>
-							<a href="products.html"><img src="public/upload/images/tranh-son-dau-hoa.png" alt=""/></a>
-						</div>
-						<div class="item4">
-							<a href="products.html"><img src="public/upload/images/tranh-quat-hoa-mai.png" alt=""/></a>
-							<div class="item-info5">
-								<h4><a href="products.html">Tranh quạt hoa mai</a></h4>
-								<span>ID: SR5421</span>
-								<a href="single.html">Buy Now</a>
-							</div>
-						</div>
-					</div>
-					<div class="new-items new_last">
-						<div class="item4">
-							<a href="products.html"><img src="public/upload/images/bach-ma-thu-cong.png" alt=""/></a>
-							<div class="item-info3">
-								<h4><a href="products.html">Bạch mã - thủ công mỹ nghệ</a></h4>
-								<span>ID: SR5421</span>
-								<a href="single.html">Buy Now</a>
-							</div>
-						</div>
-						<div class="item6">
-							<a href="products.html"><img src="public/upload/images/tranh-son-dau-phong-canh.png" alt=""/></a>
-							<div class="item-info4">
-								<h4><a href="products.html">Tranh sơn dầu phong cảnh</a></h4>
-								<span>ID: SR5421</span>
-								<a href="single.html">Buy Now</a>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -162,60 +89,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="news-section">
 			<div class="container">
 				<div class="">
+					<?php foreach ($news as $key => $value) { ?>
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="item">
 							<div class="news-container">
-								<a href="products.html"><img src="public/upload/images/Wedding-600W-x-600Hpx.jpg" class="img-responsive" alt=""/></a>
+								<a href="products.html"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
 							</div>
-							<h3><a href="news-details.html">Tranh vẽ</a></h3>
-							<h4><a href="products.html">Trang trí cổng cưới bằng hoa - sự mới mẻ phá cách tạo cảm hứng check-in cho bạn bè cô dâu chú rể</a></h4>
+							<h3><a href="news-details.html"><?php echo $value->category_name; ?></a></h3>
+							<h4><a href="products.html"><?php echo $value->short_content; ?></a></h4>
 						</div>
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<div class="item">
-							<div class="news-container">
-								<a href="products.html"><img src="public/upload/images/Consulting-design-600W-x-600Hpx.jpg" class="img-responsive" alt=""/></a>
-							</div>
-							<h3><a href="news-details.html">Nội thất</a></h3>
-							<h4><a href="products.html">Xem cái đẹp và nghệ thuật nâng tầm giá trị sống, Luôn sáng tạo và hiện thực ý tưởng của quý khách</a></h4>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<div class="item">
-							<div class="news-container">
-								<a href="products.html"><img src="public/upload/images/tranh-son-dau-hoa.png" class="img-responsive" alt=""/></a>
-							</div>
-							<h3><a href="news-details.html">Ẩm thực</a></h3>
-							<h4><a href="products.html">Tư vấn – Thiết kế – Thi công cảnh quan mang đến những dịch vụ đa dạng, phong phú nhằm thoả mãn nhu cầu của quý khách hàng.</a></h4>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<div class="item">
-							<div class="news-container">
-								<a href="products.html"><img src="public/upload/images/tranh-son-mai-phong-khach1.png" class="img-responsive" alt=""/></a>
-							</div>
-							<h3><a href="news-details.html">trang trí</a></h3>
-							<h4><a href="products.html">Tranh là vật dụng trang trí không gian mang lại sự may mắn và thịnh vượng cho gia đình. Việc chọn và treo tranh thể hiện việc yêu nghệ thuật, nói lên khiếu thẩm mỹ, </a></h4>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<div class="item">
-							<div class="news-container">
-								<a href="products.html"><img src="public/upload/images/tranh-son-mai-phong-khach2.png" class="img-responsive" alt=""/></a>
-							</div>
-							<h3><a href="news-details.html">Nội thất</a></h3>
-							<h4><a href="products.html">Treo một bức tranh đẹp, đúng với sở thích và phù hợp với phong cách gia chủ không chỉ giúp làm đẹp không gian sống, mà khiến họ thư giãn và giải toả căn thẳng.</a></h4>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-4">
-						<div class="item">
-							<div class="news-container">
-								<a href="products.html"><img src="public/upload/images/khung-tranh-1.png" class="img-responsive" alt=""/></a>
-							</div>
-							<h3><a href="news-details.html">Nội thất</a></h3>
-							<h4><a href="products.html">Việc chọn và treo tranh thể hiện việc yêu nghệ thuật, nói lên khiếu thẩm mỹ...</a></h4>
-						</div>
-					</div>
+					<?php } ?>
 					<div class="clearfix"></div>
 				</div>
 			</div>

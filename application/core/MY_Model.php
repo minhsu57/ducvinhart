@@ -256,12 +256,6 @@ class MY_Model extends CI_Model {
             
             $this->db->order_by($input['order'][0], $input['order'][1]);
         }
-        else
-        {
-            //mặc định sẽ sắp xếp theo id giảm dần 
-            $order = ($this->order == '') ? array($this->table.'.'.$this->key, 'desc') : $this->order;
-            $this->db->order_by($order[0], $order[1]);
-        }
         
         // Thêm điều kiện limit cho câu truy vấn thông qua biến $input['limit'] 
         //(ví dụ $input['limit'] = array('10' ,'0')) 

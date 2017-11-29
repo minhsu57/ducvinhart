@@ -17,8 +17,8 @@
         public function index($cate_id)
         {
         // get content of category
-            $where_cate = array('cate_id' => $cate_id);
-            $page = $this->category_translation_model->get_row_category($where_cate);
+            $input_cate['where'] = array('cate_id' => $cate_id);
+            $page = $this->category_translation_model->get_row_category($input_cate);
             if($page){
                 if($page->parent_id == 28){
                     $this->data['page_header'] = "Dịch vụ";
@@ -37,7 +37,7 @@
                $input_slider['where'] = array('status' => 1, "s.cate_id"=>$page->cate_id);
                $this->data['sliders'] = $this->slider_model->get_list_slider($input_slider);
                 //pagination settings
-               $config["per_page"] = 1;
+               $config["per_page"] = 15;
                $config['total_rows'] = $this->news_model->get_total_news($input_news);
                $this->data['total'] = $config['total_rows'];
                $choice = $config["total_rows"] / $config["per_page"];

@@ -9,8 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="top_right">
 					<ul>
 						<li><a href="#">help</a></li>|
-						<li><a href="contact.html">Contact</a></li>|
-						<li><a href="login.html">Track Order</a></li>
+						<li><a href="<?php echo base_url('lien-he'); ?>">Liên hệ</a></li>
 					</ul>
 				</div>
 				<div class="top_left">
@@ -20,9 +19,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</ul>
 					<div class="social">
 						<ul>
-							<li title="Facebook"><a href="<?php echo $website->facebook; ?>"><i class="fa fa-facebook fa-lg"></i></a></li>
-							<li title="Youtube"><a href="<?php echo $website->youtube; ?>"><i class="fa fa-youtube fa-lg"></i></a></li>
+							<li title="Facebook"><a href="<?php echo $website->facebook; ?>"><i class="fa fa-facebook-official fa-lg"></i></a></li>
 							<li title="Google plus"><a href="<?php echo $website->google_plus; ?>"><i class="fa fa-google-plus fa-lg"></i></a></li>
+							<li title="Youtube"><a href="<?php echo $website->youtube; ?>"><i class="fa fa-youtube-square fa-lg"></i></a></li>
 						</ul>
 					</div>
 				</div>

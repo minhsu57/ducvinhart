@@ -32,9 +32,9 @@ class News extends Admin_Controller
     }
 
     protected function get_categories($type_id){
-        $this->input_categories = array('parent_id' => $type_id);
+        $input_categories['where'] = array('parent_id' => $type_id);
         $this->data['type_id'] = $type_id;
-        $this->data['categories'] = $this->category_translation_model->get_list_category($this->input_categories);
+        $this->data['categories'] = $this->category_translation_model->get_list_category($input_categories);
     }
 
     public function index()

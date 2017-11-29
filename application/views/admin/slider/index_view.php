@@ -28,9 +28,12 @@
             echo '<tbody>';
             if (!empty($items)) {
                 foreach ($items as $key => $item) {
+                    $parent_name = "";
+                    $CI =& get_instance();
+                    $parent_name = $CI->getHierarchyParent($item->parent_id, $parent_name);
                     echo '<tr>';
                     echo '<td><div class="text-center">'.($key+1).'</div></td>';
-                    echo '<td>'.$item->category_name.'</td>';
+                    echo '<td>'.$parent_name.$item->category_name.'</td>';
                     echo '<td><img src="'.base_url($item->image_url).'" style="width: 180px;"></td>';
                     echo '<td>'.$item->modified_date.'</td>'; ?>
                     <td><div class="text-center"><?php if ($item->status == 1) {

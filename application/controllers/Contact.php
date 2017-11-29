@@ -21,7 +21,7 @@ class Contact extends Public_Controller {
       $this->data['website']->meta_description = $page->meta_description;
     }
         // get content of slider
-    $input = array('status' => 1, "s.cate_id" => '39');
+    $input['where'] = array('status' => 1, "s.cate_id" => '39');
     $this->data['sliders'] = $this->slider_model->get_list_slider($input);
     $this->render('user/contact_view');
   }

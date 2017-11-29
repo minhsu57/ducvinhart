@@ -41,21 +41,23 @@ class Public_Controller extends MY_Controller
 		$this->data['website']->meta_description = "";
 
 		// get categories of product
-		$input_cate = array('parent_id'=>27,'level'=>1);
+		$input_cate['where'] = array('parent_id'=>27, 'level'=>1);
+		$input_cate['order'] = array('sort_order', "ASC");
 		$cate_product = $this->category_translation_model->get_list_category_arr($input_cate);
 		//
 		$this->data['cate_product'] = array();
 		foreach ($cate_product as $key=>$item) {
-			$input_child_cate = array('parent_id' => $item['cate_id']);
+			$input_child_cate['where'] = array('parent_id' => $item['cate_id']);
+			$input_child_cate['order'] = array('sort_order', "DESC");
 			$cate_child = $this->category_translation_model->get_list_category_arr($input_child_cate);
 			$item['children'] = $cate_child;
 			array_push($this->data['cate_product'], $item);
 		}
 		// get categories of service
-		$input_cate = array('parent_id'=>28,'level'=>1);
+		$input_cate['where'] = array('parent_id'=>28,'level'=>1);
 		$this->data["cate_services"] = $this->category_translation_model->get_list_category_arr($input_cate);
 		// get categories of topic
-		$input_cate = array('parent_id'=>35,'level'=>1);
+		$input_cate['where'] = array('parent_id'=>35,'level'=>1);
 		$this->data["cate_topic"] = $this->category_translation_model->get_list_category_arr($input_cate);
 	}
 
@@ -95,4 +97,16 @@ class Admin_Controller extends MY_Controller
 	{
 		parent::render($the_view, $template);
 	}
+
+
+    public function getHierarchyParent($item_id, $finalData){
+        $input['where'] = array('cate_id' => $item_id);
+        $result = $this->category_translation_model->get_row_category($input);
+        if(!isset($result)) return $finalData;
+        $finalData= $finalData.$result->name." -> ";
+        if($result->parent_id != NULL && $result->parent_id != ""){
+        	$this->getHierarchyParent($result->parent_id, $finalData);
+        }
+        else return $finalData;
+    }
 }

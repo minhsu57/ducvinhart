@@ -11,24 +11,22 @@ class Product_model extends MY_Model
         $this->table = 'product';
     }
 
-    private function get_product($where){
+    private function get_product($input = array()){
         $this->db->select('t.id translation_id, t.name, t.description, t.detail, t.material, t.color, t.trademark, t.meta_keyword, t.meta_description, p.*');
         $this->db->from('product p');
         $this->db->join('product_translation t', 't.product_id = p.id');
-        $this->db->where($where);
-        $this->db->limit(10,0);
-        $this->db->order_by("t.name","asc");
+        $this->get_list_set_input($input);
     }
-    function get_list_product($where)
+    function get_list_product($input = array())
     {
-        $this->get_product($where);        
+        $this->get_product($input);        
         $query = $this->db->get();
         return $query->result();
     }
 
-    function get_row_product($where)
+    function get_row_product($input = array())
     {
-        $this->get_product($where);        
+        $this->get_product($input);        
         $query = $this->db->get();
         return $query->row();
     }
