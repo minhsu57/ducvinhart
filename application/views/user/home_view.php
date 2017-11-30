@@ -93,10 +93,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="item">
 							<div class="news-container">
-								<a href="products.html"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
+								<a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
 							</div>
-							<h3><a href="news-details.html"><?php echo $value->category_name; ?></a></h3>
-							<h4><a href="products.html"><?php echo $value->short_content; ?></a></h4>
+							<h3><a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->category_name; ?></a></h3>
+							<h4><a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->short_content; ?></a></h4>
 						</div>
 					</div>
 					<?php } ?>

@@ -779,6 +779,9 @@ ul#flexiselDemo1 p{
 	background: #026466;
 	padding: 1.3em 0;
 }
+.footer-content li {
+    color: #fff;
+}
 .footer-area {
 	background: #ef5f21;
     color: #ffffff;
