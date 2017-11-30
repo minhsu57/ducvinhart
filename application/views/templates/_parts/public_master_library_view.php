@@ -39,6 +39,11 @@
 	<script type="text/javascript" src="<?php echo public_helper('lib/responsivemenu/responsivemenu.js') ?>"></script>
     <!--responsive slides-->
     <script src="<?php echo public_helper('lib/responsiveslides/responsiveslides.min.js') ?>"></script>
+    <!-- script custom -->
+    <script src="<?php echo public_helper('js/script.js') ?>"></script>
+    <script>
+      var base_url = '<?php echo base_url(); ?>';
+      </script>
     <script>
 		// You can also use "$(window).load(function() {"
 		$(function () {

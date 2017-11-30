@@ -32,11 +32,11 @@
 
  					</div>
  					<div class="col-md-6 contact-right">
- 						<input type="text" placeholder="Tên của bạn" required/>
- 						<input type="text" placeholder="E-mail" required/>
- 						<input type="text" placeholder="Điện thoại" required/>
- 						<textarea placeholder="Nội dung"></textarea>
- 						<input type="submit" value="GỬI" />
+ 						<input type="text" placeholder="Tên của bạn" required id="full_name">
+ 						<input type="text" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required id="email">
+ 						<input type="text" placeholder="Điện thoại" required id="phone">
+ 						<textarea placeholder="Nội dung" id="message"></textarea>
+ 						<input type="button" id="btn_send_contact" value="GỬI" onclick="sendInfo('<?php echo base_url(); ?>')">
  					</div>
  					<div class="clearfix"></div>
  				</form>

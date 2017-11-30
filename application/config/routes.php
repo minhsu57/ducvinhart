@@ -16,3 +16,12 @@ $route['dich-vu/(:num)-(:any)']		= "news/index/$1";
 $route['chuyen-de/(:num)-(:any)']	= "news/index/$1";
 $route['san-pham/(:any)']			= "product/index/$1";
 $route['(:any)-(:num)'] 			= "product/detail/$1/$2";
+// cart
+$route['cart'] 			= 'cart';
+$route['(\w{2})/cart'] 	= 'cart';
+
+// order
+$route['order'] 			= 'order';
+$route['(\w{2})/order'] 	= 'order';
+$route['order/submit'] 		= 'order/submit';
+$route['(\w{2})/order/submit'] 	= 'order/submit';

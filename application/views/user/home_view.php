@@ -67,12 +67,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php foreach ($products as $key => $value) { ?>					
 					<div class="col-md-4">
 						<div class="item4">
-							<a href="products.html"><img src="<?php echo base_url($value->image); ?>" alt="<?php echo $value->name; ?>"/></a>
+							<a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>"><img src="<?php echo base_url($value->image); ?>" alt="<?php echo $value->name; ?>"/></a>
 							<div class="item-info4">
-								<h4><a href="products.html"><?php echo $value->name; ?></a></h4>
+								<h4><a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>"><?php echo $value->name; ?></a></h4>
 								<span>ID: <?php echo $value->model_id; ?></span>
 								<h5>Giá: <?php echo number_format($value->price,0,",","."); ?>VND</h5>
-								<a href="">Mua Ngay</a>
+								<a <?php if($value->price != 0){ ?> onclick="addToCart('<?php echo base_url(); ?>', <?php echo $value->id; ?>, <?php echo $value->price; ?>)" <?php } ?>>Mua Ngay</a>
 							</div>
 						</div>
 					</div>

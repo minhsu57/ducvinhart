@@ -1,147 +1,133 @@
-$(document).ready(function () {
-    $slider = $('#slider');
-    $slider.addClass('owl-carousel owl-theme');
-    $slider.owlCarousel({
-        items: 1,
-        dots: true,
-        nav: true,
-        autoplay: false,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        loop: true,
-        navText: ["<i class=\"fa fa-angle-left fa-lg\"></i>", "<i class=\"fa fa-angle-right fa-lg\"></i>"]
-    });
+function number_format( number, decimals, dec_point, thousands_sep ) {
+    // http://kevin.vanzonneveld.net
+    // + original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+    // + improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // + bugfix by: Michael White (http://crestidg.com)
+    // + bugfix by: Benjamin Lupton
+    // + bugfix by: Allan Jensen (http://www.winternet.no)
+    // + revised by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+    // * example 1: number_format(1234.5678, 2, '.', '');
+    // * returns 1: 1234.57
 
-    $commentSlider = $('#comment-slider');
-    $commentSlider.addClass('owl-carousel owl-theme');
-    $commentSlider.owlCarousel({
-        loop: true,
-        autoplay: false,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        nav: true,
-        navText: ["<i class=\"fa fa-angle-left fa-lg\"></i>", "<i class=\"fa fa-angle-right fa-lg\"></i>"],
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            }
-        }
-    });
-    $studentImageSlider = $('#student-image-slider');
-    $studentImageSlider.addClass('owl-carousel owl-theme');
-    $studentImageSlider.owlCarousel({
-        loop: true,
-        autoplay: false,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        nav: true,
-        navText: ["<i class=\"fa fa-angle-left fa-lg\"></i>", "<i class=\"fa fa-angle-right fa-lg\"></i>"],
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
-        }
-    });
-});
-$(document).ready(function () {
-    $slider = $('#slider');
-    $slider.addClass('owl-carousel owl-theme');
-    $slider.owlCarousel({
-        items: 1,
-        dots: true,
-        nav: true,
-        autoplay: false,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        loop: true,
-        navText: ["<i class=\"fa fa-angle-left fa-lg\"></i>", "<i class=\"fa fa-angle-right fa-lg\"></i>"]
-    });
+    var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
+    var d = dec_point == undefined ? "," : dec_point;
+    var t = thousands_sep == undefined ? "." : thousands_sep, s = n < 0 ? "-" : "";
+    var i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
 
-    $sliderCource = $('#slider-cource');
-    $sliderCource.addClass('owl-carousel owl-theme');
-    $sliderCource.owlCarousel({
-        items: 1,
-        loop: false,
-        center: true,
-        margin: 10,
-        URLhashListener: true,
-        autoplayHoverPause: true,
-        startPosition: 'URLHash'
-    });
-});
-// Script for top Navigation Menu
-// pct add code
-$(window).resize(function(){
-    if(window.innerWidth <= 768){
-        jQuery('#header-1').removeClass('hidden');
-        jQuery('#header-1 li').removeClass('open')
-        jQuery('#header-2').addClass('hidden');
-        jQuery('#header-2').removeClass('navbar-fixed-top').addClass('topnavbar');
-        jQuery('body').removeClass('bodytopmargin').addClass('bodynomargin');
-    }
-});
-// end pct add code
-jQuery(window).bind('scroll', function () {
-    if (window.innerWidth > 768) {
-        if (jQuery(window).scrollTop() > 50) {
-            jQuery('#header-2').removeClass('hidden');
-            jQuery('#header-2 li').removeClass('open');
-            jQuery('#header-1').addClass('hidden');
-            jQuery('#header-2').addClass('navbar-fixed-top').removeClass('topnavbar');
-            jQuery('body').addClass('bodytopmargin').removeClass('bodynomargin');
-        } else {
-            jQuery('#header-1').removeClass('hidden');
-            jQuery('#header-1 li').removeClass('open')
-            jQuery('#header-2').addClass('hidden');
-            jQuery('#header-2').removeClass('navbar-fixed-top').addClass('topnavbar');
-            jQuery('body').removeClass('bodytopmargin').addClass('bodynomargin');
-        }
-    }
-    if (jQuery(window).scrollTop() > 600 && jQuery(window).scrollTop() < 800) {
-        jQuery('.register img').animateCss('tada');
-    }
-});
-$.fn.extend({
-    animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function () {
-            $(this).removeClass('animated ' + animationName);
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+}
+function addToCart(base_url, id, price){
+    if(price == 0)
+        alert("fail");
+    else{
+        if($('#quanlity_product').val() != undefined){
+            if(isNaN($('#quanlity_product').val()))
+            {
+                $("#messageModal").modal();
+                $('#title_modal').html('Warning !');
+                $('#content_modal').html('Vui lòng nhập số lượng là số > 0');
+                return;
+            }else if($('#quanlity_product').val() <= 0){
+                $("#messageModal").modal();
+                $('#title_modal').html('Warning !');
+                $('#content_modal').html('Vui lòng nhập số lượng lớn hơn 0');
+                return;
+            }else qty = $('#quanlity_product').val();
+        }else qty = 1;
+        var dataString = { id: id, price: price, qty: qty};
+        $.ajax({
+            url: base_url + 'cart/addToCart',
+            type: 'POST',
+            data: dataString,
+            timeout: 1000,
+            dataType: "json",
+            async: false,
+            success: function(msg){
+                if(msg.add_cart){
+                    $("#cartModal").modal();
+                    $('#cart_couting').html(msg.qty);
+                }
+                else{
+                    alert('Add items to Cart fail');
+                }
+            },
+            error: function (){
+                alert('Error');            
+            }
         });
-        return this;
-    }
-});
-
-$(function(){
-    $("#ehouse_course_tab .dropdown-menu li a").click(function(){
-        $("#ehouse_course_id").val($(this).text());
-    });
-});
+    }   
+}
+function updateCart(base_url, id, qty, price){
+    if(qty == ""){
+        //alert("Vui lòng nhập số lượng - Please input quantity !");
+        $("#messageModal").modal();
+        $('#title_modal').html('Warning !');
+        $('#content_modal').html('Vui lòng nhập số lượng !');
+    }else if(qty<=0){
+        $("#messageModal").modal();
+        $('#title_modal').html('Warning !');
+        $('#content_modal').html('Vui lòng nhập số lượng là số > 0 !');
+    }else{
+        var dataString = { id: id, qty: qty};
+        $.ajax({
+            url: base_url + 'cart/updateCart',
+            type: 'POST',
+            data: dataString,
+            timeout: 1000,
+            dataType: "json",
+            async: false,
+            success: function(msg){
+                if(msg.add_cart){
+                    $('#cart_couting').html(msg.qty);
+                    $('#sum_price_'+id).html(number_format(qty*price, 0));
+                    $('#total_price').html(msg.total);
+                }else{
+                    alert('update items to Cart fail');
+                }
+            },
+            error: function (){
+                alert('Error');            
+            }
+        });
+    }   
+}
+function delCart(base_url, id){
+    var dataString = { id: id};
+    $.ajax({
+        url: base_url + 'cart/delCart',
+        type: 'POST',
+        data: dataString,
+        timeout: 1000,
+        dataType: "json",
+        async: false,
+        success: function(msg){
+            if(msg.del_cart){
+                location.reload();
+            }else{
+                alert('Delete item fail');
+            }
+        },
+        error: function (){
+            alert('Error');            
+        }
+    }); 
+}
 
 function sendInfo(base_url){
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    var student_name        = $('#student_name').val().trim();
-    var student_phone       = $('#student_phone').val().trim();
-    var student_email       = $('#student_email').val().trim();
-    var course              = $('#ehouse_course_id').val().trim();
-    var student_message     = $('#student_message').val().trim();
+    var full_name   = $('#full_name').val().trim();
+    var phone       = $('#phone').val().trim();
+    var email       = $('#email').val().trim();
+    var message     = $('#message').val().trim();
 
-    if(student_name == "" || student_phone == "" || student_email == ""){
-        BootstrapDialog.alert('Vui lòng nhập đầy đủ thông tin !');
-    }else if(course == ""){
-        BootstrapDialog.alert('Vui lòng chọn khóa học !');
-    }else if(!re.test(student_email)){
-        BootstrapDialog.alert('Email không đúng định dạng !');
+    if(full_name == "" || phone == "" || email == ""){
+        $("#warningModal").modal();
+        $('#warning_message').html("Vui lòng nhập đầy đủ thông tin");
+    }else if(!re.test(email)){
+        $('#warning_message').html("Email không đúng định dạng !");
     }else{
-        var dataString = {name: student_name , phone: student_phone, email: student_email, course: course, message: student_message};
+        var dataString = {name: full_name , phone: phone, email: email, message: message};
         $.ajax({
             url: base_url+'Send_mail',
             type: 'POST',
@@ -151,19 +137,21 @@ function sendInfo(base_url){
             async: false,
             success: function(msg){
                 if(msg.sent){
-                    BootstrapDialog.alert('Gửi thông tin thành công');
-                    $('#student_name').val('');
-                    $('#student_phone').val('');
-                    $('#student_email').val('');
-                    $('#ehouse_course_id').val('');
-                    $('#student_message').val('');
+                    $("#warningModal").modal();
+                    $('#warning_message').html("Gửi thông tin thành công");
+                    $('#full_name').val('');
+                    $('#phone').val('');
+                    $('#email').val('');
+                    $('#message').val('');
                 }
                 else{
-                    BootstrapDialog.alert('Gửi thông tin thất bại !');
+                    $("#warningModal").modal();
+                    $('#warning_message').html("Gửi thông tin thất bại !");
                 }
             },
             error: function (e){
-                BootstrapDialog.alert('Có lỗi xảy ra '+e);               
+                $("#warningModal").modal();
+                $('#warning_message').html("Có lỗi xảy ra !");               
             }
         });
     }

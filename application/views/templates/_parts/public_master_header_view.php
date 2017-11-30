@@ -41,9 +41,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="header_right">
 
 				<div class="cart box_1">
-					<a href="cart.html">
-						<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)
-							<img src="images/bag.png" alt=""></h3>
+					<a href="<?php echo base_url('cart'); ?>">
+						<h3> <span class="simpleCart_total"></span> <span id="cart_couting" class="simpleCart_quantity">Giỏ hàng </span><li class="fa fa-cart-plus"></li> (<?php echo $this->cart->total_items(); ?>)</h3>
 						</a>
 						<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p> -->
 						<div class="clearfix"> </div>
@@ -62,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="button"></div>
 					<!-- start header menu -->
 					<ul class="skyblue">
-						<li class="active grid"><a class="color1" href="<?php echo base_url(); ?>">Home</a></li>
+						<li class="active grid"><a class="color1" href="<?php echo base_url(); ?>">TRANG CHỦ</a></li>
 						<li class="grid"><a class="color2" href="">Sản phẩm</a>
 							<ul>
 								<?php foreach ($cate_product as $cate) { ?>
