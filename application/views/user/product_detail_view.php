@@ -20,12 +20,14 @@
                 <div class="grid images_3_of_2">
                     <div class="gallery">
                         <div class="single-main-image">
-                            <a href="<?php echo base_url($item->image) ?>" title="<?php echo $item->name; ?>"><img src="<?php echo base_url($item->image) ?>" class="img-responsive" /></a>
+                            <a href="<?php echo base_url($item->image) ?>" title="<?php echo $item->name; ?>"><img src="<?php echo base_url($item->image) ?>" class="img-responsive" alt="<?php echo $item->name; ?>"></a>
                         </div>
                         <div class="single-sub-image">
+                            <?php foreach ($product_images as $key => $value) { ?>
                             <div class="thumbnail">
-                                <a href="<?php echo base_url($item->image) ?>" title="Tranh quạt hoa mai"><img class="singe_thumb_image" src="<?php echo base_url($item->image) ?>" /></a>
+                                <a href="<?php echo base_url($value->image) ?>" title="<?php echo $item->name; ?>"><img class="singe_thumb_image" src="<?php echo base_url($value->image) ?>" alt="<?php echo $item->name; ?>"></a>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -62,8 +64,7 @@
                                 <del>2.000.0000 VND</del>
                             </li> -->
                             <li>Giá: <span class="active product-price"><?php echo number_format($item->price,0,",","."); ?> VND</span></li>
-
-                            <a href="#">MUA HÀNG</a>
+                            <a <?php if($item->price > 0){ ?> onclick="addToCart('<?php echo base_url(); ?>', <?php echo $item->id; ?>, <?php echo $item->price; ?>)" <?php } ?> ><?php if($item->price <= 0) echo "Liên hệ"; else echo "Mua Ngay"; ?></a>
                         </ul>
                     </div>
                     <div class="clearfix"></div>

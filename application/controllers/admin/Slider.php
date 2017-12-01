@@ -21,7 +21,8 @@ class Slider extends Admin_Controller
 
         $this->load->model('slider_model');
         $this->load->model('category_translation_model');
-        $this->data['categories'] = $this->category_translation_model->get_list_category();
+        $input['order'] = array('sort_order' ,"asc");
+        $this->data['categories'] = $this->category_translation_model->get_list_category($input);
         //
         $this->form_validation->set_rules('image', 'Image', 'trim|required');
         $this->form_validation->set_rules('link', 'link', 'trim');

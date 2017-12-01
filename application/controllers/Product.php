@@ -11,7 +11,7 @@ class Product extends Public_Controller {
         $this->load->model('slider_model');
         $this->load->model('category_model');
         $this->load->model('product_model');
-        
+        $this->load->model('product_images_model');
     }
 
     public function index($name)
@@ -38,8 +38,13 @@ class Product extends Public_Controller {
         //get content of this page
         $where_product['where'] = array('product_id' => $id);
         $this->data['item'] = $this->product_model->get_row_product($where_product);
+        $this->data['website']->page_title = $this->data['item']->name.' - '.$this->data['website']->website_name;
         $this->data['website']->meta_keyword = $this->data['item']->meta_keyword;
         $this->data['website']->meta_description = $this->data['item']->meta_description;
+        // get list of sub images product
+        $input_image['where'] = array('product_id' => $id);
+        $input_image['sort'] = array('sort_order' , 'asc');
+        $this->data['product_images'] = $this->product_images_model->get_list($input_image);
         // get list products same type
         $input['where'] = array('cate_id' => $this->data['item']->cate_id);
         $input['limit'] = array('4','0');

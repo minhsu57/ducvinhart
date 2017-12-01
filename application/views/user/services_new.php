@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--breadcrumb-->
     <div class="container">
         <ol class="breadcrumb">
-            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="<?php echo base_url(); ?>">Trang chủ</a></li>
             <li class="active">Dịch vụ</li>
             <li class="active"><?php echo $breadcrumb; ?></li>
         </ol>

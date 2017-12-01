@@ -55,7 +55,6 @@ class Order extends Public_Controller {
 	        			echo '<script language="javascript">';
 			            echo 'alert("error")';
 			            echo '</script>';
-		            	$this->render('user/order_view');
 	        		}	        		
 		        }
 		        
@@ -63,9 +62,8 @@ class Order extends Public_Controller {
             	echo '<script language="javascript">';
 	            echo 'alert("error")';
 	            echo '</script>';
-            	$this->render('user/order_view');
-            }        
-	        
+            }   
+            $this->render('user/order_view');     	        
 		}else{
 			header("Location: ".base_url());
 			exit();

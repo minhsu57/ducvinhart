@@ -72,7 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<h4><a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>"><?php echo $value->name; ?></a></h4>
 								<span>ID: <?php echo $value->model_id; ?></span>
 								<h5>Giá: <?php echo number_format($value->price,0,",","."); ?>VND</h5>
-								<a <?php if($value->price != 0){ ?> onclick="addToCart('<?php echo base_url(); ?>', <?php echo $value->id; ?>, <?php echo $value->price; ?>)" <?php } ?>>Mua Ngay</a>
+								<a <?php if($value->price > 0){ ?> onclick="addToCart('<?php echo base_url(); ?>', <?php echo $value->id; ?>, <?php echo $value->price; ?>)" <?php } ?> ><?php if($value->price <= 0) echo "Liên hệ"; else echo "Mua Ngay"; ?></a>
 							</div>
 						</div>
 					</div>
@@ -92,7 +92,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<?php foreach ($news as $key => $value) { ?>
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="item">
-							<div class="news-container">
+							<div class="news-container img">
 								<a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
 							</div>
 							<h3><a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->category_name; ?></a></h3>

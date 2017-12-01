@@ -23,18 +23,22 @@ class Product extends Admin_Controller
         $this->load->model('product_translation_model');
         $this->load->model('product_images_model');
         $this->load->model('category_translation_model');        
-        $input_categories = array();
+        $input_categories['order'] = array('sort_order' ,"asc");
         $this->data['categories'] = $this->category_translation_model->get_list_category($input_categories);
         //
         $this->form_validation->set_rules('name', 'Tên', 'trim|required');
         $this->form_validation->set_rules('image', 'Hình ảnh', 'trim|required');
-        //        
-        $this->where = array();
     }
 
     public function index()
     {
-        $this->data['items'] = $this->product_model->get_list_product($this->where);
+        // condition for get users data
+        $name = str_replace('"', "'", $this->input->get('name'));
+        $model  = str_replace('"', "'", $this->input->get('model'));
+        $category  = $this->input->get('category');
+        $input['like'] = array('name'=>$name, 'model_id'=>$model,'cate_id' => $category);
+        $input['order'] = array('modified_date' , "desc");
+        $this->data['items'] = $this->product_model->get_list_product($input);
         $this->render('admin/product/index_view');
     }
 
@@ -48,7 +52,7 @@ class Product extends Admin_Controller
                 $name = $this->input->post('name');
                 $category = $this->input->post('category');
                 $model_id = $this->input->post('model_id');
-                $price = $this->input->post('price');   
+                $price = is_numeric($this->input->post('price')) ? $this->input->post('price') : 0;   
                 $image = $this->input->post('image');
                 $dimensions = $this->input->post('dimensions');
                 $weight = $this->input->post('weight');
@@ -110,7 +114,7 @@ class Product extends Admin_Controller
                 $name = $this->input->post('name');
                 $category = $this->input->post('category');
                 $model_id = $this->input->post('model_id');
-                $price = $this->input->post('price');   
+                $price = is_numeric($this->input->post('price')) ? $this->input->post('price') : 0;   
                 $image = $this->input->post('image');
                 $dimensions = $this->input->post('dimensions');
                 $weight = $this->input->post('weight');

@@ -19,9 +19,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</ul>
 					<div class="social">
 						<ul>
-							<li title="Facebook"><a href="<?php echo $website->facebook; ?>"><i class="fa fa-facebook-official fa-lg"></i></a></li>
-							<li title="Google plus"><a href="<?php echo $website->google_plus; ?>"><i class="fa fa-google-plus fa-lg"></i></a></li>
-							<li title="Youtube"><a href="<?php echo $website->youtube; ?>"><i class="fa fa-youtube-square fa-lg"></i></a></li>
+							<li title="Facebook"><a target="_blank" href="<?php echo $website->facebook; ?>"><i class="fa fa-facebook-official fa-lg"></i></a></li>
+							<li title="Google plus"><a target="_blank" href="<?php echo $website->google_plus; ?>"><i class="fa fa-google-plus fa-lg"></i></a></li>
+							<li title="Youtube"><a target="_blank" href="<?php echo $website->youtube; ?>"><i class="fa fa-youtube-square fa-lg"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 				<div class="cart box_1">
 					<a href="<?php echo base_url('cart'); ?>">
-						<h3> <span class="simpleCart_total"></span> <span id="cart_couting" class="simpleCart_quantity">Giỏ hàng </span><li class="fa fa-cart-plus"></li> (<?php echo $this->cart->total_items(); ?>)</h3>
+						<h3> <span class="simpleCart_total"></span><li class="fa fa-cart-plus"></li> Giỏ hàng (<span id="cart_couting" class="simpleCart_quantity"><?php echo $this->cart->total_items(); ?></span>)</h3>
 						</a>
 						<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p> -->
 						<div class="clearfix"> </div>

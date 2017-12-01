@@ -11,6 +11,28 @@
             <a href="<?php echo base_url('admin/product/create') ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
         </div>
     </div>
+    <div class="row" style="margin-top: 10px">
+        <div class="col-xs-12">
+            <form method="GET" action="<?php echo base_url('admin/product'); ?>">
+                <div class="col-lg-4 pd-l-0">
+                    <select class="form-control" name="category">                    
+                        <option value="">-- Chọn Category --</option>
+                        <?php foreach ($categories as $value) { ?>
+                        <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id,( !empty($this->input->get('category')) && $this->input->get('category') == $value->cate_id ? TRUE : FALSE )); ?>  ><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="col-lg-4 pd-l-0">
+                    <input type="text" name="name" class="form-control" placeholder="Nhập tên để tìm kiếm" value="<?php echo $this->input->get('name'); ?>">
+                </div>
+                <div class="col-lg-4 pd-l-0">
+                    <input type="text" name="model" class="form-control" placeholder="Nhập model id để tìm kiếm" value="<?php echo $this->input->get('model'); ?>">
+                </div>
+                
+                <button class="btn btn-primary btn-md pull-right"  type="submit"><li class="fa fa-search"></li> SEARCH</button>
+            </form>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12" style="margin-top: 10px;">
             <?php

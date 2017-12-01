@@ -1,5 +1,8 @@
 <?php
-session_start();
+$cookie = $_COOKIE['ci_session'];
+$cookie = unserialize($cookie);
+$session_id = $cookie['IsAuthorized'];
+   // $CI->load->library('session');
 /*
  * CKFinder Configuration File
  *
@@ -26,8 +29,13 @@ $config = array();
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_authentication
 
 $config['authentication'] = function () {
-    //return true;
-    return isset($_SESSION['IsAuthorized']) && $_SESSION['IsAuthorized'];
+    
+    // if($CI->session->userdata('IsAuthorized') !== FALSE){
+    //   return TRUE;
+    // }
+
+    return true;
+    //return isset($_SESSION['IsAuthorized']) && $_SESSION['IsAuthorized'];
 };
 
 /*============================ License Key ============================================*/

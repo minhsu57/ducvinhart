@@ -188,19 +188,8 @@ class Users extends Admin_Controller
         if(is_null($user_id)){
             $this->postal->add('There\'s no user to delete','error');
         }else{
-            $this->load->model('calendar_model');
-            $input['where'] = array('user_name' => $user_name);
-            // get total media file of this user
-            $input_files['where'] = array('user_id' => $user_id);
-            $total_media = $this->files_model->get_total($input_files);
-            if(count($this->calendar_model->get_list($input)) >0){
-                $this->postal->add('Delete User fail, please delete calendar of this user first !','error');
-            }else if($total_media >0){
-                $this->postal->add('Delete User fail, please delete media of this user first !','error');
-            }else{                
-                $this->ion_auth->delete_user($user_id);
-                $this->postal->add($this->ion_auth->messages(),'success');
-            }
+            $this->ion_auth->delete_user($user_id);
+            $this->postal->add($this->ion_auth->messages(),'success');
             
         }
         redirect('admin/users');

@@ -82,17 +82,17 @@
                 echo form_input('address',set_value('address',$item->address),'class="form-control"');
                 ?> 
             </div>
-            <div class="form-group col-md-4 col-lg-4">
+            <div class="form-group col-md-2 col-lg-2">
                 <?php
                 echo form_label('Slogan','slogan');
                 echo form_error('slogan');
                 echo form_input('slogan',set_value('slogan',$item->slogan),'class="form-control"');
                 ?> 
             </div>
-            <div class="form-group col-md-4 col-lg-4">
+            <div class="form-group col-md-6 col-lg-6">
                 <strong>Keyword</strong>
                 <div>
-                    <textarea class="form-control" name="keyword"><?php echo $item->keyword ?></textarea> 
+                    <textarea class="ckeditor" name="keyword"><?php echo $item->keyword ?></textarea> 
                     <?php echo form_error('keyword','<p class="error">'); ?>
                 </div>
             </div>
@@ -123,7 +123,13 @@
                     <?php echo form_error('footer_content_2','<p class="error">'); ?>
                 </div>
             </div>                       
-            
+             <div class="form-group col-md-6 col-lg-6">
+                <strong>Footer Content 3</strong>
+                <div id="editor">
+                    <textarea class="ckeditor" name="footer_content_3"><?php echo $item->footer_content_3 ?></textarea> 
+                    <?php echo form_error('footer_content_3','<p class="error">'); ?>
+                </div>
+            </div> 
             <!-- AJAX Response will be outputted on this DIV container -->
             <?php echo form_hidden('id',$item->id);?>
 

@@ -27,7 +27,7 @@
                             <h4><a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>"><?php echo $value->name; ?></a></h4>
                             <span>ID: <?php echo $value->model_id; ?></span>
                             <h5>Giá: <?php echo number_format($value->price,0,",","."); ?>VND</h5>
-                            <a href="">Mua Ngay</a>
+                            <a <?php if($value->price > 0){ ?> onclick="addToCart('<?php echo base_url(); ?>', <?php echo $value->id; ?>, <?php echo $value->price; ?>)" <?php } ?> ><?php if($value->price <= 0) echo "Liên hệ"; else echo "Mua Ngay"; ?></a>
                         </div>
                     </div>
                 </div>

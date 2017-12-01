@@ -24,8 +24,8 @@ $date = date('d', strtotime($item->created_date));
 				<div class="single-latest-text">
 					<h2 class="title"><?php echo $item->title; ?></h2>
 					<div class="single-item-comment-view">
-						<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true">
-							<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Chia sẻ</a>
+						<div class="fb-share-button" data-href="<?php echo $website->facebook; ?>" data-layout="button" data-size="small" data-mobile-iframe="true">
+							<a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo $website->facebook; ?>">Chia sẻ</a>
 						</div>
 						<span><i class="fa fa-clock-o"></i>Ngày <?php echo $date; ?> tháng <?php echo $month; ?> năm <?php echo $year; ?></span>
 					</div>
@@ -51,14 +51,9 @@ $date = date('d', strtotime($item->created_date));
 						</div>
 					</div>
 					<div class="single-sidebar-widget">
-						<h4 class="title">Search by Tags</h4>
+						<h4 class="title">Từ khóa phổ biến</h4>
 						<ul class="tags">
-							<li><a href="#">Photoshop</a></li>
-							<li><a href="#">Design</a></li>
-							<li><a href="#">Tutorial</a></li>
-							<li><a href="#">Courses</a></li>
-							<li><a href="#">Premium</a></li>
-							<li><a href="#">Designtuto</a></li>
+							<li><?php echo $website->keyword; ?></li>
 						</ul>
 					</div>
 				</div>

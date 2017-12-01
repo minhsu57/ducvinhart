@@ -13,9 +13,9 @@ class Slider_model extends MY_Model
 
     private function get_slider($input = array())
     {
-        $this->db->select('c.name category_name, s.*');
-        // $this->db->join('category g', 'c.cate_id = g.id');
+        $this->db->select('c.name category_name, g.parent_id, s.*');
         $this->db->from('slider s');
+        $this->db->join('category g', 's.cate_id = g.id');
         $this->db->join('category_translation c', 'c.cate_id = s.cate_id');        
         $this->get_list_set_input($input);
     }

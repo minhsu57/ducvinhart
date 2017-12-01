@@ -6,10 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="ftr-grids">
 			<div class="col-xs-12 col-md-4 ftr-grid">
 				<ul>
-					<li><a href="#">> Bảng giá tranh - khung tranh (Tham khảo)</a></li>
-					<li><a href="#">> Phương thức thanh toán - mua hàng</a></li>
-					<li><a href="#">> Phương thức vận chuyển</a></li>
-					<li><a href="#">> Dịch vụ của chúng tôi</a></li>
+					<?php echo $website->footer_content_1; ?>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-md-4 ftr-grid social">
@@ -18,12 +15,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<li><a href="#"><span class="fa fa-google-plus circle"></span></a><a href="#"><span class="fa fa-facebook circle"></span></a>
 						<a href="#"><span class="fa fa-youtube circle"></span></a>
 					</li>
-					<?php echo $website->footer_content_1; ?>
+					<?php echo $website->footer_content_2; ?>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-md-4 ftr-grid footer_link">
 				<ul>
-					<?php echo $website->footer_content_2; ?>
+					<?php echo $website->footer_content_3; ?>
 				</ul>
 			</div>
 			<div class="clearfix"></div>

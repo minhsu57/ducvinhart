@@ -16,13 +16,20 @@
     <meta name="robots" content="noodp,index,follow" />
     <meta name='revisit-after' content='1 days' />
 
+    <!-- For Facebook -->
+    <meta property="og:title" content="<?php echo $website->page_title; ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+
     <title><?php echo $website->page_title; ?></title>
     <link href='http://fonts.googleapis.com/css?family=Montserrat|Raleway:400,200,300,500,600,700,800,900,100' rel='stylesheet'
-	 type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Droid+Sans">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600,700,800,900" rel="stylesheet">
+    type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Aladin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Droid+Sans">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600,700,800,900" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo public_helper('lib/bootstrap/css/bootstrap.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo public_helper('lib/font-awesome/css/font-awesome.min.css'); ?>"/>
@@ -33,18 +40,18 @@
     <script type="text/javascript" src="<?php echo public_helper('lib/bootstrap/js/bootstrap.min.js'); ?>"></script>
     
     <!-- animated -->
-	<link href="<?php echo public_helper('lib/animate/animate.css') ?>" rel="stylesheet" type="text/css" media="all" />
+    <link href="<?php echo public_helper('lib/animate/animate.css') ?>" rel="stylesheet" type="text/css" media="all" />
     <!-- start menu -->
-	<link type="text/css" href="<?php echo public_helper('lib/responsivemenu/responsivemenu.css') ?>" rel="stylesheet" media="all" />
-	<script type="text/javascript" src="<?php echo public_helper('lib/responsivemenu/responsivemenu.js') ?>"></script>
+    <link type="text/css" href="<?php echo public_helper('lib/responsivemenu/responsivemenu.css') ?>" rel="stylesheet" media="all" />
+    <script type="text/javascript" src="<?php echo public_helper('lib/responsivemenu/responsivemenu.js') ?>"></script>
     <!--responsive slides-->
     <script src="<?php echo public_helper('lib/responsiveslides/responsiveslides.min.js') ?>"></script>
     <!-- script custom -->
     <script src="<?php echo public_helper('js/script.js') ?>"></script>
     <script>
       var base_url = '<?php echo base_url(); ?>';
-      </script>
-    <script>
+  </script>
+  <script>
 		// You can also use "$(window).load(function() {"
 		$(function () {
 			// Slideshow 1

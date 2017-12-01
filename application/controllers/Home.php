@@ -27,9 +27,9 @@ class Home extends Public_Controller {
         $input['where'] = array('status' => 1, "s.cate_id" => '1');
         $this->data['sliders'] = $this->slider_model->get_list_slider($input);
         // get list of new product
-        $input['where'] = array();
-        $input['limit'] = array('6','0');
-        $this->data['products'] = $this->product_model->get_list_product($input);
+        $input_product['order'] = array("created_date","desc");
+        $input_product['limit'] = array('6','0');
+        $this->data['products'] = $this->product_model->get_list_product($input_product);
 
         // get list of new topic
         $input_news['where'] = array('parent_id<>' => 28);

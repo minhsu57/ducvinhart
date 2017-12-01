@@ -30,4 +30,11 @@ class Product_model extends MY_Model
         $query = $this->db->get();
         return $query->row();
     }
+
+    function get_total_product($input = array())
+    {
+        $this->get_product($input);        
+        $query = $this->db->get();        
+        return $query->num_rows();
+    }
 }

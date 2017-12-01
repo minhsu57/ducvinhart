@@ -49,7 +49,7 @@ class Category extends Admin_Controller
                 $image = $this->input->post('image');
                 $meta_keyword = $this->input->post('meta_keyword');
                 $meta_description = $this->input->post('meta_description');
-                $insert_category = array('status' => 1, 'sort_order' => $this->data['sort_order'], 'parent_id' => $parent, 'image' => $image, 'level' => $level);
+                $insert_category = array('sort_order' => $this->data['sort_order'], 'parent_id' => $parent, 'image' => $image, 'level' => $level);
                 if ($this->category_model->create($insert_category)) {
                     $new_category_id = $this->db->insert_id();
                     $insert_translation_category = array('cate_id' => $new_category_id, 'lang_slug' => $this->lang_slug, 'name' => $name, 'name_slug' => create_slug($name), 'meta_keyword' => $meta_keyword, 'meta_description' => $meta_description, 'created_date'=>date('Y-m-d H:i:s'), 'modified_date'=>date('Y-m-d H:i:s'));
