@@ -96,8 +96,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li><a class="color5" href="<?php echo base_url('lien-he'); ?>">liên hệ</a>
 						</ul>
 						<div class="search">
-							<form>
-								<input type="text" value="" placeholder="Search...">
+							<form method="get" action="<?php echo base_url('search'); ?>">
+								<input type="text" name="id" required placeholder="Tìm kiếm...">
 								<input type="submit" value="">
 							</form>
 						</div>

@@ -8,6 +8,7 @@ class Product extends Public_Controller {
         $this->load->database();
         $this->load->library('session');
         $this->load->helper('language');
+        $this->load->library('pagination');
         $this->load->model('slider_model');
         $this->load->model('category_model');
         $this->load->model('product_model');
@@ -31,6 +32,31 @@ class Product extends Public_Controller {
             $this->data['items'] = $this->product_model->get_list_product($input);
             $this->render('user/product_view');
         }        
+    }
+
+    public function search()
+    {        
+        $this->data["breadcrumb"] = "Tìm Kiếm";        
+        $input_product['like'] = array('name' => $this->input->get("id"));
+        //pagination settings
+        $config['base_url'] = site_url('search?id='.$this->input->get("id"));
+        $config["per_page"] = $this->pagination->per_page;
+        $config['total_rows'] = $this->product_model->get_total_product($input_product);
+        $this->data['total'] = $config['total_rows'];
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = $choice;       
+
+        // pagination
+        $pagi = ($this->input->get('page')) ? $this->input->get('page') : 1;
+        $this->pagination->initialize($config);        
+        $this->data['pagination'] = $this->pagination->create_links();
+        $offset = ($pagi  == 1) ? 0 : ($pagi * $config['per_page']) - $config['per_page'];
+                // get list data
+        $input_product['limit'] = array($config["per_page"], $offset);
+        //$input_product['order'] = array('created_dated','DESC');
+        //get content of search result
+        $this->data['items'] = $this->product_model->get_list_product($input_product);
+        $this->render('user/product_view');        
     }
 
     public function detail($name, $id)

@@ -9,7 +9,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['lien-he'] 					= "contact";
 $route['tin-tuc/(:num)-(:any)'] 	= "news/detail/$1";
 $route['tin-tuc'] 					= "news/index";
-$route['tim-kiem'] 					= "search/index";
+// search
+$route['search'] 					= 'product/search';
+
 $route['dich-vu/(:any)-(:num)'] 	= "news/service_detail/$2";
 $route['chuyen-de/(:any)-(:num)']	= "news/detail/$2";
 $route['dich-vu/(:num)-(:any)']		= "news/index/$1";
