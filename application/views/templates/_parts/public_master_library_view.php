@@ -19,9 +19,10 @@
     <!-- For Facebook -->
     <meta property="og:title" content="<?php echo $website->page_title; ?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:image" content="<?php echo  isset($website->image)?$website->image:""; ?>" />
+    <meta property="og:site_name" content="<?php echo $website->website_name; ?>"/>
+    <meta property="og:url" content="<?php echo "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] ?>" />
+    <meta property="og:description" content="<?php echo $website->meta_description; ?>" />
 
     <title><?php echo $website->page_title; ?></title>
     <link href='http://fonts.googleapis.com/css?family=Montserrat|Raleway:400,200,300,500,600,700,800,900,100' rel='stylesheet'

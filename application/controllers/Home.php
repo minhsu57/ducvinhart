@@ -17,11 +17,12 @@ class Home extends Public_Controller {
     function index()
     {
         // get content of category
-        $input['where'] = array("id" => '1');
+        $input['where'] = array("cate_id" => '1');
         $page = $this->category_translation_model->get_row($input);
-        if($page){            
+        if($page){           
             $this->data['website']->meta_keyword = $page->meta_keyword;
             $this->data['website']->meta_description = $page->meta_description;
+            $this->data['website']->image = "123"; 
         }
         // get content of slider
         $input['where'] = array('status' => 1, "s.cate_id" => '1');

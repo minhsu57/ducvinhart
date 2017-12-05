@@ -34,8 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="logo">
 				<a href="<?php echo base_url(); ?>" class="col-xs-12 col-md-4 pull-left"><img width="130px" src="<?php echo public_helper('upload/images/logo/logo.png') ?>" alt=""/></a>
 				<div class="slogan col-xs-8">
-					<span><?php echo $website->website_name; ?></span>
-					<span class="slogan_small"><?php echo $website->slogan; ?></span>
+					<h1><?php echo $website->website_name; ?></h1>
+					<h2><span class="slogan_small"><?php echo $website->slogan; ?></span></h2>
 				</div>
 			</div>
 			<div class="header_right">

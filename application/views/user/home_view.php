@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<div class="container">
 				<div class="col-xs-12 col-sm-3 col-md-3 wow fadeInLeft animated">
 					<a href="#">
-						<img src="public/upload/images/introduce-pic.jpg" class="img-thumbnail"/>
+						<img src="public/upload/images/introduce-pic.jpg" class="img-thumbnail" alt="<?php echo $website->page_title; ?>">
 					</a>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-9 wow fadeInRight animated">
@@ -93,7 +93,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="item">
 							<div class="news-container img">
-								<a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt=""/></a>
+								<a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><img src="<?php echo base_url($value->image); ?>" class="img-responsive" alt="<?php echo $value->title; ?>"/></a>
 							</div>
 							<h3><a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->category_name; ?></a></h3>
 							<h4><a href="<?php echo base_url('chuyen-de/'.create_slug($value->title).'-'.$value->id) ?>"><?php echo $value->short_content; ?></a></h4>
