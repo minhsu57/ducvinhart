@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <?php echo $pagination; ?>
+                <?php if(isset($pagination)) echo $pagination; ?>
             </div>
         </div>
     </div>

@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 05, 2017 lúc 04:42 CH
--- Phiên bản máy phục vụ: 10.1.21-MariaDB
--- Phiên bản PHP: 7.1.1
+-- Host: 127.0.0.1
+-- Generation Time: Dec 18, 2017 at 10:04 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ducvinhart`
+-- Database: `ducvinhart`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -35,7 +37,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `level`, `parent_id`, `image`, `sort_order`) VALUES
@@ -61,7 +63,7 @@ INSERT INTO `category` (`id`, `level`, `parent_id`, `image`, `sort_order`) VALUE
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_translation`
+-- Table structure for table `category_translation`
 --
 
 CREATE TABLE `category_translation` (
@@ -79,7 +81,7 @@ CREATE TABLE `category_translation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `category_translation`
+-- Dumping data for table `category_translation`
 --
 
 INSERT INTO `category_translation` (`id`, `cate_id`, `lang_slug`, `name`, `name_slug`, `description`, `url_slug`, `meta_keyword`, `meta_description`, `created_date`, `modified_date`) VALUES
@@ -105,7 +107,7 @@ INSERT INTO `category_translation` (`id`, `cate_id`, `lang_slug`, `name`, `name_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
@@ -117,7 +119,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`, `created_date`, `modified_date`) VALUES
@@ -127,7 +129,7 @@ INSERT INTO `groups` (`id`, `name`, `description`, `created_date`, `modified_dat
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `languages`
+-- Table structure for table `languages`
 --
 
 CREATE TABLE `languages` (
@@ -143,7 +145,7 @@ CREATE TABLE `languages` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `manufacturer`
+-- Table structure for table `manufacturer`
 --
 
 CREATE TABLE `manufacturer` (
@@ -158,7 +160,7 @@ CREATE TABLE `manufacturer` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -177,7 +179,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `cate_id`, `title`, `short_content`, `content`, `meta_keyword`, `meta_description`, `image`, `lang_slug`, `status`, `created_date`, `modified_date`) VALUES
@@ -195,7 +197,7 @@ INSERT INTO `news` (`id`, `cate_id`, `title`, `short_content`, `content`, `meta_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `page_content`
+-- Table structure for table `page_content`
 --
 
 CREATE TABLE `page_content` (
@@ -209,7 +211,7 @@ CREATE TABLE `page_content` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `payment`
+-- Table structure for table `payment`
 --
 
 CREATE TABLE `payment` (
@@ -226,7 +228,7 @@ CREATE TABLE `payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `payment`
+-- Dumping data for table `payment`
 --
 
 INSERT INTO `payment` (`id`, `name`, `address`, `phone`, `email`, `note`, `is_view`, `is_pay`, `created_date`, `modified_date`) VALUES
@@ -236,7 +238,7 @@ INSERT INTO `payment` (`id`, `name`, `address`, `phone`, `email`, `note`, `is_vi
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `payment_detail`
+-- Table structure for table `payment_detail`
 --
 
 CREATE TABLE `payment_detail` (
@@ -251,7 +253,7 @@ CREATE TABLE `payment_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `payment_detail`
+-- Dumping data for table `payment_detail`
 --
 
 INSERT INTO `payment_detail` (`id`, `payment_id`, `product_id`, `quantity`, `price`, `discount`, `created_date`, `modified_date`) VALUES
@@ -262,7 +264,7 @@ INSERT INTO `payment_detail` (`id`, `payment_id`, `product_id`, `quantity`, `pri
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -285,7 +287,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `dimensions`, `length_class`, `weight`, `weight_class`, `manufacturer_id`, `cate_id`, `image`, `price`, `rating`, `created_date`, `modified_date`) VALUES
@@ -307,7 +309,7 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_images`
+-- Table structure for table `product_images`
 --
 
 CREATE TABLE `product_images` (
@@ -318,7 +320,7 @@ CREATE TABLE `product_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `product_images`
+-- Dumping data for table `product_images`
 --
 
 INSERT INTO `product_images` (`id`, `product_id`, `image`, `sort_order`) VALUES
@@ -331,7 +333,7 @@ INSERT INTO `product_images` (`id`, `product_id`, `image`, `sort_order`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_translation`
+-- Table structure for table `product_translation`
 --
 
 CREATE TABLE `product_translation` (
@@ -351,7 +353,7 @@ CREATE TABLE `product_translation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `product_translation`
+-- Dumping data for table `product_translation`
 --
 
 INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `description`, `detail`, `material`, `color`, `trademark`, `meta_keyword`, `meta_description`, `created_date`, `modified_date`) VALUES
@@ -373,7 +375,7 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `slider`
+-- Table structure for table `slider`
 --
 
 CREATE TABLE `slider` (
@@ -388,12 +390,12 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `slider`
+-- Dumping data for table `slider`
 --
 
 INSERT INTO `slider` (`id`, `cate_id`, `name`, `image_url`, `link`, `status`, `created_date`, `modified_date`) VALUES
-(4, 1, '', '/public/upload/images/banner/tranh-quat-banner.png', '', 1, '2017-11-27 08:56:24', '2017-12-01 12:52:10'),
-(5, 1, '', '/public/upload/images/banner/tranh-son-mai-banner.png', '', 1, '2017-11-27 08:56:53', '2017-12-01 12:51:56'),
+(4, 1, '', '/public/upload/images/banner/tranh-quat-cut-ngua.png', '', 1, '2017-11-27 08:56:24', '2017-12-18 11:04:32'),
+(5, 1, '', '/public/upload/images/banner/son-mai-hien-dai-1.png', '', 1, '2017-11-27 08:56:53', '2017-12-18 11:04:47'),
 (6, 18, '', '/public/upload/images/banner/tranh-son-mai-banner.png', '', 1, '2017-11-27 08:57:28', '2017-12-01 12:56:16'),
 (7, 20, '', '/public/upload/images/banner/tranh-quat-banner.png', '', 1, '2017-11-27 10:56:26', '2017-12-01 12:51:43'),
 (8, 39, '', '/public/upload/images/banner/Top_Banner_09.jpg', '', 1, '2017-11-27 13:42:25', '2017-12-01 12:51:13'),
@@ -401,13 +403,15 @@ INSERT INTO `slider` (`id`, `cate_id`, `name`, `image_url`, `link`, `status`, `c
 (10, 36, '', '/public/upload/images/banner/Top_Banner-10.jpg', '', 1, '2017-11-28 10:57:28', '2017-12-01 12:50:49'),
 (11, 32, '', '/public/upload/images/hinh-cuoi-001.jpg', 'aaaaaaa', 1, '2017-11-29 09:35:16', '2017-11-29 21:18:52'),
 (12, 21, '', '/public/upload/images/banner/slider1.jpg', '', 1, '2017-11-29 22:07:44', '2017-12-01 12:50:39'),
-(13, 1, '', '/public/upload/images/banner/slider2.jpg', '', 1, '2017-12-01 12:52:22', '2017-12-01 12:52:22'),
-(14, 30, '', '/public/upload/images/banner/Top_Banner-11.jpg', '', 1, '2017-12-01 14:06:19', '2017-12-01 14:06:19');
+(13, 1, '', '/public/upload/images/banner/slider-2.png', '', 1, '2017-12-01 12:52:22', '2017-12-18 10:59:36'),
+(14, 30, '', '/public/upload/images/banner/Top_Banner-11.jpg', '', 1, '2017-12-01 14:06:19', '2017-12-01 14:06:19'),
+(15, 1, '', '/public/upload/images/banner/son-mai-hien-dai-2.png', '', 1, '2017-12-18 11:06:21', '2017-12-18 11:06:21'),
+(16, 1, '', '/public/upload/images/banner/banner-tranh-son-dau-1.png', '', 1, '2017-12-18 14:32:19', '2017-12-18 14:32:19');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -435,18 +439,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `birth_day`, `phone`, `address`, `profile`, `modified_date`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1512138403, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
-(19, '127.0.0.1', 'su', '$2y$08$kkIZ7yEfVRYc7g2U4NG.DOMf5s/R3kXdWUuT8xXKJkS2VkAvRc/.O', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1512483972, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
+(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1513569557, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
+(19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1512483972, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
 (20, '127.0.0.1', 'ducvinhart', '$2y$08$ZDxtMSyWgZ5sELEiMkQNfuFKdbCcS0A/0Xf6KSSGZmpTUl55oLPvm', NULL, 'tonhuyen@ducvinhart.com', NULL, NULL, NULL, NULL, 1512138626, 1512139771, 1, 'Mỹ thuật', 'Đức Vinh', 'ducvinhart', '', '123456', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users_groups`
+-- Table structure for table `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -457,19 +461,19 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `users_groups`
+-- Dumping data for table `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`, `created_date`) VALUES
 (1, 1, 1, '2017-11-22 00:00:00'),
-(4, 19, 1, '0000-00-00 00:00:00'),
 (5, 20, 1, '0000-00-00 00:00:00'),
-(6, 20, 2, '0000-00-00 00:00:00');
+(6, 20, 2, '0000-00-00 00:00:00'),
+(7, 19, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `website`
+-- Table structure for table `website`
 --
 
 CREATE TABLE `website` (
@@ -499,7 +503,7 @@ CREATE TABLE `website` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `website`
+-- Dumping data for table `website`
 --
 
 INSERT INTO `website` (`id`, `language_slug`, `website_name`, `favicon`, `facebook`, `youtube`, `google_plus`, `twitter`, `sidebar`, `phone`, `mobile_phone`, `google_map`, `email`, `admin_email`, `address`, `slogan`, `keyword`, `meta_description`, `visitor`, `footer_content_1`, `footer_content_2`, `footer_content_3`, `modified_date`) VALUES
@@ -507,184 +511,200 @@ INSERT INTO `website` (`id`, `language_slug`, `website_name`, `favicon`, `facebo
 ('common-info-vi', 'vi', 'Đức Vinh Art Workshop', '/public/upload/images/logo/logo.png', 'https://www.facebook.com/Tranhquatducvinh/', '#', '#', '#', '<p><strong>VIDEO</strong></p>\r\n\r\n<p><iframe frameborder=\"0\" scrolling=\"no\" src=\"https://www.youtube.com/embed/ejXrGoHFGJQ\"></iframe></p>\r\n\r\n<p><strong>Luyện Nh&oacute;m</strong></p>\r\n\r\n<p><a href=\"/english/luyen-noi-nhom-4-5-ban-cung-100-gvnn\"><img alt=\"\" src=\"/public/upload/images/slider2.jpg\" style=\"width:300px\" /></a></p>\r\n', ' 028 3939 0811 - 0906 911 022', '', '10.789931, 106.693402', 'ducvinhart@gmail.com', 'minhsu57@gmail.com,minhsu0602@gmail.com', 'Số 123, Trung Dũng, Biên Hòa, Đồng Nai', 'vì mái ấm gia đình bạn', '<p><a href=\"/san-pham/tranh-quat\">Tranh quạt</a><a href=\"/san-pham/noi-that-son-mai\">Nội thất sơn m&agrave;i</a><a href=\"/san-pham/tranh-son-mai\">Tranh sơn m&agrave;i</a><a href=\"/san-pham/khung-tranh\">Khung tranh</a><a href=\"/san-pham/thu-cong-my-nghe\">Thủ c&ocirc;ng mỹ nghệ</a><a href=\"/san-pham/trang-tri\">Trang tr&iacute;</a></p>\r\n', '', NULL, '<ul>\r\n	<li><a href=\"#\">&gt; Bảng gi&aacute; tranh - khung tranh (Tham khảo)</a></li>\r\n	<li><a href=\"http://ducvinhart/chuyen-de/phuong-thuc-thanh-toan-12\">&gt; Phương thức thanh to&aacute;n - mua h&agrave;ng</a></li>\r\n	<li><a href=\"#\">&gt; Phương thức vận chuyển</a></li>\r\n	<li><a href=\"#\">&gt; Dịch vụ của ch&uacute;ng t&ocirc;i</a></li>\r\n</ul>\r\n', '<ul>\r\n	<li><a href=\"#\">Mỹ thuật Đức Vinh</a></li>\r\n	<li><a href=\"#\">Điện thoại - 0936 777 170</a></li>\r\n	<li><a href=\"#\">Địa chỉ -&nbsp;</a>Trung Dũng, Bi&ecirc;n H&ograve;a, Đồng Nai</li>\r\n</ul>\r\n', '<ul>\r\n	<li><a href=\"#\">Trang chủ</a></li>\r\n	<li><a href=\"product.html\">T</a><a href=\"http://san-pham/tranh-quat\">ranh quạt</a></li>\r\n	<li><a href=\"#\">Chuy&ecirc;n đề</a></li>\r\n	<li><a href=\"#\">Li&ecirc;n hệ</a></li>\r\n</ul>\r\n', '2017-12-01 00:00:00');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `category_translation`
+-- Indexes for table `category_translation`
 --
 ALTER TABLE `category_translation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `languages`
+-- Indexes for table `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `manufacturer`
+-- Indexes for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `page_content`
+-- Indexes for table `page_content`
 --
 ALTER TABLE `page_content`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `payment`
+-- Indexes for table `payment`
 --
 ALTER TABLE `payment`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `payment_detail`
+-- Indexes for table `payment_detail`
 --
 ALTER TABLE `payment_detail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product_images`
+-- Indexes for table `product_images`
 --
 ALTER TABLE `product_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product_translation`
+-- Indexes for table `product_translation`
 --
 ALTER TABLE `product_translation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `slider`
+-- Indexes for table `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users_groups`
+-- Indexes for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `website`
+-- Indexes for table `website`
 --
 ALTER TABLE `website`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
 --
--- AUTO_INCREMENT cho bảng `category_translation`
+-- AUTO_INCREMENT for table `category_translation`
 --
 ALTER TABLE `category_translation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
--- AUTO_INCREMENT cho bảng `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT cho bảng `languages`
+-- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT cho bảng `manufacturer`
+-- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT cho bảng `news`
+-- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT cho bảng `page_content`
+-- AUTO_INCREMENT for table `page_content`
 --
 ALTER TABLE `page_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT cho bảng `payment`
+-- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
--- AUTO_INCREMENT cho bảng `payment_detail`
+-- AUTO_INCREMENT for table `payment_detail`
 --
 ALTER TABLE `payment_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
--- AUTO_INCREMENT cho bảng `product_images`
+-- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
 --
--- AUTO_INCREMENT cho bảng `product_translation`
+-- AUTO_INCREMENT for table `product_translation`
 --
 ALTER TABLE `product_translation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
--- AUTO_INCREMENT cho bảng `slider`
+-- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
--- AUTO_INCREMENT cho bảng `users_groups`
+-- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
