@@ -12,7 +12,7 @@ class Category_translation_model extends MY_Model
 
     protected function get_category($input = array())
     {
-        $this->db->select('c.level, c.parent_id, c.image, c.sort_order, s.*');
+        $this->db->select('c.level, c.parent_id, c.image image, c.sort_order, s.*');
         $this->db->from('category c');
         $this->db->join('category_translation s', 'c.id = s.cate_id');
         $this->get_list_set_input($input);

@@ -8,7 +8,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="header_top-sec">
 				<div class="top_right">
 					<ul>
-						<li><a href="#">help</a></li>|
 						<li><a href="<?php echo base_url('lien-he'); ?>">Liên hệ</a></li>
 					</ul>
 				</div>

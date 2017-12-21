@@ -22,7 +22,8 @@ class Category extends Admin_Controller
         $this->form_validation->set_message('required', $this->lang->line('required'));
         $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
         $this->form_validation->set_rules('name', 'lang:name', 'trim|required');
-        $this->form_validation->set_rules('image', 'lang:Image', 'trim|required');        
+        $this->form_validation->set_rules('image', 'lang:Image', 'trim|required'); 
+        $this->input_categories['order'] = array('sort_order' ,"asc");       
         $this->input_categories['where'] = array('level<>' => 2);
     }
 

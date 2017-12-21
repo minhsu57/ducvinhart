@@ -36,7 +36,7 @@ class Product extends Public_Controller {
 
     public function search()
     {        
-        $this->data["breadcrumb"] = "Tìm Kiếm";        
+        $this->data["breadcrumb"] = "Tìm Kiếm / ".$this->input->get("id");        
         $input_product['like'] = array('name' => $this->input->get("id"));
         //pagination settings
         $config['base_url'] = site_url('search?id='.$this->input->get("id"));

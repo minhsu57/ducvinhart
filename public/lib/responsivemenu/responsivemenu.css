@@ -13,7 +13,7 @@
 #cssmenu li:hover > ul{left:auto}
 #cssmenu li:hover > ul > li{height:35px}
 #cssmenu ul ul ul{margin-left:100%;top:0}
-#cssmenu ul ul li a{border-bottom:1px solid rgba(150,150,150,0.15);padding:11px 15px;width:170px;font-size:14px;text-decoration:none;color:#ddd;font-weight:400;}
+#cssmenu ul ul li a{border-bottom:1px solid rgba(150,150,150,0.15);border-right: 1px solid rgba(150, 150, 150, 0.1);padding:11px 15px;width:270px;font-size:14px;text-decoration:none;color:#ddd;font-weight:400;}
 #cssmenu ul ul li:last-child > a,#cssmenu ul ul li.last-item > a{border-bottom:0}
 #cssmenu ul ul li:hover > a,#cssmenu ul ul li a:hover{color:#fff;background: #EF5F21;}
 #cssmenu ul ul li.has-sub > a:after{position:absolute;top:16px;right:11px;width:8px;height:2px;display:block;background:#ddd;content:''}

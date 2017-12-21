@@ -22,7 +22,7 @@ class Home extends Public_Controller {
         if($page){           
             $this->data['website']->meta_keyword = $page->meta_keyword;
             $this->data['website']->meta_description = $page->meta_description;
-            $this->data['website']->image = "123"; 
+            //$this->data['website']->image = $page->image; 
         }
         // get content of slider
         $input['where'] = array('status' => 1, "s.cate_id" => '1');

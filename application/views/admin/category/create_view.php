@@ -19,7 +19,7 @@
                 // echo form_input('name',set_value('name',''),'class="form-control"');
                 ?>
                 <span class="error"><?php echo form_error('name'); ?></span>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" value="<?php echo set_value('name'); ?>" class="form-control">
             </div>
             <div class="form-group col-md-4 col-lg-4">
                 <?php
@@ -38,7 +38,7 @@
                 echo form_label('Sắp xếp (số)', 'sort_order');
                 ?>
                 <span class="error"><?php echo form_error('sort_order'); ?></span>
-                <input type="text" name="sort_order" class="form-control">
+                <input type="text" name="sort_order" value="<?php echo set_value('sort_order'); ?>" class="form-control">
             </div>
             <div class="form-group col-md-12 col-lg-12">
                 <label>Ảnh đại diện <span class="error">*</span></label>
