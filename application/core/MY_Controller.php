@@ -37,7 +37,8 @@ class Public_Controller extends MY_Controller
 		$this->load->model('category_translation_model');
 		$input['where'] = array('language_slug'=>$this->lang_slug);
 		$this->data['website'] = $this->website_model->get_row($input);	
-		$this->data['website']->page_title = $this->data['website']->website_name;
+		$this->data['website']->page_title = str_replace('<b>', '', $this->data['website']->website_name);
+		$this->data['website']->page_title = str_replace('</b>', '', $this->data['website']->page_title);
 		$this->data['website']->meta_keyword = "";
 		$this->data['website']->meta_description = "";
 
