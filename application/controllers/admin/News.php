@@ -129,6 +129,7 @@ public function edit($item_id,$type_id)
 }
 
 public function delete($item_id){
+    $type = $this->input->get('type');
     $where = array('item_id' => $item_id);
 
     if(!$this->news_model->delete($item_id))
@@ -136,9 +137,9 @@ public function delete($item_id){
         $this->postal->add('Tin tức không tồn tại','error');
         redirect('admin/news');
     }else{
-        $this->postal->add('Xóa tin tức thành công','success');            
+        $this->postal->add('Xóa thành công','success');            
     }
-    redirect('admin/news');
+    redirect('admin/news?type='.$type);
 }
 
 public function changeStatus($item_id, $status){

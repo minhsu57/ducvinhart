@@ -15,7 +15,7 @@ html, body{
 	font-family: 'Raleway', sans-serif;
 	font-size: 100%;
 	background: #ffffff;
-	background: url(../upload/images/bg_body.jpg) no-repeat fixed center;
+	background: url(../upload/special_images/bg_body.jpg) no-repeat fixed center;
 	background-size: 100%;
 }
 body a{
@@ -33,6 +33,9 @@ a:hover,a:active,a:focus{
 .img{
 	background: rgba(255, 255, 255, 0.25);
 	max-width: 100%;
+}
+img{
+	height: auto !important;
 }
 .row{
 	margin:0;
@@ -79,10 +82,10 @@ span.slogan_small {
 }
 .header_top{
 	padding: 2em 0;
-	background-image: url('../upload/images/bg.jpg');
+	background-image: url('../upload/special_images/bg.jpg');
 }
 .mega_nav, .content,.product-model,.single-sec,.services-details-area, .cart, .order {
-	background: rgba(255,255,255,0.6) url(../upload/images/bg_well_l.png) no-repeat left top;
+	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_well_l.png) no-repeat left top;
 }
 .megamenu>li>a {
 	padding: 5px 25px !important;
@@ -305,7 +308,7 @@ a i.google:hover {
 	-webkit-appearance: none;
 }
 .search input[type="submit"] {
-	background: url('../upload/images/search.png') no-repeat 0px 1px;
+	background: url('../upload/special_images/search.png') no-repeat 0px 1px;
 	border: none;
 	cursor: pointer;
 	width: 24px;
@@ -318,7 +321,7 @@ a i.google:hover {
 .menu_sec{
 	/*border-top:1px solid #000;
 	border-bottom:1px solid #000;*/
-	background: url(../upload/images/bg_body3.jpg);
+	background: url(../upload/special_images/bg_body3.jpg);
 	padding:0px 0;
 }
 .header_right{
@@ -374,7 +377,7 @@ a i.google:hover {
 	text-decoration: none;
 	height: 34px;
 	width: 34px;
-	background:  url("../upload/images/img-sprite.png") no-repeat -41px -3px;
+	background:  url("../upload/special_images/img-sprite.png") no-repeat -41px -3px;
 }
 .callbacks_nav.next {
 	left: auto;
@@ -428,12 +431,12 @@ a i.google:hover {
 	padding-bottom: 2em;
 }
 .introduce_section{
-	background: rgba(255,255,255,0.6) url(../upload/images/bg_well_l.png) no-repeat left top;
+	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_well_l.png) no-repeat left top;
 	padding: 20px 0;
 	font-family: 'helvetica';
 }
 .title h3 {
-	background: url(../upload/images/bg_title_h2.png) no-repeat center top;
+	background: url(../upload/special_images/bg_title_h2.png) no-repeat center top;
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
@@ -456,7 +459,7 @@ a i.google:hover {
 }
 .new{
 	padding-top: 2em;
-	background: rgba(255,255,255,0.6) url(../upload/images/bg_well_r.png) no-repeat right top;
+	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_well_r.png) no-repeat right top;
 }
 .new-products{
 	border-bottom: 1px solid #eee;
@@ -776,12 +779,12 @@ ul#flexiselDemo1 p{
 }
 .nbs-flexisel-nav-left {
 	left: -64px;
-	background: url(../upload/images/right.png) no-repeat 0px 0px;
+	background: url(../upload/special_images/right.png) no-repeat 0px 0px;
 	top: -10.5px!important;
 }
 .nbs-flexisel-nav-right {
 	right: -60px;
-	background: url(../upload/images/left.png) no-repeat 0px 0px;
+	background: url(../upload/special_images/left.png) no-repeat 0px 0px;
 	top: -10.5px!important;
 }	
 /*----*/
@@ -1215,7 +1218,7 @@ ul.dropdown-menu1 li a:hover{
 	display: block;
 	width: 18px;
 	height: 18px;
-	background: url(../upload/images/star.png) 0 -3px;
+	background: url(../upload/special_images/star.png) 0 -3px;
 	float:left;
 	font-family: FontAwesome;
 	font-style: normal;
@@ -1232,7 +1235,7 @@ ul.dropdown-menu1 li a:hover{
 }
 .sky-form .rating input:checked ~ label {
 	color: #2da5da;	
-	background: url(../upload/images/star.png) 0 -20px;
+	background: url(../upload/special_images/star.png) 0 -20px;
 	display: -webkit-box;
 }
 .id h4{
@@ -1434,7 +1437,7 @@ p.prod-desc {
 	display:inline-block;
 }
 .locations ul li span {
-	background: url(../upload/images/find.png) no-repeat 0px 0px;
+	background: url(../upload/special_images/find.png) no-repeat 0px 0px;
 	vertical-align: super;
 	width: 38px;
 	height: 38px;
@@ -1788,7 +1791,7 @@ label {
 	background: rgba(243, 243, 243, 0.61);
 }
 .close1,.close2{
-	background: url('../upload/images/close.png') no-repeat 0px 0px;
+	background: url('../upload/special_images/close.png') no-repeat 0px 0px;
 	cursor: pointer;
 	width: 28px;
 	height: 28px;
@@ -2165,7 +2168,7 @@ h4.title:after {
 	}
 	.social i {
 		height: 24px;
-		background: url('../upload/images/social2.png') no-repeat 0px 0px;
+		background: url('../upload/special_images/social2.png') no-repeat 0px 0px;
 		margin: 0 0px;
 	}
 	.search input[type="submit"] {

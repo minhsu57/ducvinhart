@@ -28,7 +28,13 @@ class Product extends Public_Controller {
             $input['where'] = array('status' => 1, "s.cate_id"=>$page->cate_id);
             $this->data['sliders'] = $this->slider_model->get_list_slider($input);
             //get content of this page
-            $input['where'] = array('cate_id' => $page->cate_id);
+            $input['where'] = array('cate_id' => $page->cate_id, 'cate_id' => 46, 'cate_id'=>47);
+            $branch = $this->buildTree($page->cate_id);
+            // print_r($branch);
+            // foreach ($branch as $element) {
+            //     array_push($input['where'], $element->id);
+            // }
+            $input['order'] = array("created_date" , "desc");
             $this->data['items'] = $this->product_model->get_list_product($input);
             $this->render('user/product_view');
         }        

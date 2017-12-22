@@ -32,8 +32,9 @@ class Public_Controller extends MY_Controller
 	{
 		parent::__construct();
 		//
-        $this->lang_slug = "vi";
+		$this->lang_slug = "vi";
 		$this->load->model('website_model');
+		$this->load->model('category_model');
 		$this->load->model('category_translation_model');
 		$input['where'] = array('language_slug'=>$this->lang_slug);
 		$this->data['website'] = $this->website_model->get_row($input);	
@@ -50,7 +51,7 @@ class Public_Controller extends MY_Controller
 		$this->data['cate_product'] = array();
 		foreach ($cate_product as $key=>$item) {
 			$input_child_cate['where'] = array('parent_id' => $item['cate_id']);
-			$input_child_cate['order'] = array('sort_order', "DESC");
+			$input_child_cate['order'] = array('sort_order', "ASC");
 			$cate_child = $this->category_translation_model->get_list_category_arr($input_child_cate);
 			$item['children'] = $cate_child;
 			array_push($this->data['cate_product'], $item);
@@ -66,6 +67,20 @@ class Public_Controller extends MY_Controller
 	protected function render($the_view = NULL, $template = 'public_master')
 	{
 		parent::render($the_view, $template);
+	}
+
+	public function buildTree($id = "") {
+		$branch = array();
+		$input['where'] = array('parent_id' => $id);
+		$result = $this->category_model->get_list($input);
+		if(isset($result)){
+			foreach ($result as $element) {
+				array_push($branch, $element->id);
+				$this->buildTree($element->id);
+			}
+		}		
+
+		return $branch;
 	}
 }
 class Admin_Controller extends MY_Controller
@@ -89,7 +104,7 @@ class Admin_Controller extends MY_Controller
 		$this->data['current_user'] = $current_user;
 		$this->data['current_user_menu'] = '';
 		//
-        $this->lang_slug = "vi";
+		$this->lang_slug = "vi";
 		if($this->ion_auth->in_group('admin'))
 		{
 			$this->data['current_user_menu'] = $this->load->view('templates/_parts/user_menu_admin_view.php', NULL, TRUE);
@@ -101,14 +116,14 @@ class Admin_Controller extends MY_Controller
 	}
 
 
-    public function getHierarchyParent($item_id, $finalData){
-        $input['where'] = array('cate_id' => $item_id);
-        $result = $this->category_translation_model->get_row_category($input);
-        if(!isset($result)) return $finalData;
-        $finalData= $finalData.$result->name." -> ";
-        if($result->parent_id != NULL && $result->parent_id != ""){
-        	$this->getHierarchyParent($result->parent_id, $finalData);
-        }
-        else return $finalData;
-    }
+	public function getHierarchyParent($item_id, $finalData){
+		$input['where'] = array('cate_id' => $item_id);
+		$result = $this->category_translation_model->get_row_category($input);
+		if(!isset($result)) return $finalData;
+		$finalData= $finalData.$result->name." -> ";
+		if($result->parent_id != NULL && $result->parent_id != ""){
+			$this->getHierarchyParent($result->parent_id, $finalData);
+		}
+		else return $finalData;
+	}
 }

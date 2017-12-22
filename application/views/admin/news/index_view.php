@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <a href="<?php echo base_url('admin/news/create/'.$type_id); ?>"><button class="pull-right btn btn-primary"><li class="fa fa-plus-circle"></li></button></a>
+            <a href="<?php echo base_url('admin/news/create/'.$type_id.'?type='.$this->input->get('type')); ?>"><button class="pull-right btn btn-primary"><li class="fa fa-plus-circle"></li></button></a>
         </div>
     </div>
     <div class="row">
@@ -41,8 +41,8 @@
                     echo '<td><img src="'.$item->image.'" style="width: 100px;"></td>';                    
                     echo '<td>'.$item->modified_date.'</td>';
                     echo '<td>';
-                    echo '<a href="'.base_url('admin/news/edit/'.$item->id.'/'.$type_id).'" style="color:#fff"><button title="Click to edit" class="btn btn-sm btn-info"><li class="fa fa-pencil"></li></button></a>';
-                    echo '<a href="'.base_url('admin/news/delete/'.$item->id.'/'.$type_id).'" style="color:#fff; margin-left:5px" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')"><button title="Click to delete" class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
+                    echo '<a href="'.base_url('admin/news/edit/'.$item->id.'/'.$type_id.'?type='.$this->input->get('type')).'" style="color:#fff"><button title="Click to edit" class="btn btn-sm btn-info"><li class="fa fa-pencil"></li></button></a>';
+                    echo '<a href="'.base_url('admin/news/delete/'.$item->id.'/'.$type_id.'?type='.$this->input->get('type')).'" style="color:#fff; margin-left:5px" onclick="return confirm(\'Bạn chắc chắn muốn xóa ?\')"><button title="Click to delete" class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
                     ?>
                     <?php
                     echo '</td>';

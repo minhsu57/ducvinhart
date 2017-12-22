@@ -21,8 +21,9 @@
                 <?php
                 echo form_label('Tên website','website_name');
                 echo form_error('website_name');
-                echo form_input('website_name',set_value('website_name',$item->website_name),'class="form-control"');
+                //echo form_input('website_name',set_value('website_name',$item->website_name),'class="form-control"');
                 ?>
+                <textarea class="form-control" name="website_name"><?php echo $item->website_name ?></textarea> 
             </div>
             <div class="form-group col-md-4 col-lg-4">
                 <?php
@@ -129,7 +130,22 @@
                     <textarea class="ckeditor" name="footer_content_3"><?php echo $item->footer_content_3 ?></textarea> 
                     <?php echo form_error('footer_content_3','<p class="error">'); ?>
                 </div>
-            </div> 
+            </div>
+            <div class="form-group col-md-6 col-lg-6">
+                <label>Phần giới thiệu <span class="error">*</span></label>
+                <?php echo form_error('home_introduce_image','<p class="error">'); ?>
+                <div>
+                    <input type="hidden" name="home_introduce_image" id="home_introduce_image" value="<?php echo set_value("home_introduce_image",$item->home_introduce_image); ?>">
+                    <img src="<?php echo base_url(set_value("home_introduce_image",$item->home_introduce_image)); ?>" id="home_introduce_link_img" style="max-height: 50px; margin-bottom: 5px; cursor: pointer;" onclick="openPopupIntroduceImg()" name="home_introduce_link_img">
+                    <span>
+                        <button type="button" class="btn btn-default" onclick="openPopupIntroduceImg()"><li class="fa fa-image"></li> Browse Image</button>
+                    </span>
+                    <div id="editor">
+                        <textarea class="ckeditor" name="home_introduce_content"><?php echo $item->home_introduce_content ?></textarea> 
+                        <?php echo form_error('home_introduce_content','<p class="error">'); ?>
+                    </div>
+                </div>
+            </div>  
             <!-- AJAX Response will be outputted on this DIV container -->
             <?php echo form_hidden('id',$item->id);?>
 
@@ -151,6 +167,22 @@
                finder.on( 'file:choose:resizedImage', function( evt ) {
                    document.getElementById('favicon').value = evt.data.resizedUrl;
                    document.getElementById( 'favicon_link_img' ).src = base_url+evt.data.resizedUrl;
+               } );
+           }
+       } );
+   }
+   function openPopupIntroduceImg() {
+       CKFinder.popup( {
+           chooseFiles: true,
+           onInit: function( finder ) {
+               finder.on( 'files:choose', function( evt ) {
+                   var file = evt.data.files.first();
+                   document.getElementById( 'home_introduce_image' ).value = file.getUrl();
+                   document.getElementById( 'home_introduce_link_img' ).src = base_url+file.getUrl();
+               } );
+               finder.on( 'file:choose:resizedImage', function( evt ) {
+                   document.getElementById('home_introduce_image').value = evt.data.resizedUrl;
+                   document.getElementById( 'home_introduce_link_img' ).src = base_url+evt.data.resizedUrl;
                } );
            }
        } );

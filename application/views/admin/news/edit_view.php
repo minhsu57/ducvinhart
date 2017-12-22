@@ -11,7 +11,7 @@
             <div class="col-xs-12 ">
                 <div class="pull-right">
                     <?php echo form_submit('submit', 'SAVE', 'class="btn btn-primary btn-lg btn-sm"');?>
-                    <a href="<?php echo base_url('admin/news') ?>"><input class="btn btn-default btn-lg btn-sm" type="button" value="CANCEL"></a>
+                    <a href="<?php echo base_url('admin/news?type='.$this->input->get('type')) ?>"><input class="btn btn-default btn-lg btn-sm" type="button" value="CANCEL"></a>
                 </div>                
             </div>
         </div>
