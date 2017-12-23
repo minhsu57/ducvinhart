@@ -70,6 +70,7 @@ class Public_Controller extends MY_Controller
 	}
 
 	public function buildTree($id = "") {
+		// get all children category id of current id and push to array
 		$branch = array();
 		$input['where'] = array('parent_id' => $id);
 		$result = $this->category_model->get_list($input);
@@ -115,15 +116,20 @@ class Admin_Controller extends MY_Controller
 		parent::render($the_view, $template);
 	}
 
-
-	public function getHierarchyParent($item_id, $finalData){
+	public function getHierarchyParent($item_id, $prefix = ''){
+		// get list parent name of current id and push to variable like : category 1 -> category 2 -> category 3
 		$input['where'] = array('cate_id' => $item_id);
 		$result = $this->category_translation_model->get_row_category($input);
-		if(!isset($result)) return $finalData;
-		$finalData= $finalData.$result->name." -> ";
-		if($result->parent_id != NULL && $result->parent_id != ""){
-			$this->getHierarchyParent($result->parent_id, $finalData);
-		}
-		else return $finalData;
+			
+		if(count($result) > 0){
+			print_r($result->parent_id."-");
+			$prefix.=$result->name." -> ";
+
+				$this->getHierarchyParent($result->parent_id, $prefix);
+
+
+		}	
+
+		return $prefix;
 	}
 }

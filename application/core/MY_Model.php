@@ -241,6 +241,13 @@ class MY_Model extends CI_Model {
         {
             $this->db->where($input['where']);
         }
+
+        // Thêm điều kiện cho câu truy vấn truyền qua biến $input['or_where_in'] 
+        //(vi du: $input['or_where_in'] = array('email', 'hocphp@gmail.com'))
+        if ((isset($input['or_where_in'])) && $input['or_where_in'])
+        {
+            $this->db->or_where_in($input['or_where_in'][0], $input['or_where_in'][1]);
+        }
         
         //tim kiem like
         // $input['like'] = array('name' => 'abc');

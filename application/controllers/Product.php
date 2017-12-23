@@ -25,17 +25,28 @@ class Product extends Public_Controller {
             $this->data['website']->meta_description = $page->meta_description;
             $this->data["breadcrumb"] = $page->name;
             // get content of slider
-            $input['where'] = array('status' => 1, "s.cate_id"=>$page->cate_id);
-            $this->data['sliders'] = $this->slider_model->get_list_slider($input);
-            //get content of this page
-            $input['where'] = array('cate_id' => $page->cate_id, 'cate_id' => 46, 'cate_id'=>47);
-            $branch = $this->buildTree($page->cate_id);
-            // print_r($branch);
-            // foreach ($branch as $element) {
-            //     array_push($input['where'], $element->id);
-            // }
-            $input['order'] = array("created_date" , "desc");
-            $this->data['items'] = $this->product_model->get_list_product($input);
+            $input_slider['where'] = array('status' => 1, "s.cate_id"=>$page->cate_id);
+            $this->data['sliders'] = $this->slider_model->get_list_slider($input_slider);
+            //get content of this page           
+            $input_product['order'] = array("created_date" , "desc");            
+            $branch = $this->buildTree($page->cate_id); 
+            array_push($branch, $page->cate_id);
+            $input_product['or_where_in'] = array('cate_id', $branch);
+            //pagination settings
+            $config['base_url'] = site_url('san-pham/'.$name);
+            $config["per_page"] = $this->pagination->per_page;
+            $config['total_rows'] = $this->product_model->get_total_product($input_product);
+            $this->data['total'] = $config['total_rows'];
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = $choice; 
+            // pagination
+            $pagi = ($this->input->get('page')) ? $this->input->get('page') : 1;
+            $this->pagination->initialize($config);        
+            $this->data['pagination'] = $this->pagination->create_links();
+            $offset = ($pagi  == 1) ? 0 : ($pagi * $config['per_page']) - $config['per_page'];
+            // get list data
+            $input_product['limit'] = array($config["per_page"], $offset);
+            $this->data['items'] = $this->product_model->get_list_product($input_product);
             $this->render('user/product_view');
         }        
     }

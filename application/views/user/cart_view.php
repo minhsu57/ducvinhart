@@ -30,7 +30,7 @@
  							$translation = $this->product_model->get_row_product($input);
  							?>
  							<tr>
- 								<td><img style="height: 100px;" src="<?php echo base_url($translation->image); ?>"></td>
+ 								<td><img style="height: 100px !important;" src="<?php echo base_url($translation->image); ?>"></td>
  								<td><?php echo $translation->name; ?></td>
  								<td><?php echo number_format($value["price"]); ?></td>
  								<td><input type="text" style="width: 60px" class="form-control number-only" value="<?php echo $value["qty"]; ?>" onchange="updateCart('<?php echo base_url(); ?>', <?php echo $value["id"] ?>, this.value, <?php echo $value["price"] ?>)"></td>

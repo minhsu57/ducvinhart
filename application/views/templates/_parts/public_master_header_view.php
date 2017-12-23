@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="top_left">
 					<ul>
-						<li class="top_link" title="Email"><i class="fa fa-envelope-o fa-lg"></i><a href="mailto@example.com"><?php echo $website->email; ?></a></li>|
+						<li class="top_link" title="Email"><i class="fa fa-envelope-o fa-lg"></i><a ><?php echo $website->email; ?></a></li>|
 						<li class="top_link" title="Phone"><i class="fa fa-phone fa-lg"></i><a href=""><?php echo $website->phone; ?></a></li>|
 					</ul>
 					<div class="social">
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<!-- start header menu -->
 					<ul class="skyblue">
 						<li class="active grid"><a class="color1" href="<?php echo base_url(); ?>">TRANG CHỦ</a></li>
-						<li class="grid"><a class="color2" href="">Sản phẩm</a>
+						<li class="grid"><a class="color2" >Sản phẩm</a>
 							<ul>
 								<?php foreach ($cate_product as $cate) { ?>
 								<li><a href="<?php echo base_url('san-pham/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a>
@@ -78,14 +78,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<?php } ?>
 							</ul>
 						</li>
-						<li><a class="color4" href="">dịch vụ</a>
+						<li><a class="color4" >dịch vụ</a>
 							<ul>
 								<?php foreach ($cate_services as $cate) { ?>
 								<li><a href="<?php echo base_url('dich-vu/'.$cate['cate_id'].'-'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
 								<?php } ?>
 							</ul>
 						</li>
-						<li><a class="color5" href="">Chuyên đề</a>
+						<li><a class="color5" >Chuyên đề</a>
 							<ul>
 								<?php foreach ($cate_topic as $cate) { ?>
 								<li><a href="<?php echo base_url('chuyen-de/'.$cate['cate_id'].'-'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>

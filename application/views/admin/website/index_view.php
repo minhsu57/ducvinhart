@@ -132,7 +132,7 @@
                 </div>
             </div>
             <div class="form-group col-md-6 col-lg-6">
-                <label>Phần giới thiệu <span class="error">*</span></label>
+                <label>Phần giới thiệu - Trang chủ<span class="error">*</span></label>
                 <?php echo form_error('home_introduce_image','<p class="error">'); ?>
                 <div>
                     <input type="hidden" name="home_introduce_image" id="home_introduce_image" value="<?php echo set_value("home_introduce_image",$item->home_introduce_image); ?>">
