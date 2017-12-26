@@ -583,8 +583,15 @@ a i.google:hover {
 	background:#eceaea;
 }
 .item4{
-	background:rgba(193, 189, 160, 0.61);
-	margin-top:2em;
+    display: inline-block !important;
+    background: rgba(193, 189, 160, 0.61);
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 30.33333333%;
+    vertical-align: top;
 }
 .item5,.item6{
 	background:#eceaea;	
@@ -2167,6 +2174,9 @@ h4.title:after {
 	}
 }
 @media (max-width: 992px){
+	.item4{
+		width: 46.8%;
+	}
 	.ftr-grid {
 		text-align: center;
 	}
@@ -2174,6 +2184,9 @@ h4.title:after {
 @media (max-width: 768px){
 	body{
 		background: #fff;
+	}
+	.item4{
+		width: 45.8%;
 	}
 	.social i {
 		height: 24px;
@@ -2291,7 +2304,7 @@ h4.title:after {
 }
 @media (max-width: 736px){
 	.item-info h4 a, .item-info2 h4 a, .item-info3 h4 a, .item-info4 h4 a, .item-info5 h4 a, .item-info6 h4 a {
-		font-size: 0.9em;
+		font-size: 1em;
 	}
 	.nbs-flexisel-item {
 		width: 228px!important;
@@ -2315,7 +2328,7 @@ h4.title:after {
 		padding: 8px 15px;
 	}
 	.box_1 h3 {
-		font-size: 0.8em;
+		font-size: 0.9em;
 	}
 	.box_1 p {
 		margin: 0em 0.3em 0;
@@ -2384,6 +2397,10 @@ h4.title:after {
 	}
 }
 @media (max-width: 600px){
+	.container, .col-md-12{
+		padding-left: 0;
+		padding-right: 0;
+	}
 	.top_right ul li a {
 		font-size: 9px;
 	}
@@ -2401,7 +2418,7 @@ h4.title:after {
 		letter-spacing: 1px;
 	}
 	.item-info h4, .item-info2 h4, .item-info3 h4, .item-info4 h4, .item-info5 h4, .item-info6 h4 {
-		font-size: 0.82em;
+		font-size: 1em;
 	}
 	.item-info5 {
 		margin-top: 2.5em;
@@ -2445,6 +2462,9 @@ h4.title:after {
 	}
 }
 @media (max-width: 568px){
+	.item4{
+		width: 100%;
+	}
 	.slogan{
 		display: none;
 	}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2017 at 10:28 AM
+-- Generation Time: Dec 26, 2017 at 10:30 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -352,7 +352,13 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (52, 'sondauhoa010', 1, 0, 0, '', '', '', 0, NULL, 46, '/public/upload/images/tranh-son-dau/tr3.png', '0', 0, '2017-12-22 15:44:27', '2017-12-22 15:44:40'),
 (53, 'sondautruutuong001', 1, 0, 0, '', '', '', 0, NULL, 49, '/public/upload/images/tranh-son-dau/tr4.png', '0', 0, '2017-12-22 15:45:19', '2017-12-22 15:45:19'),
 (54, 'sondautruutuong002', 1, 0, 0, '', '', '', 0, NULL, 49, '/public/upload/images/tranh-son-dau/tr5.png', '0', 0, '2017-12-22 15:45:55', '2017-12-22 15:45:55'),
-(55, 'sondautruutuong003', 1, 0, 0, '', '', '', 0, NULL, 49, '/public/upload/images/tranh-son-dau/tr6.png', '0', 0, '2017-12-22 15:46:21', '2017-12-22 15:46:21');
+(55, 'sondautruutuong003', 1, 0, 0, '', '', '', 0, NULL, 49, '/public/upload/images/tranh-son-dau/tr6.png', '0', 0, '2017-12-22 15:46:21', '2017-12-22 15:46:21'),
+(56, 'tranhquathoa001', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/1922207_808300302526546_3542043079976313382_n.png', '0', 0, '2017-12-26 10:00:21', '2017-12-26 10:00:46'),
+(57, 'tranhquatdongque001', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/dong-que.png', '0', 0, '2017-12-26 10:04:06', '2017-12-26 10:04:06'),
+(58, 'tranhquattinhthuonggiadinh', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/cau-ca-thuyen-song-nuoc.png', '0', 0, '2017-12-26 10:11:17', '2017-12-26 10:11:17'),
+(59, 'tranhquatdonglua', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/dong-lua.png', '0', 0, '2017-12-26 16:26:53', '2017-12-26 16:27:04'),
+(60, 'tranhquathinhcuoi', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/hinh-cuoi-001.png', '0', 0, '2017-12-26 16:28:25', '2017-12-26 16:28:25'),
+(61, 'tranhquatdongque', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/dong-que-cau-be-thoi-sao.png', '0', 0, '2017-12-26 16:30:09', '2017-12-26 16:30:09');
 
 -- --------------------------------------------------------
 
@@ -452,7 +458,13 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (50, 52, 'vi', 'Sơn dầu hoa 010', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 15:44:27', '2017-12-22 15:44:40'),
 (51, 53, 'vi', 'Sơn dầu trừu tượng 001', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 15:45:19', '2017-12-22 15:45:19'),
 (52, 54, 'vi', 'Sơn dầu trừu tượng 002', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 15:45:55', '2017-12-22 15:45:55'),
-(53, 55, 'vi', 'Sơn dầu trừu tượng 003', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 15:46:21', '2017-12-22 15:46:21');
+(53, 55, 'vi', 'Sơn dầu trừu tượng 003', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 15:46:21', '2017-12-22 15:46:21'),
+(54, 56, 'vi', 'Tranh quạt hoa 001', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 10:00:21', '2017-12-26 10:00:46'),
+(55, 57, 'vi', 'Tranh quạt đồng quê 001', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 10:04:06', '2017-12-26 10:04:06'),
+(56, 58, 'vi', 'Tranh quạt châm ngôn tình thương gia đình', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 10:11:17', '2017-12-26 10:11:17'),
+(57, 59, 'vi', 'Tranh quạt đồng lúa', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 16:26:53', '2017-12-26 16:27:04'),
+(58, 60, 'vi', 'Tranh quạt hình cưới 001', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 16:28:25', '2017-12-26 16:28:25'),
+(59, 61, 'vi', 'Tranh quạt đồng quê', '', '', '', '', '', '', '', '2017-12-26 16:30:09', '2017-12-26 16:30:09');
 
 -- --------------------------------------------------------
 
@@ -529,7 +541,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `birth_day`, `phone`, `address`, `profile`, `modified_date`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514013899, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
+(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514280193, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
 (19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1513957558, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
 (20, '127.0.0.1', 'ducvinhart', '$2y$08$ZDxtMSyWgZ5sELEiMkQNfuFKdbCcS0A/0Xf6KSSGZmpTUl55oLPvm', NULL, 'tonhuyen@ducvinhart.com', NULL, NULL, NULL, NULL, 1512138626, 1512139771, 1, 'Mỹ thuật', 'Đức Vinh', 'ducvinhart', '', '123456', NULL, NULL, NULL);
 
@@ -736,7 +748,7 @@ ALTER TABLE `manufacturer`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `page_content`
@@ -760,7 +772,7 @@ ALTER TABLE `payment_detail`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `product_images`
@@ -772,7 +784,7 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `product_translation`
 --
 ALTER TABLE `product_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `slider`

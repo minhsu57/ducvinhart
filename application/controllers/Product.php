@@ -90,7 +90,7 @@ class Product extends Public_Controller {
         $this->data['product_images'] = $this->product_images_model->get_list($input_image);
         // get list products same type
         $input['where'] = array('cate_id' => $this->data['item']->cate_id);
-        $input['limit'] = array('4','0');
+        $input['limit'] = array('6','0');
         $this->data['products'] = $this->product_model->get_list_product($input);
         $this->render('user/product_detail_view');       
     }

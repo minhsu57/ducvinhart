@@ -102,8 +102,8 @@
             <div class="container">
                 <div class="col-md-12 new-products fadeInLeft animated">
                     <?php foreach ($products as $key => $value) { ?>                       
-                    <div class="col-md-3">
-                        <div class="item4">
+                    <div class="item4">
+                        <div >
                             <a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>"><img src="<?php echo base_url($value->image); ?>" alt="<?php echo $value->name; ?>"/></a>
                             <div class="item-info4">
                                 <h4><a href="<?php echo base_url(create_slug($value->name).'-'.$value->id); ?>"><?php echo $value->name; ?></a></h4>
