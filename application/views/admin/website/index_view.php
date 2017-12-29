@@ -145,7 +145,27 @@
                         <?php echo form_error('home_introduce_content','<p class="error">'); ?>
                     </div>
                 </div>
-            </div>  
+            </div>
+            <div class="form-group col-md-6 col-lg-6">
+                <label>Header - Backgroud<span class="error">*</span></label>
+                <?php echo form_error('header_bg','<p class="error">'); ?>
+                <div>
+                    <input type="hidden" name="header_bg" id="header_bg" value="<?php echo set_value("header_bg",$item->header_bg); ?>">
+                    <img src="<?php echo base_url(set_value("header_bg",$item->header_bg)); ?>" id="header_bg_link" style="max-height: 50px; margin-bottom: 5px; cursor: pointer;" onclick="openPopupHeaderBg()" name="header_bg_link">
+                    <span>
+                        <button type="button" class="btn btn-default" onclick="openPopupHeaderBg()"><li class="fa fa-image"></li> Browse Image</button>
+                    </span>
+                </div>
+                <label>Body - Backgroud<span class="error">*</span></label>
+                <?php echo form_error('body_bg','<p class="error">'); ?>
+                <div>
+                    <input type="hidden" name="body_bg" id="body_bg" value="<?php echo set_value("body_bg",$item->body_bg); ?>">
+                    <img src="<?php echo base_url(set_value("body_bg",$item->body_bg)); ?>" id="body_bg_link" style="max-height: 50px; margin-bottom: 5px; cursor: pointer;" onclick="openPopupBodyBg()" name="body_bg_link">
+                    <span>
+                        <button type="button" class="btn btn-default" onclick="openPopupBodyBg()"><li class="fa fa-image"></li> Browse Image</button>
+                    </span>
+                </div>
+            </div>   
             <!-- AJAX Response will be outputted on this DIV container -->
             <?php echo form_hidden('id',$item->id);?>
 
@@ -183,6 +203,38 @@
                finder.on( 'file:choose:resizedImage', function( evt ) {
                    document.getElementById('home_introduce_image').value = evt.data.resizedUrl;
                    document.getElementById( 'home_introduce_link_img' ).src = base_url+evt.data.resizedUrl;
+               } );
+           }
+       } );
+   }
+   function openPopupHeaderBg() {
+       CKFinder.popup( {
+           chooseFiles: true,
+           onInit: function( finder ) {
+               finder.on( 'files:choose', function( evt ) {
+                   var file = evt.data.files.first();
+                   document.getElementById( 'header_bg' ).value = file.getUrl();
+                   document.getElementById( 'header_bg_link' ).src = base_url+file.getUrl();
+               } );
+               finder.on( 'file:choose:resizedImage', function( evt ) {
+                   document.getElementById('header_bg').value = evt.data.resizedUrl;
+                   document.getElementById( 'header_bg_link' ).src = base_url+evt.data.resizedUrl;
+               } );
+           }
+       } );
+   }
+   function openPopupBodyBg() {
+       CKFinder.popup( {
+           chooseFiles: true,
+           onInit: function( finder ) {
+               finder.on( 'files:choose', function( evt ) {
+                   var file = evt.data.files.first();
+                   document.getElementById( 'body_bg' ).value = file.getUrl();
+                   document.getElementById( 'body_bg_link' ).src = base_url+file.getUrl();
+               } );
+               finder.on( 'file:choose:resizedImage', function( evt ) {
+                   document.getElementById('body_bg').value = evt.data.resizedUrl;
+                   document.getElementById( 'body_bg_link' ).src = base_url+evt.data.resizedUrl;
                } );
            }
        } );

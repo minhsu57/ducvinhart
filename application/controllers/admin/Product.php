@@ -90,6 +90,10 @@ class Product extends Admin_Controller
                 } else {
                     $this->postal->add('Tạo mới thất bại.', 'success');
                 }
+                $cate_no = $this->input->post('cate_no');
+                $cate_name = $this->input->post('cate_name');
+                $model_no = $this->input->post('model_no');
+                redirect('admin/product?category='.$cate_no.'&name='.$cate_name.'&model='.$model_no);
                 redirect('admin/product');
             }                     
         }else{
@@ -156,7 +160,10 @@ class Product extends Admin_Controller
                 } else {
                     $this->postal->add('Cập nhật thất bại.', 'success');
                 }
-                redirect('admin/product');
+                $cate_no = $this->input->post('cate_no');
+                $cate_name = $this->input->post('cate_name');
+                $model_no = $this->input->post('model_no');
+                redirect('admin/product?category='.$cate_no.'&name='.$cate_name.'&model='.$model_no);
             }            
         }else{
             $this->render('admin/product/edit_view');

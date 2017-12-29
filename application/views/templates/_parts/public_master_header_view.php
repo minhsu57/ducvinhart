@@ -28,10 +28,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 	</div>
-	<div class="header_top">
+	<div class="header_top" style="background-image: url(<?php echo $website->header_bg; ?>);">
 		<div class="container">
 			<div class="logo">
-				<a href="<?php echo base_url(); ?>" class="col-md-4 pull-left"><img width="130px" src="<?php echo public_helper('upload/images/logo/logo.png') ?>" alt=""/></a>
+				<a href="<?php echo base_url(); ?>" class="pull-left"><img width="130px" src="<?php echo $website->favicon; ?>" alt="<?php echo $website->website_name; ?>"/></a>
 				<div class="slogan col-md-8">
 					<h1><?php echo $website->website_name; ?></h1>
 					<h2><span class="slogan_small"><?php echo $website->slogan; ?></span></h2>
@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 	<!---->
+	<!-- <img src="<?php echo public_helper('upload/images/logo/aaa.jpg') ?>"> -->
 	<div class="menu_sec">
 		<div class="container">
 			<div class="">

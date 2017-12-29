@@ -42,8 +42,10 @@ class Website extends Admin_Controller
             $footer_content_2 = $this->input->post('footer_content_2');
             $footer_content_3 = $this->input->post('footer_content_3');
             $home_introduce_image = $this->input->post('home_introduce_image');
+            $header_bg = $this->input->post('header_bg');
+            $body_bg = $this->input->post('body_bg');
             $home_introduce_content = $this->input->post('home_introduce_content');
-            $update_data = array('website_name' => $website_name,'facebook' => $facebook, 'youtube' => $youtube, 'google_plus' => $google_plus, 'phone' => $phone, 'google_map' => $google_map, 'email' => $email, 'admin_email' => $admin_email, 'address' => $address, 'slogan' => $slogan, 'keyword'=>$keyword, 'favicon' => $favicon, 'footer_content_1' => $footer_content_1, 'footer_content_2' => $footer_content_2, 'footer_content_3' => $footer_content_3, 'home_introduce_image' => $home_introduce_image, 'home_introduce_content' => $home_introduce_content, 'modified_date'=>date('Y-m-d'));
+            $update_data = array('website_name' => $website_name,'facebook' => $facebook, 'youtube' => $youtube, 'google_plus' => $google_plus, 'phone' => $phone, 'google_map' => $google_map, 'email' => $email, 'admin_email' => $admin_email, 'address' => $address, 'slogan' => $slogan, 'keyword'=>$keyword, 'favicon' => $favicon, 'footer_content_1' => $footer_content_1, 'footer_content_2' => $footer_content_2, 'footer_content_3' => $footer_content_3, 'home_introduce_image' => $home_introduce_image, 'home_introduce_content' => $home_introduce_content,  'header_bg' => $header_bg, 'body_bg' => $body_bg,'modified_date'=>date('Y-m-d'));
             if(!$this->website_model->update($id, $update_data))
             {             
                 $this->postal->add('Update failed !','error');

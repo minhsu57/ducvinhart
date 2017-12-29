@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2017 at 10:30 AM
+-- Generation Time: Dec 29, 2017 at 10:28 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -311,7 +311,6 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (8, '12123a', 1, 0, 0, '12312313', '', '123123123', 0, NULL, 20, '/public/upload/images/tranh-quat/IMG_005.png', '123123', 0, '2017-11-25 23:42:00', '2017-12-22 08:16:49'),
 (12, 'ho01101', 1, 0, 0, '1x2x3', '', '100g', 0, NULL, 20, '/public/upload/images/tranh-quat/ho.png', '1200000', 0, '2017-11-27 10:48:38', '2017-12-22 08:17:23'),
 (13, 'DUCME001', 1, 0, 0, '10x22x2', '', '100g', 0, NULL, 20, '/public/upload/images/tranh-quat/duc%20me02.png', '1500000', 0, '2017-11-27 13:09:18', '2017-12-22 08:17:11'),
-(14, 'SM001', 1, 0, 0, '10x2x2', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/IMG1.png', '300000', 0, '2017-11-29 23:30:17', '2017-12-22 08:17:00'),
 (15, 'tcmn001', 1, 0, 0, '0', '', '0', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/bach-ma.png', '500000', 0, '2017-11-30 18:49:42', '2017-12-01 13:07:33'),
 (16, 'tcmn002', 1, 0, 0, '0', '', '0', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/hoa-hong.png', '0', 0, '2017-11-30 18:50:30', '2017-12-01 13:07:40'),
 (17, 'tcmn003', 1, 0, 0, '0', '', '0', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/hoa-mai.png', '0', 0, '2017-12-01 13:09:07', '2017-12-01 13:09:07'),
@@ -358,7 +357,16 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (58, 'tranhquattinhthuonggiadinh', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/cau-ca-thuyen-song-nuoc.png', '0', 0, '2017-12-26 10:11:17', '2017-12-26 10:11:17'),
 (59, 'tranhquatdonglua', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/dong-lua.png', '0', 0, '2017-12-26 16:26:53', '2017-12-26 16:27:04'),
 (60, 'tranhquathinhcuoi', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/hinh-cuoi-001.png', '0', 0, '2017-12-26 16:28:25', '2017-12-26 16:28:25'),
-(61, 'tranhquatdongque', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/dong-que-cau-be-thoi-sao.png', '0', 0, '2017-12-26 16:30:09', '2017-12-26 16:30:09');
+(61, 'tranhquatdongque', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/dong-que-cau-be-thoi-sao.png', '0', 0, '2017-12-26 16:30:09', '2017-12-26 16:30:09'),
+(62, 'tranhquatmanhho', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/manh-ho-thac-nuoc.png', '0', 0, '2017-12-29 15:52:02', '2017-12-29 15:52:02'),
+(63, 'tranhquatsongdieu', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/song-dieu.png', '0', 0, '2017-12-29 16:12:38', '2017-12-29 16:12:38'),
+(64, 'tranhquatducme', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/me.png', '0', 0, '2017-12-29 16:13:53', '2017-12-29 16:13:53'),
+(65, 'tranhquatthacnuoc', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/thac%20moi.png', '0', 0, '2017-12-29 16:14:43', '2017-12-29 16:14:43'),
+(66, 'tranhquatthacnuoc001', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/Thac%20TT.png', '0', 0, '2017-12-29 16:15:33', '2017-12-29 16:15:33'),
+(67, 'tranhquatthuyen', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/thuyen-song-nuoc.png', '0', 0, '2017-12-29 16:15:59', '2017-12-29 16:15:59'),
+(68, 'tranhquattiecly', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/Tiec%20ly.png', '0', 0, '2017-12-29 16:16:42', '2017-12-29 16:16:42'),
+(69, 'tranhquattraunuoc', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/tranh-quat-trau.png', '0', 0, '2017-12-29 16:17:14', '2017-12-29 16:17:14'),
+(70, 'tranhquattunghac', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/tung%20hac.png', '0', 0, '2017-12-29 16:20:34', '2017-12-29 16:28:12');
 
 -- --------------------------------------------------------
 
@@ -379,7 +387,6 @@ CREATE TABLE `product_images` (
 
 INSERT INTO `product_images` (`id`, `product_id`, `image`, `sort_order`) VALUES
 (71, 8, '/public/upload/images/scan0002.jpg', ''),
-(72, 14, '/public/upload/images/tranh-quat/IMG1.png', ''),
 (73, 12, '/public/upload/images/tranh-quat/ho.png', ''),
 (74, 33, '/public/upload/images/son-mai-hien-dai/GM%20%20(6).png', ''),
 (75, 21, '/public/upload/images/khung-tranh-nghe-thuat/100_0372.png', ''),
@@ -417,7 +424,6 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (6, 8, 'vi', 'Tranh quạt màu vàng', 'asf', '<ul>\r\n	<li>Dimensions: 3 Seater: Length 208 x Width 81 x Height 91.5 cm and 1 Seater: Length 99 x Width 81 x Height 91.5 cm</li>\r\n	<li>Assembly Type: Pre Assembled</li>\r\n	<li>Material: Wooden Structure, Chemical Treated And Seasoned Wood, 19 mm and 12 mm Commercial Ply and Mdf Used On Visible Parts</li>\r\n	<li>Looks amazing in a contemporary setting</li>\r\n	<li>Colour: Brown Jute, Sheron Brown</li>\r\n	<li>Type: Spencer 3 plus 1 plus 1 Sofa Set With 5 Big Cushions and 6 Small Cushions, Wooden Handle</li>\r\n	<li>Long lasting, durable and easy to use product</li>\r\n	<li>Contents: 3 Pc</li>\r\n	<li>Delivery Time: 7 to 10 days from the Day of Dispatch</li>\r\n	<li>Very classy and contemporary design</li>\r\n	<li>SUPC: SHG21458689652</li>\r\n	<li>Material: High Density Foam and Fabric</li>\r\n</ul>\r\n', 'đá', 'xám nhạt kết hợp xanh ngọc', 'Đức Vinh Art', '123123', '1asdfasdfasdf', '2017-11-25 23:42:00', '2017-12-22 08:16:49'),
 (10, 12, 'vi', 'Tranh quạt hình hổ', 'Dimensions: 3 Seater: Length 208 x Width 81 x Height 91.5 cm and 1 Seater: Length 99 x Width 81 x Height 91.5 cm\r\nAssembly Type: Pre Assembled\r\nMaterial: Wooden Structure, Chemical Treated And Seasoned Wood, 19 mm and 12 mm Commercial Ply and Mdf Used On ', '<ul>\r\n	<li>Dimensions: 3 Seater: Length 208 x Width 81 x Height 91.5 cm and 1 Seater: Length 99 x Width 81 x Height 91.5 cm</li>\r\n	<li>Assembly Type: Pre Assembled</li>\r\n	<li>Material: Wooden Structure, Chemical Treated And Seasoned Wood, 19 mm and 12 mm Commercial Ply and Mdf Used On Visible Parts</li>\r\n	<li>Looks amazing in a contemporary setting</li>\r\n	<li>Colour: Brown Jute, Sheron Brown</li>\r\n	<li>Type: Spencer 3 plus 1 plus 1 Sofa Set With 5 Big Cushions and 6 Small Cushions, Wooden Handle</li>\r\n	<li>Long lasting, durable and easy to use product</li>\r\n	<li>Contents: 3 Pc</li>\r\n	<li>Delivery Time: 7 to 10 days from the Day of Dispatch</li>\r\n	<li>Very classy and contemporary design</li>\r\n	<li>SUPC: SHG21458689652</li>\r\n	<li>Material: High Density Foam and Fabric</li>\r\n</ul>\r\n', 'Giấy, Tre', 'Xanh nõn chuối', 'Đức Vinh Art', '', '', '2017-11-27 10:48:39', '2017-12-22 08:17:23'),
 (11, 13, 'vi', 'Tranh quạt hình Đức Mẹ', 'Được vẽ từng chi tiết bằng sơn mài, tranh quạt tạo ra sự khác biệt giữa các loại quạt bình thường được vẽ bằng các công nghệ vi tính', '<ul>\r\n	<li>Dimensions: 3 Seater: Length 208 x Width 81 x Height 91.5 cm and 1 Seater: Length 99 x Width 81 x Height 91.5 cm</li>\r\n	<li>Assembly Type: Pre Assembled</li>\r\n	<li>Material: Wooden Structure, Chemical Treated And Seasoned Wood, 19 mm and 12 mm Commercial Ply and Mdf Used On Visible Parts</li>\r\n	<li>Looks amazing in a contemporary setting</li>\r\n	<li>Colour: Brown Jute, Sheron Brown</li>\r\n	<li>Type: Spencer 3 plus 1 plus 1 Sofa Set With 5 Big Cushions and 6 Small Cushions, Wooden Handle</li>\r\n	<li>Long lasting, durable and easy to use product</li>\r\n	<li>Contents: 3 Pc</li>\r\n	<li>Delivery Time: 7 to 10 days from the Day of Dispatch</li>\r\n	<li>Very classy and contemporary design</li>\r\n	<li>SUPC: SHG21458689652</li>\r\n	<li>Material: High Density Foam and Fabric</li>\r\n</ul>\r\n', 'Giấy', 'xanh', 'Đức Vinh Art', '', '', '2017-11-27 13:09:18', '2017-12-22 08:17:11'),
-(12, 14, 'vi', 'Tranh quạt sơn mài', '', '', 'gỗ', 'vàng', 'Đức Vinh Art', '', '', '2017-11-29 23:30:17', '2017-12-22 08:17:00'),
 (13, 15, 'vi', 'Thủ công mỹ nghệ 001', '', '', 'Gỗ', '', 'Đức Vinh Art', '', '', '2017-11-30 18:49:42', '2017-12-01 13:07:34'),
 (14, 16, 'vi', 'Thủ công mỹ nghệ 002', '', '', 'Gỗ', 'Xám', 'Đức Vinh Art', '', '', '2017-11-30 18:50:30', '2017-12-01 13:07:40'),
 (15, 17, 'vi', 'Thủ công mỹ nghệ 003', '', '', 'Gỗ', '', 'Đức Vinh Art', '', '', '2017-12-01 13:09:07', '2017-12-01 13:09:07'),
@@ -464,7 +470,16 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (56, 58, 'vi', 'Tranh quạt châm ngôn tình thương gia đình', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 10:11:17', '2017-12-26 10:11:17'),
 (57, 59, 'vi', 'Tranh quạt đồng lúa', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 16:26:53', '2017-12-26 16:27:04'),
 (58, 60, 'vi', 'Tranh quạt hình cưới 001', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-26 16:28:25', '2017-12-26 16:28:25'),
-(59, 61, 'vi', 'Tranh quạt đồng quê', '', '', '', '', '', '', '', '2017-12-26 16:30:09', '2017-12-26 16:30:09');
+(59, 61, 'vi', 'Tranh quạt đồng quê', '', '', '', '', '', '', '', '2017-12-26 16:30:09', '2017-12-26 16:30:09'),
+(60, 62, 'vi', 'Tranh quạt mãnh hổ', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 15:52:02', '2017-12-29 15:52:02'),
+(61, 63, 'vi', 'Tranh quạt song điêu', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:12:38', '2017-12-29 16:12:38'),
+(62, 64, 'vi', 'Tranh quạt đức mẹ', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:13:53', '2017-12-29 16:13:53'),
+(63, 65, 'vi', 'Tranh quạt thác nước', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:14:43', '2017-12-29 16:14:43'),
+(64, 66, 'vi', 'Tranh quạt thác nước', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:15:33', '2017-12-29 16:15:33'),
+(65, 67, 'vi', 'Tranh quạt thuyền sông nước', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:15:59', '2017-12-29 16:15:59'),
+(66, 68, 'vi', 'Tranh quạt tiệc ly', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:16:42', '2017-12-29 16:16:42'),
+(67, 69, 'vi', 'Tranh quạt trâu nước', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:17:15', '2017-12-29 16:17:15'),
+(68, 70, 'vi', 'Tranh quạt tùng hạc', '', '', '', '', '', '', '', '2017-12-29 16:20:34', '2017-12-29 16:28:13');
 
 -- --------------------------------------------------------
 
@@ -541,7 +556,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `birth_day`, `phone`, `address`, `profile`, `modified_date`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514280193, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
+(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514534472, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
 (19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1513957558, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
 (20, '127.0.0.1', 'ducvinhart', '$2y$08$ZDxtMSyWgZ5sELEiMkQNfuFKdbCcS0A/0Xf6KSSGZmpTUl55oLPvm', NULL, 'tonhuyen@ducvinhart.com', NULL, NULL, NULL, NULL, 1512138626, 1512139771, 1, 'Mỹ thuật', 'Đức Vinh', 'ducvinhart', '', '123456', NULL, NULL, NULL);
 
@@ -599,6 +614,8 @@ CREATE TABLE `website` (
   `footer_content_3` text NOT NULL,
   `home_introduce_image` varchar(255) NOT NULL,
   `home_introduce_content` text NOT NULL,
+  `header_bg` varchar(255) NOT NULL,
+  `body_bg` varchar(255) NOT NULL,
   `modified_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -606,9 +623,9 @@ CREATE TABLE `website` (
 -- Dumping data for table `website`
 --
 
-INSERT INTO `website` (`id`, `language_slug`, `website_name`, `favicon`, `facebook`, `youtube`, `google_plus`, `twitter`, `sidebar`, `phone`, `mobile_phone`, `google_map`, `email`, `admin_email`, `address`, `slogan`, `keyword`, `meta_description`, `visitor`, `footer_content_1`, `footer_content_2`, `footer_content_3`, `home_introduce_image`, `home_introduce_content`, `modified_date`) VALUES
-('common-info-en', 'en', 'EHOUSE COFFEE', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', NULL, '', '', '', '0', '', '0000-00-00 00:00:00'),
-('common-info-vi', 'vi', 'Đức Vinh <b>Art Workshop</b>', '/public/upload/images/logo/logo.png', 'https://www.facebook.com/Tranhquatducvinh/', '#', '#', '#', '<p><strong>VIDEO</strong></p>\r\n\r\n<p><iframe frameborder=\"0\" scrolling=\"no\" src=\"https://www.youtube.com/embed/ejXrGoHFGJQ\"></iframe></p>\r\n\r\n<p><strong>Luyện Nh&oacute;m</strong></p>\r\n\r\n<p><a href=\"/english/luyen-noi-nhom-4-5-ban-cung-100-gvnn\"><img alt=\"\" src=\"/public/upload/images/slider2.jpg\" style=\"width:300px\" /></a></p>\r\n', '0919512920', '', '10.950106, 106.812736', 'ducvinhart77@gmail.com', 'ducvinhart77@gmail.com,minhsu0602@gmail.com', '388/68 Huỳnh Văn Lũy, P. Quang Vinh, TP. Biên Hòa, Đồng Nai', 'vì mái ấm gia đình bạn', '<p><a href=\"/san-pham/tranh-quat\">Tranh quạt</a><a href=\"/san-pham/noi-that-son-mai\">Nội thất sơn m&agrave;i</a><a href=\"/san-pham/tranh-son-mai\">Tranh sơn m&agrave;i</a><a href=\"/san-pham/khung-tranh\">Khung tranh</a><a href=\"/san-pham/thu-cong-my-nghe\">Thủ c&ocirc;ng mỹ nghệ</a><a href=\"/san-pham/trang-tri\">Trang tr&iacute;</a></p>\r\n', '', NULL, '<ul>\r\n	<li><a href=\"#\">&gt; Bảng gi&aacute; tranh - khung tranh (Tham khảo)</a></li>\r\n	<li><a href=\"http://ducvinhart/chuyen-de/phuong-thuc-thanh-toan-12\">&gt; Phương thức thanh to&aacute;n - mua h&agrave;ng</a></li>\r\n	<li><a href=\"#\">&gt; Phương thức vận chuyển</a></li>\r\n	<li><a href=\"#\">&gt; Dịch vụ của ch&uacute;ng t&ocirc;i</a></li>\r\n</ul>\r\n', '<ul>\r\n	<li><a href=\"#\">Mỹ thuật Đức Vinh</a></li>\r\n	<li><a href=\"#\">Điện thoại - 0919512920</a></li>\r\n	<li><a href=\"#\">Địa chỉ -&nbsp;</a>388/68 Huỳnh Văn Lũy, P. Quang Vinh, TP. Bi&ecirc;n H&ograve;a, Đồng Nai</li>\r\n</ul>\r\n', '<ul>\r\n	<li><a href=\"#\">Trang chủ</a></li>\r\n	<li><a href=\"product.html\">T</a><a href=\"http://san-pham/tranh-quat\">ranh quạt</a></li>\r\n	<li><a href=\"#\">T</a><a href=\"/san-pham/tranh-son-dau\">ranh sơn dầu</a></li>\r\n	<li><a href=\"/san-pham/tranh-son-mai\">Tranh sơn m&agrave;i</a></li>\r\n	<li><a href=\"#\">Li&ecirc;n hệ</a></li>\r\n</ul>\r\n', '/public/upload/images/introduce-pic.jpg', '<p><strong>Giới thiệu:</strong></p>\r\n\r\n<p><strong>Xem c&aacute;i đẹp v&agrave; nghệ thuật n&acirc;ng tầm gi&aacute; trị sống,</strong><br />\r\n<em>Lu&ocirc;n s&aacute;ng tạo v&agrave; hiện thực &yacute; tưởng của qu&yacute; kh&aacute;ch.</em></p>\r\n\r\n<p>Đức Vinh Art workshop l&agrave; trang trực tuyến chuy&ecirc;n cung cấp sản phẩm v&agrave; dịch vụ về hội hoạ, Sản phẩm thủ c&ocirc;ng, Trang tr&iacute; &ndash; Trưng b&agrave;y. Ngo&agrave;i ra trang c&ograve;n phục vụ Tư vấn &ndash; Thiết kế &ndash; Thi c&ocirc;ng cảnh quan mang đến những dịch vụ đa dạng, phong ph&uacute; nhằm thoả m&atilde;n nhu cầu của qu&yacute; kh&aacute;ch h&agrave;ng.</p>\r\n\r\n<p><strong>Tầm nh&igrave;n:&nbsp;</strong><em>Nghệ thuật lu&ocirc;n hữu h&igrave;nh v&agrave; v&ocirc; tận &ndash; để mang những t&aacute;c phẩm n&acirc;ng tầm thẩm mĩ, gi&aacute; trị sống cho qu&yacute; kh&aacute;ch</em>. Đức Vinh Art workshop&nbsp; thấu hiểu nhu cầu cần thiết về trang tr&iacute; kh&ocirc;ng gian sống, nơi l&agrave;m việc &ndash; văn ph&ograve;ng kinh doanh. Trang l&agrave; nơi tập hợp, khuyến kh&iacute;ch c&aacute;c bạn hoạt động c&ugrave;ng ng&agrave;nh nghề cộng t&aacute;c, đồng thời l&agrave; đối t&aacute;c ti&ecirc;n phong ở c&aacute;c l&atilde;nh vực văn ho&aacute; nghệ thuật.</p>\r\n\r\n<p>C&aacute;c Sản phẩm v&agrave; Dịch vụ của ch&uacute;ng t&ocirc;i:&nbsp;<em>Tranh Sơn Dầu, Tranh Quạt, Tranh Sơn m&agrave;i, Nội thất sơn m&agrave;i, Tranh ph&ugrave; đi&ecirc;u, Khung tranh, Thủ c&ocirc;ng mỹ nghệ, Thư ph&aacute;p Việt, ...</em></p>\r\n', '2017-12-22 00:00:00');
+INSERT INTO `website` (`id`, `language_slug`, `website_name`, `favicon`, `facebook`, `youtube`, `google_plus`, `twitter`, `sidebar`, `phone`, `mobile_phone`, `google_map`, `email`, `admin_email`, `address`, `slogan`, `keyword`, `meta_description`, `visitor`, `footer_content_1`, `footer_content_2`, `footer_content_3`, `home_introduce_image`, `home_introduce_content`, `header_bg`, `body_bg`, `modified_date`) VALUES
+('common-info-en', 'en', 'EHOUSE COFFEE', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', NULL, '', '', '', '0', '', '', '', '0000-00-00 00:00:00'),
+('common-info-vi', 'vi', 'ĐứcVinh <b>Art Store</b>', '/public/upload/images/logo/logo-2.png', 'https://www.facebook.com/Tranhquatducvinh/', '#', '#', '#', '<p><strong>VIDEO</strong></p>\r\n\r\n<p><iframe frameborder=\"0\" scrolling=\"no\" src=\"https://www.youtube.com/embed/ejXrGoHFGJQ\"></iframe></p>\r\n\r\n<p><strong>Luyện Nh&oacute;m</strong></p>\r\n\r\n<p><a href=\"/english/luyen-noi-nhom-4-5-ban-cung-100-gvnn\"><img alt=\"\" src=\"/public/upload/images/slider2.jpg\" style=\"width:300px\" /></a></p>\r\n', '0919512920', '', '10.950106, 106.812736', 'ducvinhart77@gmail.com', 'ducvinhart77@gmail.com,minhsu0602@gmail.com', '388/68 Huỳnh Văn Lũy, P. Quang Vinh, TP. Biên Hòa, Đồng Nai', 'Vì mái ấm gia đình bạn', '<p><a href=\"/san-pham/tranh-quat\">Tranh quạt</a><a href=\"/san-pham/noi-that-son-mai\">Nội thất sơn m&agrave;i</a><a href=\"/san-pham/tranh-son-mai\">Tranh sơn m&agrave;i</a><a href=\"/san-pham/khung-tranh\">Khung tranh</a><a href=\"/san-pham/thu-cong-my-nghe\">Thủ c&ocirc;ng mỹ nghệ</a><a href=\"/san-pham/trang-tri\">Trang tr&iacute;</a></p>\r\n', '', NULL, '<ul>\r\n	<li><a href=\"#\">&gt; Bảng gi&aacute; tranh - khung tranh (Tham khảo)</a></li>\r\n	<li><a href=\"http://ducvinhart/chuyen-de/phuong-thuc-thanh-toan-12\">&gt; Phương thức thanh to&aacute;n - mua h&agrave;ng</a></li>\r\n	<li><a href=\"#\">&gt; Phương thức vận chuyển</a></li>\r\n	<li><a href=\"#\">&gt; Dịch vụ của ch&uacute;ng t&ocirc;i</a></li>\r\n</ul>\r\n', '<ul>\r\n	<li><a href=\"#\">Mỹ thuật Đức Vinh</a></li>\r\n	<li><a href=\"#\">Điện thoại - 0919512920</a></li>\r\n	<li><a href=\"#\">Địa chỉ -&nbsp;</a>388/68 Huỳnh Văn Lũy, P. Quang Vinh, TP. Bi&ecirc;n H&ograve;a, Đồng Nai</li>\r\n</ul>\r\n', '<ul>\r\n	<li><a href=\"#\">Trang chủ</a></li>\r\n	<li><a href=\"product.html\">T</a><a href=\"http://san-pham/tranh-quat\">ranh quạt</a></li>\r\n	<li><a href=\"#\">T</a><a href=\"/san-pham/tranh-son-dau\">ranh sơn dầu</a></li>\r\n	<li><a href=\"/san-pham/tranh-son-mai\">Tranh sơn m&agrave;i</a></li>\r\n	<li><a href=\"#\">Li&ecirc;n hệ</a></li>\r\n</ul>\r\n', '/public/upload/images/introduce-pic.jpg', '<p><strong>Giới thiệu:</strong></p>\r\n\r\n<p><strong>Xem c&aacute;i đẹp v&agrave; nghệ thuật n&acirc;ng tầm gi&aacute; trị sống,</strong><br />\r\n<em>Lu&ocirc;n s&aacute;ng tạo v&agrave; hiện thực &yacute; tưởng của qu&yacute; kh&aacute;ch.</em></p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; Đức Vinh Art workshop l&agrave; trang trực tuyến chuy&ecirc;n cung cấp sản phẩm v&agrave; dịch vụ về hội hoạ, Sản phẩm thủ c&ocirc;ng, Trang tr&iacute; &ndash; Trưng b&agrave;y. Ngo&agrave;i ra trang c&ograve;n phục vụ Tư vấn &ndash; Thiết kế &ndash; Thi c&ocirc;ng cảnh quan mang đến những dịch vụ đa dạng, phong ph&uacute; nhằm thoả m&atilde;n nhu cầu của qu&yacute; kh&aacute;ch h&agrave;ng.</p>\r\n\r\n<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; Tầm nh&igrave;n:&nbsp;</strong><em>Nghệ thuật lu&ocirc;n hữu h&igrave;nh v&agrave; v&ocirc; tận &ndash; để mang những t&aacute;c phẩm n&acirc;ng tầm thẩm mĩ, gi&aacute; trị sống cho qu&yacute; kh&aacute;ch</em>. Đức Vinh Art workshop&nbsp; thấu hiểu nhu cầu cần thiết về trang tr&iacute; kh&ocirc;ng gian sống, nơi l&agrave;m việc &ndash; văn ph&ograve;ng kinh doanh. Trang l&agrave; nơi tập hợp, khuyến kh&iacute;ch c&aacute;c bạn hoạt động c&ugrave;ng ng&agrave;nh nghề cộng t&aacute;c, đồng thời l&agrave; đối t&aacute;c ti&ecirc;n phong ở c&aacute;c l&atilde;nh vực văn ho&aacute; nghệ thuật.</p>\r\n\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; C&aacute;c Sản phẩm v&agrave; Dịch vụ của ch&uacute;ng t&ocirc;i:&nbsp;<em>Tranh Sơn Dầu, Tranh Quạt, Tranh Sơn m&agrave;i, Nội thất sơn m&agrave;i, Tranh ph&ugrave; đi&ecirc;u, Khung tranh, Thủ c&ocirc;ng mỹ nghệ, Thư ph&aacute;p Việt, ...</em></p>\r\n', '/public/upload/images/background/header.png', '/public/upload/images/background/bg_body.jpg', '2017-12-29 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -772,7 +789,7 @@ ALTER TABLE `payment_detail`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `product_images`
@@ -784,7 +801,7 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `product_translation`
 --
 ALTER TABLE `product_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `slider`

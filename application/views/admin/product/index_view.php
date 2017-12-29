@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <a href="<?php echo base_url('admin/product/create') ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
+            <a href="<?php echo base_url('admin/product/create?category='.$this->input->get('category').'&name='.$this->input->get('name').'&model='.$this->input->get('model')) ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
         </div>
     </div>
     <div class="row" style="margin-top: 10px">
@@ -64,7 +64,7 @@
                     } ?></div></td>
                     <?php
                     echo '<td>';
-                    echo '<a href="product/edit/'.$item->id.'/'.$item->translation_id.'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
+                    echo '<a href="product/edit/'.$item->id.'/'.$item->translation_id.'?category='.$this->input->get('category').'&name='.$this->input->get('name').'&model='.$this->input->get('model').'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
                     echo '<a href="product/delete/'.$item->id.'" style="color:#fff" onclick="return confirm(\'Are you sure to delete ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
                     ?>
                     <?php

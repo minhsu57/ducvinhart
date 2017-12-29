@@ -24,7 +24,7 @@
                 ?>
                 <select class="form-control" name="category">
                     <?php foreach ($categories as $value) { ?>
-                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category', $value->cate_id); ?>><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id,( !empty($this->input->get('category')) && $this->input->get('category') == $value->cate_id ? TRUE : FALSE )); ?>><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -127,7 +127,9 @@
                 ?>
                 <textarea class="form-control" name="meta_description"><?php set_value("meta_description") ?></textarea>
             </div>
-
+            <input type="hidden" name="cate_no" value="<?php echo $this->input->get('category'); ?>">
+            <input type="hidden" name="cate_name" value="<?php echo $this->input->get('name'); ?>">
+            <input type="hidden" name="model_no" value="<?php echo $this->input->get('model'); ?>">
             <?php echo form_close();?>
         </div>
     </div>

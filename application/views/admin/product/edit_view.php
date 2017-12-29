@@ -134,7 +134,9 @@
                 ?>
                 <textarea class="form-control" name="meta_description"><?php echo set_value("meta_description",$item->meta_description) ?></textarea>
             </div>
-
+            <input type="hidden" name="cate_no" value="<?php echo $this->input->get('category'); ?>">
+            <input type="hidden" name="cate_name" value="<?php echo $this->input->get('name'); ?>">
+            <input type="hidden" name="model_no" value="<?php echo $this->input->get('model'); ?>">
             <?php echo form_close();?>
         </div>
     </div>
