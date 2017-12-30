@@ -8,25 +8,25 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <a href="<?php echo base_url('admin/product/create?category='.$this->input->get('category').'&name='.$this->input->get('name').'&model='.$this->input->get('model')) ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
+            <a href="<?php echo base_url('admin/product/create?cate_no='.$this->input->get('cate_no').'&cate_name='.$this->input->get('cate_name').'&model_no='.$this->input->get('model_no')) ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
         </div>
     </div>
     <div class="row" style="margin-top: 10px">
         <div class="col-xs-12">
             <form method="GET" action="<?php echo base_url('admin/product'); ?>">
                 <div class="col-lg-4 pd-l-0">
-                    <select class="form-control" name="category">                    
+                    <select class="form-control" name="cate_no">                    
                         <option value="">-- Chọn Category --</option>
                         <?php foreach ($categories as $value) { ?>
-                        <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id,( !empty($this->input->get('category')) && $this->input->get('category') == $value->cate_id ? TRUE : FALSE )); ?>  ><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
+                        <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('cate_no',$value->cate_id,( !empty($this->input->get('cate_no')) && $this->input->get('cate_no') == $value->cate_id ? TRUE : FALSE )); ?>  ><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="col-lg-4 pd-l-0">
-                    <input type="text" name="name" class="form-control" placeholder="Nhập tên để tìm kiếm" value="<?php echo $this->input->get('name'); ?>">
+                    <input type="text" name="cate_name" class="form-control" placeholder="Nhập tên để tìm kiếm" value="<?php echo $this->input->get('name'); ?>">
                 </div>
                 <div class="col-lg-4 pd-l-0">
-                    <input type="text" name="model" class="form-control" placeholder="Nhập model id để tìm kiếm" value="<?php echo $this->input->get('model'); ?>">
+                    <input type="text" name="model_no" class="form-control" placeholder="Nhập model id để tìm kiếm" value="<?php echo $this->input->get('model'); ?>">
                 </div>
                 
                 <button class="btn btn-primary btn-md pull-right"  type="submit"><li class="fa fa-search"></li> SEARCH</button>
@@ -64,8 +64,8 @@
                     } ?></div></td>
                     <?php
                     echo '<td>';
-                    echo '<a href="product/edit/'.$item->id.'/'.$item->translation_id.'?category='.$this->input->get('category').'&name='.$this->input->get('name').'&model='.$this->input->get('model').'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
-                    echo '<a href="product/delete/'.$item->id.'" style="color:#fff" onclick="return confirm(\'Are you sure to delete ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
+                    echo '<a href="'.base_url().'admin/product/edit/'.$item->id.'/'.$item->translation_id.'?cate_no='.$this->input->get('cate_no').'&cate_name='.$this->input->get('cate_name').'&model_no='.$this->input->get('model_no').'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
+                    echo '<a href="'.base_url().'admin/product/delete/'.$item->id.'" style="color:#fff" onclick="return confirm(\'Are you sure to delete ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
                     ?>
                     <?php
                     echo '</td>';
@@ -74,10 +74,12 @@
             }
             echo '</tbody>';
             echo '</table>';
-            echo '<nav><ul class="pagination">';
-            // echo //$next_previous_pages;
-            echo '</ul></nav>';
             ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <?php if(isset($pagination)) echo $pagination; ?>
         </div>
     </div>
 </div>

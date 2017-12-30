@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2017 at 10:28 AM
+-- Generation Time: Dec 30, 2017 at 10:25 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,12 +42,12 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `level`, `parent_id`, `image`, `sort_order`) VALUES
 (1, 0, '', '/public/upload/images/introduce-pic.jpg', '1'),
-(18, 1, '27', '/public/upload/images/son-mai-hien-dai/IMG_20140622_130620.png', '2.4'),
+(18, 1, '27', '/public/upload/images/noi-that-son-mai/11025677_10153187061573259_2251952327694919133_o.png', '2.4'),
 (19, 1, '27', '/public/upload/images/thu-phap/thu-phap-1.gif', '2.8'),
 (20, 1, '27', '/public/upload/images/tranh-quat/ho.png', '2.2'),
 (27, 0, '', '', '2'),
 (28, 0, '', '', '3'),
-(29, 1, '27', '/public/upload/images/son-mai-hien-dai/sen1.png', '2.3'),
+(29, 1, '27', '/public/upload/images/son-mai-hien-dai/sen-son-mai-001.png', '2.3'),
 (30, 1, '27', '/public/upload/images/khung-tranh-nghe-thuat/2007-01-18-23.58.png', '2.6'),
 (31, 1, '27', '/public/upload/images/thu-cong-my-nghe/IMG_0548.png', '2.7'),
 (32, 1, '28', '/public/upload/images/noi-that-son-mai/GIUONG-002-01.png', '3.3'),
@@ -95,13 +95,13 @@ CREATE TABLE `category_translation` (
 --
 
 INSERT INTO `category_translation` (`id`, `cate_id`, `lang_slug`, `name`, `name_slug`, `description`, `url_slug`, `meta_keyword`, `meta_description`, `created_date`, `modified_date`) VALUES
-(7, 18, 'vi', 'Nội thất sơn mài', 'noi-that-son-mai', NULL, '', 'nội thất', 'nội thất', '2017-11-23 14:01:11', '2017-12-21 23:11:50'),
+(7, 18, 'vi', 'Nội thất sơn mài', 'noi-that-son-mai', NULL, '', 'nội thất', 'nội thất', '2017-11-23 14:01:11', '2017-12-30 16:24:40'),
 (8, 19, 'vi', 'Thư pháp Việt', 'thu-phap-viet', NULL, '', 'trang trí nội thất', 'trang trí nội thất', '2017-11-23 14:01:26', '2017-12-22 01:09:09'),
 (9, 20, 'vi', 'Tranh Quạt', 'tranh-quat', NULL, '', 'tranh quạt', 'tranh quạt', '2017-11-23 14:03:00', '2017-12-22 01:10:28'),
 (15, 1, 'vi', 'Trang chủ', 'trang-chu', NULL, '', 'Tranh quạt, thủ công mỹ nghệ, nội thất sơn mài, tranh sơn dầu', 'Đức Vinh Art workshop là trang trực tuyến chuyên cung cấp sản phẩm và dịch vụ về hội hoạ, Sản phẩm thủ công, Trang trí – Trưng bày', '2017-11-26 14:49:45', '2017-12-05 21:28:38'),
 (16, 27, 'vi', 'Sản Phẩm', '', NULL, '', '', '', '2017-11-26 19:56:19', '2017-11-26 20:26:49'),
 (17, 28, 'vi', 'Dịch vụ', 'dich-vu', NULL, '', '', '', '2017-11-26 20:22:59', '2017-11-27 10:50:16'),
-(18, 29, 'vi', 'Tranh sơn mài', 'tranh-son-mai', NULL, '', '', '', '2017-11-26 20:40:46', '2017-11-30 00:23:27'),
+(18, 29, 'vi', 'Tranh sơn mài', 'tranh-son-mai', NULL, '', '', '', '2017-11-26 20:40:46', '2017-12-30 16:25:12'),
 (19, 30, 'vi', 'Khung tranh', 'khung-tranh', NULL, '', '', '', '2017-11-26 20:41:08', '2017-12-22 01:09:53'),
 (20, 31, 'vi', 'Thủ công mỹ nghệ', 'thu-cong-my-nghe', NULL, '', 'Thủ công mỹ nghệ', 'Thủ công mỹ nghệ', '2017-11-26 20:41:25', '2017-12-21 23:14:57'),
 (21, 32, 'vi', 'Trang trí - Trưng bài', 'trang-tri-trung-bai', NULL, '', '', '', '2017-11-26 20:46:01', '2017-12-22 00:53:12'),
@@ -317,17 +317,17 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (18, 'tcmn004', 1, 0, 0, '0', '', '0', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/IMG_0003.png', '0', 0, '2017-12-01 13:11:18', '2017-12-01 13:11:18'),
 (19, 'tcmn005', 1, 0, 0, '0', '', '0', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/IMG_0535.png', '0', 0, '2017-12-01 13:12:07', '2017-12-01 13:14:03'),
 (20, 'tcmn006', 1, 0, 0, '0', '', '0', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/IMG_0548.png', '0', 0, '2017-12-01 13:13:54', '2017-12-01 13:13:54'),
-(21, 'khungtranh001', 1, 0, 0, '0', '', '0', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/100_0369.png', '0', 0, '2017-12-01 14:07:41', '2017-12-22 15:16:22'),
+(21, 'khungtranh001', 1, 0, 0, '0', '', '0', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/100_0369.png', '0', 0, '2017-12-01 14:07:41', '2017-12-30 16:10:20'),
 (22, 'khungtranh002', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/DV0401.png', '0', 0, '2017-12-01 14:18:35', '2017-12-01 14:18:53'),
 (23, 'tusm001', 1, 0, 0, '', '', '0', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/100_0665.png', '0', 0, '2017-12-01 14:21:10', '2017-12-01 14:22:58'),
 (24, 'bansm001', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/100APPLE_IMG_0388.png', '0', 0, '2017-12-01 14:23:55', '2017-12-01 14:23:55'),
-(25, 'smhd01', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/GM%20%20(11).png', '0', 0, '2017-12-22 14:08:07', '2017-12-22 14:08:07'),
+(25, 'smhd01', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/GM%20%20(11).png', '0', 0, '2017-12-22 14:08:07', '2017-12-30 15:32:57'),
 (26, 'smhd02', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/GM%20%20(6).png', '0', 0, '2017-12-22 14:08:46', '2017-12-22 14:09:07'),
 (27, 'smhdcd01', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/hoa%201.png', '0', 0, '2017-12-22 14:09:46', '2017-12-22 14:10:13'),
 (28, 'smhdcd02', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/hoa%202.png', '0', 0, '2017-12-22 14:11:19', '2017-12-22 14:11:30'),
-(29, 'smhdcd03', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/IMG_0145.png', '0', 0, '2017-12-22 14:13:49', '2017-12-22 14:21:18'),
-(30, 'sms01', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/IMG_20140618_225857.png', '0', 0, '2017-12-22 14:15:10', '2017-12-22 14:15:56'),
-(31, 'sms02', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/IMG_20140622_130620.png', '0', 0, '2017-12-22 14:15:35', '2017-12-22 14:16:10'),
+(29, 'sonmaicodai', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/co-dai-001.png', '0', 0, '2017-12-22 14:13:49', '2017-12-30 15:23:30'),
+(30, 'sms01', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/sen-son-mai-001.png', '0', 0, '2017-12-22 14:15:10', '2017-12-30 15:21:31'),
+(31, 'sms02', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/hoa-son-mai-001.png', '0', 0, '2017-12-22 14:15:35', '2017-12-30 15:22:02'),
 (32, 'sms03', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/IMG_20140629_083043.png', '0', 0, '2017-12-22 14:31:46', '2017-12-22 14:31:46'),
 (33, 'smhh01', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/md.png', '0', 0, '2017-12-22 14:32:41', '2017-12-22 14:34:05'),
 (34, 'khungtranh003', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/Bubh.png', '0', 0, '2017-12-22 15:17:09', '2017-12-22 15:17:24'),
@@ -366,7 +366,24 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (67, 'tranhquatthuyen', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/thuyen-song-nuoc.png', '0', 0, '2017-12-29 16:15:59', '2017-12-29 16:15:59'),
 (68, 'tranhquattiecly', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/Tiec%20ly.png', '0', 0, '2017-12-29 16:16:42', '2017-12-29 16:16:42'),
 (69, 'tranhquattraunuoc', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/tranh-quat-trau.png', '0', 0, '2017-12-29 16:17:14', '2017-12-29 16:17:14'),
-(70, 'tranhquattunghac', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/tung%20hac.png', '0', 0, '2017-12-29 16:20:34', '2017-12-29 16:28:12');
+(70, 'tranhquattunghac', 1, 0, 0, '', '', '', 0, NULL, 20, '/public/upload/images/tranh-quat/tung%20hac.png', '0', 0, '2017-12-29 16:20:34', '2017-12-29 16:28:12'),
+(71, 'tcmn007', 1, 0, 0, '', '', '', 0, NULL, 31, '/public/upload/images/thu-cong-my-nghe/IMG_0539.png', '0', 0, '2017-12-30 14:33:25', '2017-12-30 14:33:25'),
+(72, 'sonmaihoasen', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/sen1.png', '0', 0, '2017-12-30 15:25:14', '2017-12-30 15:31:06'),
+(73, 'sonmaihoasen', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/sen2.png', '0', 0, '2017-12-30 15:25:39', '2017-12-30 15:30:47'),
+(74, 'sonmaihoasen', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/sen3.png', '0', 0, '2017-12-30 15:26:00', '2017-12-30 15:29:48'),
+(75, 'sonmaila001', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/TRANH%20LA-04.png', '0', 0, '2017-12-30 15:26:28', '2017-12-30 15:26:28'),
+(76, 'sonmaila', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/TRANH%20LA-05.png', '0', 0, '2017-12-30 15:26:50', '2017-12-30 15:26:50'),
+(77, 'sonmaila003', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/TRANH%20LA-06.png', '0', 0, '2017-12-30 15:27:27', '2017-12-30 15:27:27'),
+(78, 'sonmaicodai', 1, 0, 0, '', '', '', 0, NULL, 29, '/public/upload/images/son-mai-hien-dai/tranh1.png', '0', 0, '2017-12-30 15:27:56', '2017-12-30 15:28:29'),
+(79, 'khungtranh', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/100_0375.png', '0', 0, '2017-12-30 15:49:17', '2017-12-30 15:55:56'),
+(80, 'khungtranhphat', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/547447_557189024304343_1877318860_n.png', '0', 0, '2017-12-30 16:10:53', '2017-12-30 16:11:19'),
+(81, 'khungtranhphat', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/Bubh3.png', '0', 0, '2017-12-30 16:12:35', '2017-12-30 16:12:35'),
+(82, 'khungtranhphatme', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/DV1001.png', '0', 0, '2017-12-30 16:13:16', '2017-12-30 16:13:16'),
+(83, 'khungtranhhinhmau', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/DV0501.png', '0', 0, '2017-12-30 16:14:02', '2017-12-30 16:14:02'),
+(84, 'khungtranhhoahong', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/DV1501.png', '0', 0, '2017-12-30 16:14:38', '2017-12-30 16:14:38'),
+(85, 'G1124', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/G1124.png', '0', 0, '2017-12-30 16:15:36', '2017-12-30 16:17:48'),
+(86, 'G1134', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/G1134.png', '0', 0, '2017-12-30 16:16:33', '2017-12-30 16:17:58'),
+(87, 'khungtranhhoavan', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/IMG_20140225_143846.png', '0', 0, '2017-12-30 16:18:42', '2017-12-30 16:19:05');
 
 -- --------------------------------------------------------
 
@@ -389,10 +406,10 @@ INSERT INTO `product_images` (`id`, `product_id`, `image`, `sort_order`) VALUES
 (71, 8, '/public/upload/images/scan0002.jpg', ''),
 (73, 12, '/public/upload/images/tranh-quat/ho.png', ''),
 (74, 33, '/public/upload/images/son-mai-hien-dai/GM%20%20(6).png', ''),
-(75, 21, '/public/upload/images/khung-tranh-nghe-thuat/100_0372.png', ''),
-(76, 21, '/public/upload/images/khung-tranh-nghe-thuat/2007-01-18-23.58.png', ''),
-(77, 21, '/public/upload/images/khung-tranh-nghe-thuat/G1124.png', ''),
-(79, 34, '/public/upload/images/khung-tranh-nghe-thuat/Bubh3.png', '');
+(79, 34, '/public/upload/images/khung-tranh-nghe-thuat/Bubh3.png', ''),
+(92, 21, '/public/upload/images/khung-tranh-nghe-thuat/100_0372.png', ''),
+(93, 21, '/public/upload/images/khung-tranh-nghe-thuat/2007-01-18-23.58.png', ''),
+(94, 21, '/public/upload/images/khung-tranh-nghe-thuat/G1124.png', '');
 
 -- --------------------------------------------------------
 
@@ -430,17 +447,17 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (16, 18, 'vi', 'Thủ công mỹ nghệ 004', '', '', 'Gỗ', '', 'Đức Vinh Art', '', '', '2017-12-01 13:11:18', '2017-12-01 13:11:18'),
 (17, 19, 'vi', 'Thủ công mỹ nghệ 005', '', '', 'Đất nung', 'Trắng', 'Đức Vinh Art', '', '', '2017-12-01 13:12:07', '2017-12-01 13:14:03'),
 (18, 20, 'vi', 'Thủ công mỹ nghệ 006', '', '', 'Gỗ', 'Đỏ', 'Đức Vinh Art', '', '', '2017-12-01 13:13:54', '2017-12-01 13:13:54'),
-(19, 21, 'vi', 'Khung tranh 001', '', '', 'Gỗ', 'Đỏ, Trắng, Đen, ...', 'Đức Vinh Art', 'Khung tranh 001', 'Khung tranh 001', '2017-12-01 14:07:41', '2017-12-22 15:16:22'),
+(19, 21, 'vi', 'Khung tranh 001', '', '', 'Gỗ', 'Đỏ, Trắng, Đen, ...', 'Đức Vinh Art', 'Khung tranh 001', 'Khung tranh 001', '2017-12-01 14:07:41', '2017-12-30 16:10:20'),
 (20, 22, 'vi', 'Khung tranh 002', '', '', 'Gỗ', 'Đỏ', 'Đức Vinh Art', 'Khung tranh 002', 'Khung tranh 002', '2017-12-01 14:18:35', '2017-12-01 14:18:53'),
 (21, 23, 'vi', 'Tranh - tủ ảnh sơn mài', '', '', 'Gỗ', 'Trắng', '', '', '', '2017-12-01 14:21:10', '2017-12-01 14:22:58'),
 (22, 24, 'vi', 'Bàn sơn mài', '', '', 'Đá', 'Trắng', 'Đức Vinh Art', 'Bàn sơn mài', 'Bàn sơn mài', '2017-12-01 14:23:55', '2017-12-01 14:23:55'),
-(23, 25, 'vi', 'Sơn mài hiện đại 1', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:08:07', '2017-12-22 14:08:07'),
+(23, 25, 'vi', 'Tranh sơn mài hiện đại', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:08:07', '2017-12-30 15:32:57'),
 (24, 26, 'vi', 'Sơn mài hiện đại 2', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:08:46', '2017-12-22 14:09:07'),
 (25, 27, 'vi', 'Sơn mài cỏ dại 01', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:09:46', '2017-12-22 14:10:13'),
 (26, 28, 'vi', 'Sơn mài cỏ dại 02', '', '', '', '', '', '', '', '2017-12-22 14:11:19', '2017-12-22 14:11:30'),
-(27, 29, 'vi', 'Sơn mài cỏ dại 03', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:13:49', '2017-12-22 14:21:18'),
-(28, 30, 'vi', 'Sơn mài sen 01', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:15:10', '2017-12-22 14:15:56'),
-(29, 31, 'vi', 'Sơn mài sen 02', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:15:35', '2017-12-22 14:16:10'),
+(27, 29, 'vi', 'Sơn mài cỏ dại', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:13:49', '2017-12-30 15:23:30'),
+(28, 30, 'vi', 'Sơn mài sen 01', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:15:10', '2017-12-30 15:21:31'),
+(29, 31, 'vi', 'Sơn mài sen 02', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:15:35', '2017-12-30 15:22:02'),
 (30, 32, 'vi', 'Sơn mài sen 03', '', '', '', '', '', '', '', '2017-12-22 14:31:46', '2017-12-22 14:31:46'),
 (31, 33, 'vi', 'Sơn mài hoa hồng', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 14:32:41', '2017-12-22 14:34:05'),
 (32, 34, 'vi', 'Khung tranh 003', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-22 15:17:09', '2017-12-22 15:17:24'),
@@ -479,7 +496,24 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (65, 67, 'vi', 'Tranh quạt thuyền sông nước', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:15:59', '2017-12-29 16:15:59'),
 (66, 68, 'vi', 'Tranh quạt tiệc ly', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:16:42', '2017-12-29 16:16:42'),
 (67, 69, 'vi', 'Tranh quạt trâu nước', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-29 16:17:15', '2017-12-29 16:17:15'),
-(68, 70, 'vi', 'Tranh quạt tùng hạc', '', '', '', '', '', '', '', '2017-12-29 16:20:34', '2017-12-29 16:28:13');
+(68, 70, 'vi', 'Tranh quạt tùng hạc', '', '', '', '', '', '', '', '2017-12-29 16:20:34', '2017-12-29 16:28:13'),
+(69, 71, 'vi', 'Thủ công mỹ nghệ 007', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 14:33:25', '2017-12-30 14:33:25'),
+(70, 72, 'vi', 'Tranh sơn mài hoa sen', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:25:14', '2017-12-30 15:31:06'),
+(71, 73, 'vi', 'Tranh sơn mài hoa sen', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:25:39', '2017-12-30 15:30:47'),
+(72, 74, 'vi', 'Tranh sơn mài hoa sen', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:26:01', '2017-12-30 15:29:48'),
+(73, 75, 'vi', 'Tranh sơn mài lá', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:26:28', '2017-12-30 15:26:28'),
+(74, 76, 'vi', 'Tranh sơn mài lá', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:26:50', '2017-12-30 15:26:50'),
+(75, 77, 'vi', 'Tranh sơn mài lá', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:27:27', '2017-12-30 15:27:27'),
+(76, 78, 'vi', 'Tranh sơn mài cỏ dại', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:27:56', '2017-12-30 15:28:29'),
+(77, 79, 'vi', 'Khung tranh 003', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 15:49:17', '2017-12-30 15:55:56'),
+(78, 80, 'vi', 'Khung tranh phật', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:10:53', '2017-12-30 16:11:19'),
+(79, 81, 'vi', 'Khung tranh phật 002', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:12:35', '2017-12-30 16:12:35'),
+(80, 82, 'vi', 'Khung tranh phật mẹ 001', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:13:16', '2017-12-30 16:13:16'),
+(81, 83, 'vi', 'Khung tranh hình mẫu', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:14:02', '2017-12-30 16:14:02'),
+(82, 84, 'vi', 'Khung tranh hoa hồng', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:14:38', '2017-12-30 16:14:38'),
+(83, 85, 'vi', 'Mảnh ghép khung tranh G1124', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:15:36', '2017-12-30 16:17:48'),
+(84, 86, 'vi', 'Mảnh ghép khung tranh G1134', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:16:33', '2017-12-30 16:17:58'),
+(85, 87, 'vi', 'Khung tranh hoa văn', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:18:42', '2017-12-30 16:19:05');
 
 -- --------------------------------------------------------
 
@@ -556,7 +590,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `birth_day`, `phone`, `address`, `profile`, `modified_date`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514534472, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
+(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514619048, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
 (19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1513957558, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
 (20, '127.0.0.1', 'ducvinhart', '$2y$08$ZDxtMSyWgZ5sELEiMkQNfuFKdbCcS0A/0Xf6KSSGZmpTUl55oLPvm', NULL, 'tonhuyen@ducvinhart.com', NULL, NULL, NULL, NULL, 1512138626, 1512139771, 1, 'Mỹ thuật', 'Đức Vinh', 'ducvinhart', '', '123456', NULL, NULL, NULL);
 
@@ -789,19 +823,19 @@ ALTER TABLE `payment_detail`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `product_translation`
 --
 ALTER TABLE `product_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `slider`

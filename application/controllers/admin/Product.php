@@ -13,6 +13,7 @@ class Product extends Admin_Controller
             $this->postal->add('You are not allowed to visit the Categories page','error');
             redirect('admin');
         }
+        $this->load->library('pagination');
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $this->load->helper(array('form'));
         $this->lang->load('form_validation', 'english');
@@ -28,17 +29,32 @@ class Product extends Admin_Controller
         //
         $this->form_validation->set_rules('name', 'Tên', 'trim|required');
         $this->form_validation->set_rules('image', 'Hình ảnh', 'trim|required');
+        // get param from url        
+        $this->cate_no = str_replace('"', "'", $this->input->get_post('cate_no'));
+        $this->cate_name = str_replace('"', "'", $this->input->get_post('cate_name'));
+        $this->model_no = str_replace('"', "'", $this->input->get_post('model_no'));
     }
 
     public function index()
     {
         // condition for get users data
-        $name = str_replace('"', "'", $this->input->get('name'));
-        $model  = str_replace('"', "'", $this->input->get('model'));
-        $category  = $this->input->get('category');
-        $input['like'] = array('name'=>$name, 'model_id'=>$model,'cate_id' => $category);
-        $input['order'] = array('modified_date' , "desc");
-        $this->data['items'] = $this->product_model->get_list_product($input);
+        $input_product['like'] = array('name'=>$this->cate_name, 'model_id'=>$this->model_no,'cate_id' => $this->cate_no);
+        $input_product['order'] = array('modified_date' , "desc");
+        //pagination settings
+        $config['base_url'] = site_url('admin/product?cate_no='.$this->cate_no.'&cate_name='.$this->cate_name.'&model_no='.$this->model_no);
+        $config["per_page"] = $this->pagination->per_page;
+        $config['total_rows'] = $this->product_model->get_total_product($input_product);
+        $this->data['total'] = $config['total_rows'];
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = $choice; 
+        // pagination
+        $pagi = ($this->input->get('page')) ? $this->input->get('page') : 1;
+        $this->pagination->initialize($config);        
+        $this->data['pagination'] = $this->pagination->create_links();
+        $offset = ($pagi  == 1) ? 0 : ($pagi * $config['per_page']) - $config['per_page'];
+        // get list data
+        $input_product['limit'] = array($config["per_page"], $offset);
+        $this->data['items'] = $this->product_model->get_list_product($input_product);
         $this->render('admin/product/index_view');
     }
 
@@ -90,10 +106,7 @@ class Product extends Admin_Controller
                 } else {
                     $this->postal->add('Tạo mới thất bại.', 'success');
                 }
-                $cate_no = $this->input->post('cate_no');
-                $cate_name = $this->input->post('cate_name');
-                $model_no = $this->input->post('model_no');
-                redirect('admin/product?category='.$cate_no.'&name='.$cate_name.'&model='.$model_no);
+                redirect('admin/product?cate_no='.$this->cate_no.'&cate_name='.$this->cate_name.'&model_no='.$this->model_no);
                 redirect('admin/product');
             }                     
         }else{
@@ -160,10 +173,7 @@ class Product extends Admin_Controller
                 } else {
                     $this->postal->add('Cập nhật thất bại.', 'success');
                 }
-                $cate_no = $this->input->post('cate_no');
-                $cate_name = $this->input->post('cate_name');
-                $model_no = $this->input->post('model_no');
-                redirect('admin/product?category='.$cate_no.'&name='.$cate_name.'&model='.$model_no);
+                redirect('admin/product?cate_no='.$this->cate_no.'&cate_name='.$this->cate_name.'&model_no='.$this->model_no);
             }            
         }else{
             $this->render('admin/product/edit_view');
