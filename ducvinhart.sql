@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2017 at 10:25 AM
+-- Generation Time: Jan 02, 2018 at 10:29 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -383,7 +383,29 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (84, 'khungtranhhoahong', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/DV1501.png', '0', 0, '2017-12-30 16:14:38', '2017-12-30 16:14:38'),
 (85, 'G1124', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/G1124.png', '0', 0, '2017-12-30 16:15:36', '2017-12-30 16:17:48'),
 (86, 'G1134', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/G1134.png', '0', 0, '2017-12-30 16:16:33', '2017-12-30 16:17:58'),
-(87, 'khungtranhhoavan', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/IMG_20140225_143846.png', '0', 0, '2017-12-30 16:18:42', '2017-12-30 16:19:05');
+(87, 'khungtranhhoavan', 1, 0, 0, '', '', '', 0, NULL, 30, '/public/upload/images/khung-tranh-nghe-thuat/IMG_20140225_143846.png', '0', 0, '2017-12-30 16:18:42', '2017-12-30 16:19:05'),
+(88, 'noithatbinh&ban', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/100_0579.png', '0', 0, '2018-01-02 15:52:12', '2018-01-02 15:52:12'),
+(89, 'bansonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/ban-son-mai-001.png', '0', 0, '2018-01-02 16:02:59', '2018-01-02 16:02:59'),
+(90, 'bancoffee', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/COFFEE-TABLE-01-03.png', '0', 0, '2018-01-02 16:03:31', '2018-01-02 16:03:31'),
+(91, 'bancoffeedo', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/COFFEE-TABLE-08-08.png', '0', 0, '2018-01-02 16:05:21', '2018-01-02 16:05:21'),
+(92, 'cuatusonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/cua-tu-Anh-Tien-2.png', '0', 0, '2018-01-02 16:05:52', '2018-01-02 16:05:52'),
+(93, 'giuongsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/GIUONG-002-01.png', '0', 0, '2018-01-02 16:06:17', '2018-01-02 16:06:17'),
+(94, 'phongbephoa', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/hoa-11.png', '0', 0, '2018-01-02 16:06:48', '2018-01-02 16:06:48'),
+(95, 'bansonmaihoa', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/hoa-19.png', '0', 0, '2018-01-02 16:07:34', '2018-01-02 16:07:34'),
+(96, 'phongkhachsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/IMG029.png', '0', 0, '2018-01-02 16:10:28', '2018-01-02 16:10:28'),
+(97, 'nhabepsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/IMG1122.png', '0', 0, '2018-01-02 16:12:01', '2018-01-02 16:12:01'),
+(98, 'phongkhac', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-003.png', '0', 0, '2018-01-02 16:12:46', '2018-01-02 16:12:46'),
+(99, 'phongkhachsonmai', 1, 0, 0, 'aá', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-son-mai-phong-khach-001.png', '0', 0, '2018-01-02 16:14:59', '2018-01-02 16:21:24'),
+(100, 'phongkhachsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-son-mai-phong-khach-002.png', '0', 0, '2018-01-02 16:18:47', '2018-01-02 16:21:16'),
+(101, 'phongmaster', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-son-mai-phong-ngu-001.png', '0', 0, '2018-01-02 16:21:05', '2018-01-02 16:21:05'),
+(102, 'tusonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-son-mai-phong-ngu-002.png', '0', 0, '2018-01-02 16:22:17', '2018-01-02 16:22:17'),
+(103, 'kesonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-son-mai-trang-diem-001.png', '0', 0, '2018-01-02 16:23:05', '2018-01-02 16:23:05'),
+(104, 'tusonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/noi-that-son-mai-tu.png', '0', 0, '2018-01-02 16:23:47', '2018-01-02 16:23:47'),
+(105, 'phongbepsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/p-bep---v2.png', '0', 0, '2018-01-02 16:24:14', '2018-01-02 16:24:14'),
+(106, 'phongbepsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/p-bep---v3.png', '0', 0, '2018-01-02 16:24:33', '2018-01-02 16:24:52'),
+(107, 'phongkhachsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/p-khach---v3.png', '0', 0, '2018-01-02 16:25:19', '2018-01-02 16:26:07'),
+(109, 'phongkhachsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/p-khach---v4.png', '0', 0, '2018-01-02 16:27:10', '2018-01-02 16:27:39'),
+(110, 'phongbepsonmai', 1, 0, 0, '', '', '', 0, NULL, 18, '/public/upload/images/noi-that-son-mai/P8161015.png', '0', 0, '2018-01-02 16:28:32', '2018-01-02 16:28:46');
 
 -- --------------------------------------------------------
 
@@ -513,7 +535,29 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (82, 84, 'vi', 'Khung tranh hoa hồng', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:14:38', '2017-12-30 16:14:38'),
 (83, 85, 'vi', 'Mảnh ghép khung tranh G1124', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:15:36', '2017-12-30 16:17:48'),
 (84, 86, 'vi', 'Mảnh ghép khung tranh G1134', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:16:33', '2017-12-30 16:17:58'),
-(85, 87, 'vi', 'Khung tranh hoa văn', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:18:42', '2017-12-30 16:19:05');
+(85, 87, 'vi', 'Khung tranh hoa văn', '', '', '', '', 'Đức Vinh Art', '', '', '2017-12-30 16:18:42', '2017-12-30 16:19:05'),
+(86, 88, 'vi', 'Nội thất sơn mài bình & bàn', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 15:52:12', '2018-01-02 15:52:12'),
+(87, 89, 'vi', 'Bàn sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:02:59', '2018-01-02 16:02:59'),
+(88, 90, 'vi', 'Bàn coffee', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:03:31', '2018-01-02 16:03:31'),
+(89, 91, 'vi', 'Bàn coffee đỏ', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:05:21', '2018-01-02 16:05:21'),
+(90, 92, 'vi', 'Cửa tủ sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:05:52', '2018-01-02 16:05:52'),
+(91, 93, 'vi', 'Gường sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:06:17', '2018-01-02 16:06:17'),
+(92, 94, 'vi', 'Phòng bếp - hoa', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:06:49', '2018-01-02 16:06:49'),
+(93, 95, 'vi', 'Bàn sơn mài - hoa', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:07:34', '2018-01-02 16:07:34'),
+(94, 96, 'vi', 'Phòng khách sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:10:28', '2018-01-02 16:10:28'),
+(95, 97, 'vi', 'Nhà bếp - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:12:01', '2018-01-02 16:12:01'),
+(96, 98, 'vi', 'Phòng khách sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:12:46', '2018-01-02 16:12:46'),
+(97, 99, 'vi', 'Phòng khách - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:14:59', '2018-01-02 16:21:24'),
+(98, 100, 'vi', 'Phòng khách - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:18:47', '2018-01-02 16:21:16'),
+(99, 101, 'vi', 'Phòng master', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:21:05', '2018-01-02 16:21:05'),
+(100, 102, 'vi', 'Tủ sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:22:17', '2018-01-02 16:22:17'),
+(101, 103, 'vi', 'Kệ - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:23:05', '2018-01-02 16:23:05'),
+(102, 104, 'vi', 'Tủ - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:23:47', '2018-01-02 16:23:47'),
+(103, 105, 'vi', 'Phòng bếp - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:24:14', '2018-01-02 16:24:14'),
+(104, 106, 'vi', 'Phòng bếp - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:24:33', '2018-01-02 16:24:52'),
+(105, 107, 'vi', 'Phòng khách', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:25:19', '2018-01-02 16:26:07'),
+(107, 109, 'vi', 'Phòng khách', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:27:10', '2018-01-02 16:27:39'),
+(108, 110, 'vi', 'Phòng bếp - sơn mài', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-02 16:28:33', '2018-01-02 16:28:46');
 
 -- --------------------------------------------------------
 
@@ -590,7 +634,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `birth_day`, `phone`, `address`, `profile`, `modified_date`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514619048, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
+(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514882881, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
 (19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1513957558, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
 (20, '127.0.0.1', 'ducvinhart', '$2y$08$ZDxtMSyWgZ5sELEiMkQNfuFKdbCcS0A/0Xf6KSSGZmpTUl55oLPvm', NULL, 'tonhuyen@ducvinhart.com', NULL, NULL, NULL, NULL, 1512138626, 1512139771, 1, 'Mỹ thuật', 'Đức Vinh', 'ducvinhart', '', '123456', NULL, NULL, NULL);
 
@@ -823,7 +867,7 @@ ALTER TABLE `payment_detail`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `product_images`
@@ -835,7 +879,7 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `product_translation`
 --
 ALTER TABLE `product_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `slider`
