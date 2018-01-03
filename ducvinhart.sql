@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2018 at 10:08 AM
+-- Generation Time: Jan 03, 2018 at 10:23 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -42,7 +42,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `level`, `parent_id`, `image`, `sort_order`) VALUES
 (1, 0, '', '/public/upload/images/introduce-pic.jpg', '1'),
-(18, 1, '27', '/public/upload/images/noi-that-son-mai/11025677_10153187061573259_2251952327694919133_o.png', '2.4'),
+(18, 1, '27', '/public/upload/images/noi-that-son-mai/p-bep---v3.png', '2.4'),
 (19, 1, '27', '/public/upload/images/thu-phap/thu-phap-1.gif', '2.8'),
 (20, 1, '27', '/public/upload/images/tranh-quat/ho.png', '2.2'),
 (27, 0, '', '', '2'),
@@ -58,8 +58,8 @@ INSERT INTO `category` (`id`, `level`, `parent_id`, `image`, `sort_order`) VALUE
 (38, 1, '35', '/public/upload/images/chuyen-de/bo-anh-cuoi-xua.jpg', '4.1'),
 (39, 0, '', '', '5'),
 (42, 1, '35', '/public/upload/images/chuyen-de/Decoration-600W-x-600Hpx.jpg', '4.5'),
-(43, 1, '27', '/public/upload/images/tranh-son-dau/10394068_878591975497378_1671423375966054871_n.png', '2.1'),
-(44, 1, '27', '/public/upload/images/tranh-son-dau/HTB1apFpGFXXXXbmaXXXq6xXFXXXE.png', '2.5'),
+(43, 1, '27', '/public/upload/images/tranh-son-dau/tranh-hoa/10394068_878591975497378_1671423375966054871_n.png', '2.1'),
+(44, 1, '27', '/public/upload/images/tran-phu-dieu/d2f89406dd1632486b07.png', '2.5'),
 (46, 2, '43', '/public/upload/images/tranh-son-dau/10891943_862024087154167_8829379901705073035_n.png', '2.1.1'),
 (47, 2, '43', '/public/upload/images/tranh-son-dau/IMG_0627.png', '2.1.2'),
 (48, 2, '43', '/public/upload/images/tranh-son-dau/HTB1apFpGFXXXXbmaXXXq6xXFXXXE.png', '2.1.3'),
@@ -96,7 +96,7 @@ CREATE TABLE `category_translation` (
 --
 
 INSERT INTO `category_translation` (`id`, `cate_id`, `lang_slug`, `name`, `name_slug`, `description`, `url_slug`, `meta_keyword`, `meta_description`, `created_date`, `modified_date`) VALUES
-(7, 18, 'vi', 'Nội thất sơn mài', 'noi-that-son-mai', NULL, '', 'nội thất', 'nội thất', '2017-11-23 14:01:11', '2017-12-30 16:24:40'),
+(7, 18, 'vi', 'Nội thất sơn mài', 'noi-that-son-mai', NULL, '', 'nội thất', 'nội thất', '2017-11-23 14:01:11', '2018-01-03 16:21:59'),
 (8, 19, 'vi', 'Thư pháp Việt', 'thu-phap-viet', NULL, '', 'trang trí nội thất', 'trang trí nội thất', '2017-11-23 14:01:26', '2017-12-22 01:09:09'),
 (9, 20, 'vi', 'Tranh Quạt', 'tranh-quat', NULL, '', 'tranh quạt', 'tranh quạt', '2017-11-23 14:03:00', '2017-12-22 01:10:28'),
 (15, 1, 'vi', 'Trang chủ', 'trang-chu', NULL, '', 'Tranh quạt, thủ công mỹ nghệ, nội thất sơn mài, tranh sơn dầu', 'Đức Vinh Art workshop là trang trực tuyến chuyên cung cấp sản phẩm và dịch vụ về hội hoạ, Sản phẩm thủ công, Trang trí – Trưng bày', '2017-11-26 14:49:45', '2017-12-05 21:28:38'),
@@ -113,8 +113,8 @@ INSERT INTO `category_translation` (`id`, `cate_id`, `lang_slug`, `name`, `name_
 (27, 38, 'vi', 'Văn học', 'van-hoc', NULL, '', 'Tranh quạt, thủ công mỹ nghệ, nội thất sơn mài, tranh sơn dầu', 'Đức Vinh Art workshop là trang trực tuyến chuyên cung cấp sản phẩm và dịch vụ về hội hoạ, Sản phẩm thủ công, Trang trí – Trưng bày', '2017-11-26 20:48:15', '2017-12-22 00:56:58'),
 (28, 39, 'vi', 'Liên hệ', 'lien-he', NULL, '', '', '', '2017-11-27 10:51:37', '2017-11-27 10:52:09'),
 (31, 42, 'vi', 'Khác', 'khac', NULL, '', '', '', '2017-12-01 15:58:35', '2017-12-22 00:56:41'),
-(32, 43, 'vi', 'Tranh Sơn Dầu', 'tranh-son-dau', NULL, '', '', '', '2017-12-21 23:11:24', '2017-12-21 23:12:38'),
-(33, 44, 'vi', 'Tranh Phù Điêu', 'tranh-phu-dieu', NULL, '', '', '', '2017-12-22 00:17:52', '2017-12-22 00:17:52'),
+(32, 43, 'vi', 'Tranh Sơn Dầu', 'tranh-son-dau', NULL, '', '', '', '2017-12-21 23:11:24', '2018-01-03 16:20:59'),
+(33, 44, 'vi', 'Tranh Phù Điêu', 'tranh-phu-dieu', NULL, '', '', '', '2017-12-22 00:17:52', '2018-01-03 16:22:28'),
 (35, 46, 'vi', 'Tranh hoa', 'tranh-hoa', NULL, '', '', '', '2017-12-22 00:41:35', '2017-12-22 15:29:58'),
 (36, 47, 'vi', 'Tranh phong cảnh', 'tranh-phong-canh', NULL, '', '', '', '2017-12-22 00:42:11', '2017-12-22 15:30:21'),
 (37, 48, 'vi', 'Tranh ấn tượng', 'tranh-an-tuong', NULL, '', '', '', '2017-12-22 00:42:31', '2017-12-22 15:30:13'),
