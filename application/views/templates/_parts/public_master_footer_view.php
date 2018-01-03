@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<!-- scroll up-->
+<div class="scrollup">
+    <a href="#"><i class="fa fa-chevron-up"></i></a>
+</div><!-- End off scroll up -->
 <div class="footer-content">
 	<div class="container">
 		<div class="ftr-grids">
@@ -86,3 +90,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  jQuery(document).ready(function ($) {
+  	//---------------------------------------------
+// Scroll Up 
+//---------------------------------------------
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 600) {
+            $('.scrollup').fadeIn('slow');
+        } else {
+            $('.scrollup').fadeOut('slow');
+        }
+    });
+    $('.scrollup').click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
+        return false;
+    });
+    });
+  </script>
