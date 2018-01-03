@@ -8,7 +8,24 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <a href="<?php echo base_url('admin/slider/create') ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus"></li> ADD NEW</button></a>
+            <a href="<?php echo base_url('admin/slider/create?cate_no='.$this->input->get('cate_no')) ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+        <div class="col-xs-12">
+            <form method="GET" action="<?php echo base_url('admin/slider'); ?>">           
+                
+                <button class="btn btn-primary btn-md pull-right"  type="submit"><li class="fa fa-search"></li> Search</button>
+                <div class="col-lg-4 pd-l-0 pull-right">
+                    <select class="form-control" name="cate_no">                    
+                        <option value="">-- Chọn Category --</option>
+                        <?php foreach ($categories as $value) { ?>
+                        <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('cate_no',$value->cate_id,( !empty($this->input->get('cate_no')) && $this->input->get('cate_no') == $value->cate_id ? TRUE : FALSE )); ?>  ><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -43,8 +60,8 @@
                     } ?></div></td>
                     <?php
                     echo '<td>';
-                    echo '<a href="slider/edit/'.$item->id.'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
-                    echo '<a href="slider/delete/'.$item->id.'" style="color:#fff" onclick="return confirm(\'Are you sure to delete ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
+                    echo '<a href="slider/edit/'.$item->id.'?cate_no='.$this->input->get('cate_no').'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';
+                    echo '<a href="slider/delete/'.$item->id.'?cate_no='.$this->input->get('cate_no').'" style="color:#fff" onclick="return confirm(\'Are you sure to delete ?\')"><button class="btn btn-sm btn-danger"><li class="fa fa-trash"></li></button></a>';
                     ?>
                     <?php
                     echo '</td>';

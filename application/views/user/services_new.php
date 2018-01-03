@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require "slider_view.php" ?>
 <!-- End slider section -->
 <!-- News -->
-<div class="main">
+<div class="main services-details-area">
     <div class="title">
         <h3>Dịch vụ của chúng tôi</h3>
     </div>

@@ -11,7 +11,7 @@
             <div class="col-xs-12 ">
                 <div class="pull-right">
                     <?php echo form_submit('submit', 'SAVE', 'class="btn btn-primary btn-lg btn-sm"');?>
-                    <a href="<?php echo base_url('admin/news?type='.$this->input->get('type')) ?>"><input class="btn btn-default btn-lg btn-sm" type="button" value="CANCEL"></a>
+                    <a href="<?php echo base_url('admin/news?cate_type='.$this->input->get('cate_type').'&cate_no='.$this->input->get('cate_no')) ?>"><input class="btn btn-default btn-lg btn-sm" type="button" value="CANCEL"></a>
                 </div>                
             </div>
         </div>
@@ -78,6 +78,7 @@
                 ?>
             </div>
             <input type="hidden" name="id" value="<?php echo $item->id; ?>">
+            <input type="hidden" name="cate_no" value="<?php echo $this->input->get('cate_no'); ?>"> 
             <?php echo form_close();?>
         </div>
     </div>

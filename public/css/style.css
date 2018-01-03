@@ -558,7 +558,6 @@ a i.google:hover {
 	background:none;
 	color:#5A5A5A;
 	padding:0;
-	text-transform: capitalize;
 }
 .item-info h4 a:hover,.item-info2 h4 a:hover,.item-info3 h4 a:hover,.item-info4 h4 a:hover,.item-info5 h4 a:hover,.item-info6 h4 a:hover{
 	color:#026466;
@@ -592,8 +591,8 @@ a i.google:hover {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
     width: 30.33333333%;
     vertical-align: top;
 }
@@ -639,6 +638,7 @@ a i.google:hover {
     opacity: 0.8;
 }
 .news-left-content{
+	background: #fff;
 	padding-right: 0px;
 	margin-bottom: 20px;
 }
@@ -648,7 +648,7 @@ a i.google:hover {
 }
 .news-date {
     font-size: 1.2em;
-    color: #2f3333cc;
+    color: #2f3333e0;
     margin-bottom: 10px;
 }
 .news-date li {
@@ -2087,7 +2087,7 @@ h4.title:after {
     width: 73px;
 }
 .recent-content-item {
-    margin-bottom: 22px;
+    margin-bottom: 7px;
     overflow: hidden;
 }
 .recent-content-item > a {
@@ -2107,6 +2107,7 @@ h4.title:after {
     font-weight: 400;
     color: #545454;
     font-family: 'helvetica';
+    text-transform: capitalize;
 }
 .single-latest-text {
     background: #f6f6f6 none repeat scroll 0 0;
@@ -2116,13 +2117,15 @@ h4.title:after {
 	margin-bottom: 50px;
 }
 .single-sidebar-widget .tags li a {
-    background: #ffffff none repeat scroll 0 0;
+	background: #ffffff none repeat scroll 0 0;
     border: 1px solid rgba(76, 76, 76, 0.3803921568627451);
-    color: #4c4c4c;
+    color: #4c4c4ce8;
     float: left;
+    font-size: 15px;
     margin-bottom: 13px;
-    margin-right: 6px;
+    margin-right: 4px;
     padding: 1px 9px;
+    font-family: 'helvetica';
 }
 .single-sidebar-widget .tags li a:hover{
 	background: #EF5F21;

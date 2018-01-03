@@ -24,11 +24,13 @@ class Category extends Admin_Controller
         $this->form_validation->set_rules('name', 'lang:name', 'trim|required');
         $this->form_validation->set_rules('image', 'lang:Image', 'trim|required'); 
         $this->input_categories['order'] = array('sort_order' ,"asc");       
-        $this->input_categories['where'] = array('level<>' => 2);
+        $this->input_categories['where'] = array('level<>' => 2);        
+        $this->data['categories'] = $this->category_translation_model->get_list_category($this->input_categories);
     }
 
     public function index()
-    {
+    {     
+        $this->data['categories'] = $this->category_translation_model->get_list_category($this->input_categories);
         $input['order'] = array("sort_order", "ASC");
         $this->data['items'] = $this->category_translation_model->get_list_category($input);
         $this->render('admin/category/index_view');
@@ -36,7 +38,6 @@ class Category extends Admin_Controller
 
     public function create()
     {
-        $this->data['categories'] = $this->category_translation_model->get_list_category($this->input_categories);
         if ($this->input->post('submit')) {
             if ($this->form_validation->run() == false) {
                 $this->render('admin/category/create_view');
@@ -71,7 +72,6 @@ class Category extends Admin_Controller
 
     public function edit($id)
     {
-        $this->data['categories'] = $this->category_translation_model->get_list_category($this->input_categories);
         // get data this $id
         $edit_cate['where'] = array('cate_id' => $id, "lang_slug" => $this->lang_slug);
         $this->data["item"] = $this->category_translation_model->get_row_category($edit_cate);

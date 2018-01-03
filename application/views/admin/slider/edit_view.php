@@ -39,7 +39,7 @@
             <div class="image_note">Kích thước tốt : 1978 x 521 or tỉ lệ dài/cao = 3,8</div>
           </div>
         </div>
-
+        <input type="hidden" name="cate_no" value="<?php echo $this->input->get('cate_no'); ?>">
         <?php
         $submit_button = 'Save';
         echo form_submit('submit', $submit_button, 'class="btn btn-primary btn-lg btn-block"');?>

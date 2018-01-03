@@ -25,12 +25,15 @@ class Slider extends Admin_Controller
         $this->data['categories'] = $this->category_translation_model->get_list_category($input);
         //
         $this->form_validation->set_rules('image', 'Image', 'trim|required');
-        $this->form_validation->set_rules('link', 'link', 'trim');
+        $this->form_validation->set_rules('link', 'link', 'trim');        
+        // get param from url        
+        $this->cate_no = str_replace('"', "'", $this->input->get_post('cate_no'));
     }
 
     public function index()
     {
-        $input['order'] = array('cate_id', "desc");
+        if($this->cate_no != "") $input['where'] = array('s.cate_id' => $this->cate_no);  
+        $input['order'] = array('s.cate_id', "desc");
         $this->data['items'] = $this->slider_model->get_list_slider($input);
         $this->render('admin/slider/index_view');
     }
@@ -51,7 +54,7 @@ class Slider extends Admin_Controller
                 {             
                     $this->postal->add('Tạo mới thất bại','error');
                 }else $this->postal->add('Tạo mới thành công.','success');
-                redirect('admin/slider');
+                redirect('admin/slider?cate_no='.$this->cate_no);
             }                     
         }else{
             $this->render('admin/slider/create_view');
@@ -76,7 +79,7 @@ class Slider extends Admin_Controller
                 {             
                     $this->postal->add('Sửa thất bại !','error');
                 }else $this->postal->add('Sửa thành công.','success');
-                redirect('admin/slider');
+                redirect('admin/slider?cate_no='.$this->cate_no);
             }            
         }else{
             $this->render('admin/slider/edit_view');
@@ -90,6 +93,6 @@ class Slider extends Admin_Controller
         }else{
             $this->postal->add('Xóa thành công','success');            
         }
-        redirect('admin/slider');
+        redirect('admin/slider?cate_no='.$this->cate_no);
     }
 }

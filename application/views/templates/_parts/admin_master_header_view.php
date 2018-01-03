@@ -44,7 +44,7 @@ if($this->ion_auth->logged_in()) {
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">NEWS <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><?php echo anchor('admin/news?type=services','Dịch Vụ');?></li>
+                            <li><?php echo anchor('admin/news?cate_type=services','Dịch Vụ');?></li>
                             <li><?php echo anchor('admin/news','Chuyên Đề');?></li>
                         </ul>
                     </li>

@@ -8,7 +8,7 @@
                 <label>Category </label><span class="error">*</span>
                 <select class="form-control" name="category">
                 <?php foreach ($categories as $value) { ?>
-                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id); ?>><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
+                    <option value="<?php echo $value->cate_id; ?>" <?php echo set_select('category',$value->cate_id,( !empty($this->input->get('cate_no')) && $this->input->get('cate_no') == $value->cate_id ? TRUE : FALSE )); ?>><?php if($value->level==1) echo "-- "; else if($value->level==2) echo "------ "; echo $value->name; ?></option>
                 <?php } ?>
                 </select>
             </div>
@@ -35,7 +35,8 @@
                     <button type="button" class="btn btn-default btn-browse-image" onclick="openPopup()"><li class="fa fa-image"></li> Browse Image</button>
                     <div class="image_note">Kích thước tốt : 1978 x 521 or tỉ lệ dài/cao = 3,8</div>
                 </div>
-            </div>                     
+            </div>
+            <input type="hidden" name="cate_no" value="<?php echo $this->input->get('cate_no'); ?>">                     
             <?php
             $submit_button = 'Save';
             echo form_submit('submit', $submit_button, 'class="btn btn-primary btn-lg btn-block"');?>

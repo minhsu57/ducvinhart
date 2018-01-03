@@ -120,14 +120,10 @@ class Admin_Controller extends MY_Controller
 		// get list parent name of current id and push to variable like : category 1 -> category 2 -> category 3
 		$input['where'] = array('cate_id' => $item_id);
 		$result = $this->category_translation_model->get_row_category($input);
-			
+
 		if(count($result) > 0){
 			$prefix.=$result->name." -> ";
-
-			if($item_id == 27) print_r($prefix."-");
-				$this->getHierarchyParent($result->parent_id, $prefix);
-
-
+			$this->getHierarchyParent($result->parent_id, $prefix);
 		}	
 
 		return $prefix;

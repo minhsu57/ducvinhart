@@ -25,6 +25,7 @@ class Product extends Public_Controller {
             $this->data['website']->meta_description = $page->meta_description;
             $this->data["breadcrumb"] = $page->name;
             // get content of slider
+            $input_slider['order'] = array('modified_date', 'desc');
             $input_slider['where'] = array('status' => 1, "s.cate_id"=>$page->cate_id);
             $this->data['sliders'] = $this->slider_model->get_list_slider($input_slider);
             //get content of this page           

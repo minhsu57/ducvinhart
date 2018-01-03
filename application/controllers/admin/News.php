@@ -28,7 +28,9 @@ class News extends Admin_Controller
         $this->form_validation->set_rules('short_content', 'Short Content', 'trim|required');
         $this->form_validation->set_rules('image', 'Wrapper photo', 'trim|required');
         //
-        $this->input_categories = array("level<>"=>0); 
+        $this->input_categories = array("level<>"=>0);
+        // get param from url        
+        $this->cate_no = str_replace('"', "'", $this->input->get_post('cate_no')); 
     }
 
     protected function get_categories($type_id){
@@ -39,17 +41,19 @@ class News extends Admin_Controller
 
     public function index()
     {
-        $this->type = $this->input->get("type");
+        $this->type = $this->input->get("cate_type");
         //condition to get total row and list of news
         if($this->type == "services"){
             $input_news['where'] = array('parent_id' => 28);
             $this->data["type_id"] = 28;
-            $config['base_url'] = site_url('admin/news?type=services');
+            $config['base_url'] = site_url('admin/news?cate_type=services');
         }else{ 
             $this->data["type_id"] = 35;
             $input_news['where'] = array('parent_id<>' => 28);
             $config['base_url'] = site_url('admin/news');
         }
+        $input_news['like'] = array('n.cate_id' => $this->cate_no);
+        $this->get_categories($this->data["type_id"]);
         //pagination settings
         $config["per_page"] = 15;        
         $config['total_rows'] = $this->news_model->get_total_news($input_news);
@@ -94,7 +98,7 @@ class News extends Admin_Controller
             {             
                 $this->postal->add('Thêm bài viết thất bại !','error');
             }else{ $this->postal->add('Thêm bài viết thành công.','success'); }
-            if($type_id == 28){ redirect('admin/news?type=services'); } else{ redirect('admin/news');  } 
+            if($type_id == 28){ redirect('admin/news?cate_type=services&cate_no='.$this->cate_no); } else{ redirect('admin/news?cate_no='.$this->cate_no);  } 
         }
 
     }else{ $this->render('admin/news/create_view'); } 
@@ -123,13 +127,13 @@ public function edit($item_id,$type_id)
         {             
             $this->postal->add('Chỉnh sửa bài viết thất bại !','error');
         }else $this->postal->add('Chỉnh sửa bài viết thành công.','success');
-        if($type_id == 28){ redirect('admin/news?type=services'); } else{ redirect('admin/news');  }
+        if($type_id == 28){ redirect('admin/news?cate_type=services&cate_no='.$this->cate_no); } else{ redirect('admin/news?cate_no='.$this->cate_no);  }
     }
 }else{ $this->render('admin/news/edit_view');}
 }
 
 public function delete($item_id){
-    $type = $this->input->get('type');
+    $type = $this->input->get('cate_type');
     $where = array('item_id' => $item_id);
 
     if(!$this->news_model->delete($item_id))
@@ -139,7 +143,7 @@ public function delete($item_id){
     }else{
         $this->postal->add('Xóa thành công','success');            
     }
-    redirect('admin/news?type='.$type);
+    redirect('admin/news?cate_type='.$type.'&cate_no='.$this->cate_no);
 }
 
 public function changeStatus($item_id, $status){

@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <a href="<?php echo base_url('admin/category/create') ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus"></li> ADD NEW</button></a>
+            <a href="<?php echo base_url('admin/category/create') ?>"><button class="btn btn-primary btn-md pull-right"><li class="fa fa-plus-circle"></li></button></a>
         </div>
     </div>
     <div class="row">
@@ -43,7 +43,7 @@
             echo '</tbody>';
             echo '</table>';
             echo '<nav><ul class="pagination">';
-            // echo //$next_previous_pages;
+        // echo //$next_previous_pages;
             echo '</ul></nav>';
             ?>
         </div>

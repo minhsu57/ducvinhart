@@ -9,7 +9,7 @@
 
                 <div class="col-lg-2 pull-right">
                     <?php echo form_submit('submit', 'Save', 'class="btn btn-primary btn-lg btn-sm"');?>
-                    <?php echo anchor('/admin/product', 'Cancel', 'class="btn btn-default btn-lg btn-sm"');?>
+                    <?php echo anchor('admin/product?cate_no='.$this->input->get_post('cate_no').'&cate_name='.$this->input->get('cate_name').'&model_no='.$this->input->get('model_no'), 'Cancel', 'class="btn btn-default btn-lg btn-sm"');?>
                 </div>
             </div>
             <div class="form-group col-md-4 col-lg-4">

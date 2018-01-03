@@ -56,7 +56,7 @@
                     echo '<td><img src="'.base_url($item->image).'" style="width: 60px;"></td>';
                     echo '<td>'.$item->name.'</td>';
                     echo '<td>'.$item->model_id.'</td>';
-                    echo '<td>'.$item->price.'</td>'; ?>
+                    echo '<td>'.number_format($item->price,0,",",".").'</td>'; ?>
                     <td><div class="text-center"><?php if ($item->status == 1) {
                         echo "<li class='fa fa-check'></li>";
                     } else {
