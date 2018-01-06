@@ -58,6 +58,9 @@ img{
 .logo img{
 	width: 170px;
 }
+.slogan-container {
+    width: fit-content;
+}
 .slogan{
 	float: left;
     color: rgb(241, 76, 30);
@@ -77,7 +80,7 @@ img{
     color: #f47f1f;
 }
 span.slogan_small {
-	padding-left: 148px;
+	float: right;
     margin-top: -7px;
     font-size: 25px;
     font-weight: bold;

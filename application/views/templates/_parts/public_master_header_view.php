@@ -33,8 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="logo">
 				<a href="<?php echo base_url(); ?>" class="pull-left"><img width="130px" src="<?php echo $website->favicon; ?>" alt="<?php echo $website->website_name; ?>"/></a>
 				<div class="slogan col-md-8">
-					<h1><?php echo $website->website_name; ?></h1>
-					<h2><span class="slogan_small"><?php echo $website->slogan; ?></span></h2>
+					<div class="slogan-container">						
+						<h1><?php echo $website->website_name; ?></h1>
+						<h2><span class="slogan_small"><?php echo $website->slogan; ?></span></h2>
+					</div>
 				</div>
 			</div>
 			<div class="header_right">
@@ -42,68 +44,68 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="cart box_1">
 					<a href="<?php echo base_url('cart'); ?>">
 						<h3> <span class="simpleCart_total"></span><li class="fa fa-cart-plus"></li> Giỏ hàng (<span id="cart_couting" class="simpleCart_quantity"><?php echo $this->cart->total_items(); ?></span>)</h3>
-						</a>
-						<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p> -->
-						<div class="clearfix"> </div>
-					</div>
+					</a>
+					<!-- <p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p> -->
+					<div class="clearfix"> </div>
 				</div>
-				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!---->
+<!-- <img src="<?php echo public_helper('upload/images/logo/aaa.jpg') ?>"> -->
+<div class="menu_sec">
+	<div class="container">
+		<div class="">
+			<nav id='cssmenu'>
+				<div id="head-mobile"></div>
+				<div class="button"></div>
+				<!-- start header menu -->
+				<ul class="skyblue">
+					<li class="active grid"><a class="color1" href="<?php echo base_url(); ?>">TRANG CHỦ</a></li>
+					<li class="grid"><a class="color2" >Sản phẩm</a>
+						<ul>
+							<?php foreach ($cate_product as $cate) { ?>
+							<li><a href="<?php echo base_url('san-pham/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a>
+								<?php 
+								if(count($cate['children'])>0){
+									echo '<ul>';                   
+									foreach ($cate['children'] as $key => $value) { ?>
+									<li><a href="<?php echo base_url('san-pham/'.create_slug($value['name'])) ?>"><?php echo $value['name']; ?></a></li>                      
+									<?php }
+									echo '</ul>';
+								}
+								?>
+							</li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a class="color4" >dịch vụ</a>
+						<ul>
+							<?php foreach ($cate_services as $cate) { ?>
+							<li><a href="<?php echo base_url('dich-vu/'.$cate['cate_id'].'-'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a class="color5" >Chuyên đề</a>
+						<ul>
+							<?php foreach ($cate_topic as $cate) { ?>
+							<li><a href="<?php echo base_url('chuyen-de/'.$cate['cate_id'].'-'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a class="color5" href="<?php echo base_url('lien-he'); ?>">liên hệ</a>
+					</ul>
+					<div class="search">
+						<form method="get" action="<?php echo base_url('search'); ?>">
+							<input type="text" name="id" required placeholder="Tìm kiếm...">
+							<input type="submit" value="">
+						</form>
+					</div>
+					<div class="clearfix"></div>
+				</nav>
 			</div>
 		</div>
 	</div>
-	<!---->
-	<!-- <img src="<?php echo public_helper('upload/images/logo/aaa.jpg') ?>"> -->
-	<div class="menu_sec">
-		<div class="container">
-			<div class="">
-				<nav id='cssmenu'>
-					<div id="head-mobile"></div>
-					<div class="button"></div>
-					<!-- start header menu -->
-					<ul class="skyblue">
-						<li class="active grid"><a class="color1" href="<?php echo base_url(); ?>">TRANG CHỦ</a></li>
-						<li class="grid"><a class="color2" >Sản phẩm</a>
-							<ul>
-								<?php foreach ($cate_product as $cate) { ?>
-								<li><a href="<?php echo base_url('san-pham/'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a>
-									<?php 
-									if(count($cate['children'])>0){
-										echo '<ul>';                   
-										foreach ($cate['children'] as $key => $value) { ?>
-											<li><a href="<?php echo base_url('san-pham/'.create_slug($value['name'])) ?>"><?php echo $value['name']; ?></a></li>                      
-										<?php }
-										echo '</ul>';
-									}
-									?>
-								</li>
-								<?php } ?>
-							</ul>
-						</li>
-						<li><a class="color4" >dịch vụ</a>
-							<ul>
-								<?php foreach ($cate_services as $cate) { ?>
-								<li><a href="<?php echo base_url('dich-vu/'.$cate['cate_id'].'-'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
-								<?php } ?>
-							</ul>
-						</li>
-						<li><a class="color5" >Chuyên đề</a>
-							<ul>
-								<?php foreach ($cate_topic as $cate) { ?>
-								<li><a href="<?php echo base_url('chuyen-de/'.$cate['cate_id'].'-'.create_slug($cate['name'])) ?>"><?php echo $cate['name']; ?></a></li>
-								<?php } ?>
-							</ul>
-						</li>
-						<li><a class="color5" href="<?php echo base_url('lien-he'); ?>">liên hệ</a>
-						</ul>
-						<div class="search">
-							<form method="get" action="<?php echo base_url('search'); ?>">
-								<input type="text" name="id" required placeholder="Tìm kiếm...">
-								<input type="submit" value="">
-							</form>
-						</div>
-						<div class="clearfix"></div>
-					</nav>
-				</div>
-			</div>
-		</div>
 	<!---->

@@ -36,7 +36,7 @@
             <div class="form-group col-md-4 col-lg-4">
                 <label>Giá</label>
                 <span class="error"><?php echo form_error('price'); ?></span>
-                <input type="text" name="price" class="form-control" value="<?php echo set_value("price"); ?>">
+                <input type="text" name="price" class="form-control price" value="<?php echo set_value("price"); ?>">
             </div>
             <div class="form-group col-md-4 col-lg-4">
                 <label>Kích thước</label>
