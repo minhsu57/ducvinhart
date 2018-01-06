@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2018 at 10:23 AM
+-- Generation Time: Jan 06, 2018 at 09:46 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -456,7 +456,8 @@ INSERT INTO `product` (`id`, `model_id`, `status`, `sort_order`, `quantity`, `di
 (157, 'phudieuphat', 1, 0, 0, '', '', '', 0, NULL, 44, '/public/upload/images/tran-phu-dieu/d750e9ada0bd4fe316ac.png', '0', 0, '2018-01-03 16:05:46', '2018-01-03 16:05:46'),
 (158, 'phudieu', 1, 0, 0, '', '', '', 0, NULL, 44, '/public/upload/images/tran-phu-dieu/d852bce1f1f11eaf47e0.png', '0', 0, '2018-01-03 16:07:02', '2018-01-03 16:07:02'),
 (159, 'phudieu', 1, 0, 0, '', '', '', 0, NULL, 44, '/public/upload/images/tran-phu-dieu/edc5f98fb59f5ac1038e.png', '0', 0, '2018-01-03 16:07:21', '2018-01-03 16:07:21'),
-(160, 'phudieucachep', 1, 0, 0, '', '', '', 0, NULL, 44, '/public/upload/images/tran-phu-dieu/f8af8034cd24227a7b35.png', '0', 0, '2018-01-03 16:07:52', '2018-01-03 16:07:52');
+(160, 'phudieucachep', 1, 0, 0, '', '', '', 0, NULL, 44, '/public/upload/images/tran-phu-dieu/f8af8034cd24227a7b35.png', '0', 0, '2018-01-03 16:07:52', '2018-01-03 16:07:52'),
+(162, '', 1, 0, 0, '', '', '', 0, NULL, 1, '/public/upload/images/tran-phu-dieu/1a0902af4bbfa4e1fdae.png', '0', 0, '2018-01-04 07:54:00', '2018-01-04 07:54:00');
 
 -- --------------------------------------------------------
 
@@ -657,7 +658,8 @@ INSERT INTO `product_translation` (`id`, `product_id`, `lang_slug`, `name`, `des
 (155, 157, 'vi', 'Tranh phù điêu phật', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-03 16:05:47', '2018-01-03 16:05:47'),
 (156, 158, 'vi', 'Tranh phù điêu', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-03 16:07:02', '2018-01-03 16:07:02'),
 (157, 159, 'vi', 'Tranh phù điêu', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-03 16:07:21', '2018-01-03 16:07:21'),
-(158, 160, 'vi', 'Tranh phù điêu cá chép', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-03 16:07:52', '2018-01-03 16:07:52');
+(158, 160, 'vi', 'Tranh phù điêu cá chép', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-03 16:07:52', '2018-01-03 16:07:52'),
+(160, 162, 'vi', 'ăefawefawef', '', '', '', '', 'Đức Vinh Art', '', '', '2018-01-04 07:54:01', '2018-01-04 07:54:01');
 
 -- --------------------------------------------------------
 
@@ -749,7 +751,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `birth_day`, `phone`, `address`, `profile`, `modified_date`) VALUES
 (1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'minhsu0602@gmail.com', '', NULL, NULL, NULL, 1268889823, 1514964567, 1, 'Super', 'Admin', 'ADMIN', '2017-09-14', '0936122222', '', NULL, '2017-09-20 21:39:03'),
-(19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1514965577, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
+(19, '127.0.0.1', 'su', '$2y$08$IjV9Q8oWRskVsi4JknT.0uRCjS/4kgPZ8rF7YQ5148Wb7DBBFkAYu', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1512137861, 1515120092, 1, 'lê minh', 'sự', '', '06/02/1992', '0936777170', 'Trị an, Vĩnh Cửu, Đồng Nai', '', '2017-12-01 21:17:41'),
 (20, '127.0.0.1', 'ducvinhart', '$2y$08$ZDxtMSyWgZ5sELEiMkQNfuFKdbCcS0A/0Xf6KSSGZmpTUl55oLPvm', NULL, 'tonhuyen@ducvinhart.com', NULL, NULL, NULL, NULL, 1512138626, 1512139771, 1, 'Mỹ thuật', 'Đức Vinh', 'ducvinhart', '', '123456', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -981,7 +983,7 @@ ALTER TABLE `payment_detail`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT for table `product_images`
@@ -993,7 +995,7 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `product_translation`
 --
 ALTER TABLE `product_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
 -- AUTO_INCREMENT for table `slider`
