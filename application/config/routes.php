@@ -6,6 +6,7 @@ $route['admin'] = 'admin/dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['index.html'] 				= "home";
 $route['lien-he'] 					= "contact";
 $route['tin-tuc/(:num)-(:any)'] 	= "news/detail/$1";
 $route['tin-tuc'] 					= "news/index";

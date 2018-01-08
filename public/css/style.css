@@ -82,7 +82,7 @@ img{
 span.slogan_small {
 	float: right;
     margin-top: -7px;
-    font-size: 25px;
+    font-size: 19px;
     font-weight: bold;
     color: #333;
     display: inherit;
@@ -91,7 +91,7 @@ span.slogan_small {
 	padding: 2em 0;
 }
 .mega_nav, .content,.product-model,.single-sec,.services-details-area, .cart, .order {
-	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_well_l.png) no-repeat left top;
+	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_su_l.png) no-repeat left top;
 }
 .megamenu>li>a {
 	padding: 5px 25px !important;
@@ -438,7 +438,7 @@ a i.google:hover {
 	padding-bottom: 2em;
 }
 .introduce_section{
-	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_well_l.png) no-repeat left top;
+	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_su_l.png) no-repeat left top;
 	padding: 20px 0;
 	font-family: 'helvetica';
 }
@@ -466,7 +466,7 @@ a i.google:hover {
 }
 .new{
 	padding-top: 2em;
-	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_well_r.png) no-repeat right top;
+	background: rgba(255,255,255,0.6) url(../upload/special_images/bg_su_r.png) no-repeat right top;
 }
 .new-products{
 	border-bottom: 1px solid #eee;
