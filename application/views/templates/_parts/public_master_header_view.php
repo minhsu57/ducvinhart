@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="container">
 			<div class="logo">
 				<a href="<?php echo base_url(); ?>" class="pull-left"><img width="130px" src="<?php echo $website->favicon; ?>" alt="<?php echo $website->website_name; ?>"/></a>
-				<div class="slogan col-md-8">
+				<div class="slogan">
 					<div class="slogan-container">						
 						<h1><?php echo $website->website_name; ?></h1>
 						<h2><span class="slogan_small"><?php echo $website->slogan; ?></span></h2>

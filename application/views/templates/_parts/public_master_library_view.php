@@ -34,7 +34,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo public_helper('lib/bootstrap/css/bootstrap.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo public_helper('lib/font-awesome/css/font-awesome.min.css'); ?>"/>
-    <link rel="stylesheet" href="<?php echo public_helper('css/style.css'); ?>"/>
+    <link rel="stylesheet" href="<?php echo public_helper('css/style.min.css'); ?>"/>
 
     <!-- Javascript -->
     <script type="text/javascript" src="<?php echo public_helper("lib/jquery/jquery.min.js"); ?>"></script>

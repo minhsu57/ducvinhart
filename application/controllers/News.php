@@ -50,7 +50,7 @@
          $offset = ($pagi  == 1) ? 0 : ($pagi * $config['per_page']) - $config['per_page'];
                 // get list data
          $input_news['limit'] = array($config["per_page"], $offset);
-         $input_news['order'] = array('title','ASC');
+         $input_news['order'] = array('created_date','DESC');
                 // get list news	
          $this->data['items'] = $this->news_model->get_list_news($input_news);
 
